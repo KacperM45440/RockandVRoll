@@ -487,7 +487,7 @@ MonoBehaviour:
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 842422645}
-  m_ModelParent: {fileID: 541096546}
+  m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 541096546}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -1235,6 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd45a0ad8c80d8f409ba400cc2745391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactorRef: {fileID: 1073548926}
   gripSensitivity: 0.3
 --- !u!1001 &842422644
 PrefabInstance:
@@ -1478,7 +1479,7 @@ GameObject:
   - component: {fileID: 1073548926}
   - component: {fileID: 1073548929}
   - component: {fileID: 1073548928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightRayInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1588,7 +1589,7 @@ MonoBehaviour:
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
-  m_RayOriginTransform: {fileID: 541096546}
+  m_RayOriginTransform: {fileID: 0}
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
   m_Acceleration: 9.8
@@ -1643,7 +1644,7 @@ MonoBehaviour:
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 842422645}
-  m_ModelParent: {fileID: 541096546}
+  m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
@@ -1989,7 +1990,7 @@ MonoBehaviour:
   m_StopLineAtSelection: 0
   m_SnapEndpointIfAvailable: 1
   m_LineBendRatio: 0.5
-  m_OverrideInteractorLineOrigin: 1
+  m_OverrideInteractorLineOrigin: 0
   m_LineOriginTransform: {fileID: 541096546}
   m_LineOriginOffset: 0
 --- !u!120 &1073548929
@@ -2177,7 +2178,7 @@ GameObject:
   - component: {fileID: 1512674251}
   - component: {fileID: 1512674254}
   - component: {fileID: 1512674253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftRayInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2287,7 +2288,7 @@ MonoBehaviour:
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
-  m_RayOriginTransform: {fileID: 1728657556}
+  m_RayOriginTransform: {fileID: 0}
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
   m_Acceleration: 9.8
@@ -2342,7 +2343,7 @@ MonoBehaviour:
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 1934505123}
-  m_ModelParent: {fileID: 1728657556}
+  m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
@@ -2688,7 +2689,7 @@ MonoBehaviour:
   m_StopLineAtSelection: 0
   m_SnapEndpointIfAvailable: 1
   m_LineBendRatio: 0.5
-  m_OverrideInteractorLineOrigin: 1
+  m_OverrideInteractorLineOrigin: 0
   m_LineOriginTransform: {fileID: 1728657556}
   m_LineOriginOffset: 0
 --- !u!120 &1512674254
@@ -3004,7 +3005,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 541096546}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -3359,7 +3360,7 @@ MonoBehaviour:
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 1934505123}
-  m_ModelParent: {fileID: 1728657556}
+  m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 

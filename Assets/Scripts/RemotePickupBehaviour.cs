@@ -8,24 +8,26 @@ using System;
 
 public class RemotePickupBehaviour : MonoBehaviour
 {
-    private bool triggerPressed = false;
+    private bool gripPressed = false;
     [SerializeField] private XRRayInteractor interactorRef;
     [SerializeField] private float gripSensitivity = 0.3f;
-    private void Update()
+
+    public void Update()
     {
-        // Check if the trigger button is pressed
-        bool triggerPressedValue = Input.GetAxis("XRI_Right_Grip") > gripSensitivity;
+        RecallObject();
+    }
 
-        if (triggerPressedValue && !triggerPressed)
+
+    public void RecallObject()
+    {
+        bool gripPressedValue = Input.GetAxis("XRI_Right_Grip") > gripSensitivity;
+
+        if (gripPressedValue && !gripPressed)
         {
-            interactorRef.useForceGrab = true;
-        }
-        else if (!triggerPressedValue && triggerPressed)
-        {
-            interactorRef.useForceGrab = false;
+   
         }
 
-        triggerPressed = triggerPressedValue;
+        gripPressed = gripPressedValue;
     }
 }
 
