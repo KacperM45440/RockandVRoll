@@ -10,32 +10,59 @@ using System.Linq;
 public class RemotePickupBehaviour : XRBaseInteractor
 {
     private bool isRecalled = false;
-    private bool gripPressed = false;
+    private bool gripPressedRight = false;
+    private bool gripPressedLeft = false;
     private XRGrabInteractable grabbedObject;
-    [SerializeField] private XRRayInteractor interactorRef;
+    [SerializeField] private XRRayInteractor interactorRefLeft;
+    [SerializeField] private XRRayInteractor interactorRefRight;
     [SerializeField] private float gripSensitivity = 0.3f;
 
-    public GameObject controller;
+    public GameObject controllerLeft;
+    public GameObject controllerRight;
+
 
     public void Update()
     {
-        if (!isRecalled)
-        {
-            RecallObject();
-        }
+        CheckForInput();
     }
 
-    public void RecallObject()
+    public void CheckForInput()
     {
-        bool gripPressedValue = Input.GetAxis("XRI_Right_Grip") > gripSensitivity;
+        if (isRecalled)
+        {
+            return;
+        }
 
-        if (gripPressedValue && !gripPressed)
+        gripPressedRight = Input.GetAxis("XRI_Right_Grip") > gripSensitivity;
+        gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > gripSensitivity;
+
+        if (gripPressedRight)
+        {
+            RecallObject(controllerRight, interactorRefRight);
+        }
+        else if (!gripPressedRight)
+        {
+            ReleaseObject(interactorRefRight);
+        }
+
+        if (gripPressedLeft)
+        {
+            RecallObject(controllerLeft, interactorRefLeft);
+        }
+        else if (!gripPressedLeft)
+        {
+            ReleaseObject(interactorRefLeft);
+        }
+    }
+    public void RecallObject(GameObject currentController, XRRayInteractor currentInteractor)
+    {
+        if (gripPressedRight && currentController == controllerRight || gripPressedLeft && currentController == controllerLeft)
         {
             isRecalled = true;
 
             try
             {
-                grabbedObject = interactorRef.interactablesSelected[0] as XRGrabInteractable;
+                grabbedObject = currentInteractor.interactablesSelected[0] as XRGrabInteractable;
             }
             catch 
             {
@@ -43,26 +70,24 @@ public class RemotePickupBehaviour : XRBaseInteractor
                 return;
             }
 
-            ForceDeselect();
-            interactorRef.useForceGrab = true;
-            ForceSelect(grabbedObject);
+            ForceDeselect(currentInteractor);
+            currentInteractor.useForceGrab = true;
+            ForceSelect(currentInteractor,grabbedObject);
         }
-        else if (!gripPressedValue && gripPressed)
-        {
-            interactorRef.useForceGrab = false;
-        }
-
-        gripPressed = gripPressedValue;
         isRecalled = false;
     }
 
-    public void ForceDeselect()
+    public void ReleaseObject(XRRayInteractor currentInteractorRef)
     {
-        gameObject.GetComponent<CustomInteractionManager>().ForceDeselect(interactorRef);
+        currentInteractorRef.useForceGrab = false;
     }
-    public void ForceSelect(IXRSelectInteractable interactable)
+    public void ForceDeselect(XRRayInteractor interactor)
     {
-        gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactorRef, interactable);
+        gameObject.GetComponent<CustomInteractionManager>().ForceDeselect(interactor);
+    }
+    public void ForceSelect(XRRayInteractor interactor, IXRSelectInteractable interactable)
+    {
+        gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactor, interactable);
     }
 }
 
