@@ -98,11 +98,11 @@ public class RemotePickupBehaviour : XRBaseInteractor
         currentInteractorRef.useForceGrab = false;
         grabbedObject = null;
     }
-    public void ForceDeselect(XRRayInteractor interactor)
+    public void ForceDeselect(XRBaseInteractor interactor)
     {
         gameObject.GetComponent<CustomInteractionManager>().ForceDeselect(interactor);
     }
-    public void ForceSelect(XRRayInteractor interactor, IXRSelectInteractable interactable)
+    public void ForceSelect(XRBaseInteractor interactor, IXRSelectInteractable interactable)
     {
         gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactor, interactable);
     }

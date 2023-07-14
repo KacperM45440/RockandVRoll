@@ -610,6 +610,9 @@ MonoBehaviour:
   disableOnPlacement: 0
   mustBeDropped: 0
   neededObject: {fileID: 1519621083}
+  leftControllerRef: {fileID: 1728657555}
+  rightControllerRef: {fileID: 541096545}
+  pickupRef: {fileID: 819204301}
   chosenInteraction: 1
 --- !u!1 &358466066
 GameObject:
@@ -940,7 +943,6 @@ GameObject:
   - component: {fileID: 541096548}
   - component: {fileID: 541096551}
   - component: {fileID: 541096552}
-  - component: {fileID: 541096553}
   m_Layer: 0
   m_Name: RightController
   m_TagString: Untagged
@@ -1337,20 +1339,6 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &541096553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541096545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a21c92f8cf30df4f8a7857f669e9b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRightController: 1
-  myRayInteractor: {fileID: 1073548924}
 --- !u!1 &579688774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,7 +3973,7 @@ GameObject:
   - component: {fileID: 1519621088}
   m_Layer: 6
   m_Name: Lil Cube (2)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4871,7 +4859,6 @@ GameObject:
   - component: {fileID: 1728657558}
   - component: {fileID: 1728657561}
   - component: {fileID: 1728657562}
-  - component: {fileID: 1728657563}
   m_Layer: 0
   m_Name: LeftController
   m_TagString: Untagged
@@ -5268,20 +5255,6 @@ MonoBehaviour:
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1728657563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728657555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a21c92f8cf30df4f8a7857f669e9b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRightController: 0
-  myRayInteractor: {fileID: 1512674249}
 --- !u!1 &1869868445
 GameObject:
   m_ObjectHideFlags: 0
