@@ -9,18 +9,35 @@ using System.Linq;
 
 public class RemotePickupBehaviour : XRBaseInteractor
 {
+    private static RemotePickupBehaviour _instance;
+    public static RemotePickupBehaviour Instance { get { return _instance; } }
+
     private bool isRecalled = false;
     private bool gripPressedRight = false;
     private bool gripPressedLeft = false;
-    private XRGrabInteractable grabbedObject;
-    [SerializeField] private XRRayInteractor interactorRefLeft;
-    [SerializeField] private XRRayInteractor interactorRefRight;
+    public XRGrabInteractable grabbedObject;
+    public XRRayInteractor usedInteractor;
+    public XRRayInteractor interactorRefLeft;
+    public XRRayInteractor interactorRefRight;
+
     [SerializeField] private float gripSensitivity = 0.3f;
 
     public GameObject controllerLeft;
     public GameObject controllerRight;
 
+    private new void Awake()
+    {
+        base.Awake();
 
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
     public void Update()
     {
         CheckForInput();
@@ -74,20 +91,27 @@ public class RemotePickupBehaviour : XRBaseInteractor
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor,grabbedObject);
         }
-        isRecalled = false;
+        StartCoroutine(WaitForRelease());
     }
 
     public void ReleaseObject(XRRayInteractor currentInteractorRef)
     {
         currentInteractorRef.useForceGrab = false;
+        grabbedObject = null;
     }
-    public void ForceDeselect(XRRayInteractor interactor)
+    public void ForceDeselect(XRBaseInteractor interactor)
     {
         gameObject.GetComponent<CustomInteractionManager>().ForceDeselect(interactor);
     }
-    public void ForceSelect(XRRayInteractor interactor, IXRSelectInteractable interactable)
+    public void ForceSelect(XRBaseInteractor interactor, IXRSelectInteractable interactable)
     {
         gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactor, interactable);
+    }
+
+    IEnumerator WaitForRelease()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isRecalled = false; 
     }
 }
 
