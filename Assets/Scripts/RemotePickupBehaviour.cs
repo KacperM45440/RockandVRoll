@@ -19,6 +19,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public XRRayInteractor usedInteractor;
     public XRRayInteractor interactorRefLeft;
     public XRRayInteractor interactorRefRight;
+
     [SerializeField] private float gripSensitivity = 0.3f;
 
     public GameObject controllerLeft;
@@ -90,7 +91,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor,grabbedObject);
         }
-        isRecalled = false;
+        StartCoroutine(WaitForRelease());
     }
 
     public void ReleaseObject(XRRayInteractor currentInteractorRef)
@@ -105,6 +106,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public void ForceSelect(XRBaseInteractor interactor, IXRSelectInteractable interactable)
     {
         gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactor, interactable);
+    }
+
+    IEnumerator WaitForRelease()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isRecalled = false; 
     }
 }
 

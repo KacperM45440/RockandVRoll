@@ -20,24 +20,34 @@ public class PlaceableArea : MonoBehaviour
     {
         if (!mustBeDropped)
         {
-            try
+            if (enteredCollider.gameObject.name.Equals(neededObject.name))
             {
-                DeselectBoth(enteredCollider);
+                try
+                {
+                    DeselectBoth(enteredCollider);
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex);
+                }
+
+                PlaceInArea(enteredCollider.gameObject);
             }
-            catch (Exception ex)
-            {
-                Debug.Log(ex);
-            }
-            
-            PlaceInArea(enteredCollider.gameObject);
+
             return;
         }
 
-        PlaceInArea(enteredCollider.gameObject);
+        if (enteredCollider.gameObject.name.Equals(neededObject.name))
+        {
+            PlaceInArea(enteredCollider.gameObject);
+        }
 
     }
     public void PlaceInArea(GameObject givenObject)
     {
+        // Mam dziwne wrazenie ze przy bezposrednim trzymaniu przedmiotu w rece czasami obiekt teleportuje sie do miejsca docelowego razem z graczem
+        // Nie mam na razie pomyslu na to jak to zbadac ani co z tym zrobic
+
         switch ((int)chosenInteraction)
         {
             case 1:
@@ -51,10 +61,6 @@ public class PlaceableArea : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Debug.Log(pickupRef.interactorRefLeft.interactablesSelected[0] as XRGrabInteractable);
-    }
     public void DeselectBoth(Collider givenCollider)
     {
         bool leftHandHasSelection = leftControllerRef.GetComponent<XRDirectInteractor>().hasSelection || pickupRef.interactorRefLeft.hasSelection;
@@ -65,70 +71,52 @@ public class PlaceableArea : MonoBehaviour
         bool firstRightCheck;
         bool secondRightCheck;
 
-        // Zadne z tych checkow nie przechodza poniewaz porownywane obiekty nie sa takie same
-        // Roznica jest taka ze po zlapaniu do kostki doczepiany jest dynamic attach, trzeba bedzie poczytac w jaki sposob dobrze zrobic manualny zeby to sie (mam nadzieje) nie dzialo
-
         try
         {
-            firstLeftCheck = GameObject.ReferenceEquals(givenCollider.gameObject, pickupRef.interactorRefLeft.interactablesSelected[0] as XRGrabInteractable);
+            firstLeftCheck = (givenCollider.gameObject.name.Equals((pickupRef.interactorRefLeft.interactablesSelected[0] as XRGrabInteractable).name));
         }
         catch
         {
             firstLeftCheck = false;
         }
 
-        Debug.Log("Ray left check: " +firstLeftCheck);
-
         try
         {
-            secondLeftCheck = GameObject.ReferenceEquals(givenCollider.gameObject, leftControllerRef.GetComponent<XRDirectInteractor>().interactablesSelected[0] as XRGrabInteractable);
+            secondLeftCheck = (givenCollider.gameObject.name.Equals((leftControllerRef.GetComponent<XRDirectInteractor>().interactablesSelected[0] as XRGrabInteractable).name));
         }
         catch
         {
             secondLeftCheck = false;
         }
 
-        Debug.Log("Direct left check: " + secondLeftCheck);
-
         try
         {
-            firstRightCheck = GameObject.ReferenceEquals(givenCollider.gameObject, pickupRef.interactorRefRight.interactablesSelected[0] as XRGrabInteractable);
+            firstRightCheck = (givenCollider.gameObject.name.Equals((pickupRef.interactorRefRight.interactablesSelected[0] as XRGrabInteractable).name));
         }
         catch
         {
             firstRightCheck = false;
         }
 
-        Debug.Log("Ray right check: " + firstRightCheck);
-
         try
         {
-            secondRightCheck = GameObject.ReferenceEquals(givenCollider.gameObject, rightControllerRef.GetComponent<XRDirectInteractor>().interactablesSelected[0] as XRGrabInteractable);
+            secondRightCheck = (givenCollider.gameObject.name.Equals((rightControllerRef.GetComponent<XRDirectInteractor>().interactablesSelected[0] as XRGrabInteractable).name));
         }
         catch
         {
             secondRightCheck = false;
         }
 
-        Debug.Log("Direct right check: " + secondRightCheck);
-
-        if (leftHandHasSelection && GameObject.ReferenceEquals(givenCollider.gameObject, neededObject) && (firstLeftCheck || secondLeftCheck))
-        {
-            // Sprawdzanie jeszcze tagu to chyba overkill, ale niech zostanie
-            if (pickupRef.grabbedObject.CompareTag(neededObject.tag))
-            {
-                pickupRef.ForceDeselect(pickupRef.interactorRefLeft);
-                pickupRef.ForceDeselect(leftControllerRef.GetComponent<XRDirectInteractor>());
-            }
+        if (leftHandHasSelection && (givenCollider.gameObject.name.Equals(neededObject.name)) && (firstLeftCheck || secondLeftCheck))
+        { 
+            pickupRef.ForceDeselect(pickupRef.interactorRefLeft);
+            pickupRef.ForceDeselect(leftControllerRef.GetComponent<XRDirectInteractor>());
         }
 
-        if (rightHandHasSelection && GameObject.ReferenceEquals(givenCollider.gameObject, neededObject) && (firstRightCheck || secondRightCheck))
+        if (rightHandHasSelection && (givenCollider.gameObject.name.Equals(neededObject.name)) && (firstRightCheck || secondRightCheck))
         {
-            if (pickupRef.grabbedObject.CompareTag(neededObject.tag))
-            {
-                pickupRef.ForceDeselect(pickupRef.interactorRefRight);
-                pickupRef.ForceDeselect(rightControllerRef.GetComponent<XRDirectInteractor>());
-            }
+            pickupRef.ForceDeselect(pickupRef.interactorRefRight);
+            pickupRef.ForceDeselect(rightControllerRef.GetComponent<XRDirectInteractor>());
         }
     }
 }
