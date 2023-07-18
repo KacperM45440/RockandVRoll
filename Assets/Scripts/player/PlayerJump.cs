@@ -17,33 +17,37 @@ public class PlayerJump : MonoBehaviour
     private Vector3 previousLeft = Vector3.zero;
     private Vector3 previousRight = Vector3.zero;
 
-    private void Start() {
-        
+    private void Start()
+    {
+
     }
     void Update()
     {
-        if (nextTriggerTime > 0) {
+        if (nextTriggerTime > 0)
+        {
             nextTriggerTime -= Time.deltaTime;
         }
-        else {
+        else
+        {
             tryJump();
             nextTriggerTime = interval;
         }
     }
 
-    private void tryJump() {
+    private void tryJump()
+    {
         Vector3 leftMove = leftHand.position - previousLeft;
         Vector3 rightMove = rightHand.position - previousRight;
-        
-            Debug.Log("leftMove " + leftMove);
-            Debug.Log("rightMove " + rightMove);
-        if (leftMove.y > triggerDistance && rightMove.y > triggerDistance && groundDetector.isGrounded) {
+
+        if (leftMove.y > triggerDistance && rightMove.y > triggerDistance && groundDetector.isGrounded)
+        {
             Jump();
         }
         previousLeft = leftHand.position;
         previousRight = rightHand.position;
     }
-    private void Jump() {
+    private void Jump()
+    {
         rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
     }
 }
