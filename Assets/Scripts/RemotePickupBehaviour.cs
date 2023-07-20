@@ -42,6 +42,33 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public void Update()
     {
         CheckForInput();
+        CheckForSelection();
+    }
+
+    // Podczas pracy bezpoœredniego interactora, wy³¹czamy interakcjê promieniem aby nie da³o siê ruszaæ rêk¹ dwóch obiektów naraz (b¹dŸ bugowaæ te obecnie z³apane)
+    public void CheckForSelection()
+    {
+        if (controllerLeft.GetComponent<XRDirectInteractor>().hasSelection)
+        {
+            interactorRefLeft.enabled = false;
+            interactorRefLeft.gameObject.GetComponent<XRInteractorLineVisual>().enabled = false;
+        }
+        else if (!controllerLeft.GetComponent<XRDirectInteractor>().hasSelection)
+        {
+            interactorRefLeft.enabled = true;
+            interactorRefLeft.gameObject.GetComponent<XRInteractorLineVisual>().enabled = true;
+        }
+
+        if (controllerRight.GetComponent<XRDirectInteractor>().hasSelection)
+        {
+            interactorRefRight.enabled = false;
+            interactorRefRight.gameObject.GetComponent<XRInteractorLineVisual>().enabled = false;
+        }
+        else if (!controllerRight.GetComponent<XRDirectInteractor>().hasSelection)
+        {
+            interactorRefRight.enabled = true;
+            interactorRefRight.gameObject.GetComponent<XRInteractorLineVisual>().enabled = true;
+        }
     }
 
     // SprawdŸ, czy klikane s¹ obecnie jakiekolwiek guziki
