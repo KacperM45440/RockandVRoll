@@ -14,13 +14,9 @@ public class PlayerJump : MonoBehaviour
     public GroundDetector groundDetector;
 
     private float nextTriggerTime;
-    private Vector3 previousLeft = Vector3.zero;
-    private Vector3 previousRight = Vector3.zero;
+    private Vector3 previousLeft = new(0, 9999, 0);
+    private Vector3 previousRight = new(0, 9999, 0);
 
-    private void Start()
-    {
-
-    }
     void Update()
     {
         if (nextTriggerTime > 0)
@@ -29,12 +25,12 @@ public class PlayerJump : MonoBehaviour
         }
         else
         {
-            tryJump();
+            TryJump();
             nextTriggerTime = interval;
         }
     }
 
-    private void tryJump()
+    private void TryJump()
     {
         Vector3 leftMove = leftHand.position - previousLeft;
         Vector3 rightMove = rightHand.position - previousRight;
