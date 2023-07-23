@@ -13,13 +13,15 @@ public class PlayerJump : MonoBehaviour
     public Rigidbody rb;
     public GroundDetector groundDetector;
 
-    private float nextTriggerTime;
+    private float nextTriggerTime = 1;
     private Vector3 previousLeft = Vector3.zero;
     private Vector3 previousRight = Vector3.zero;
+    private bool initialised = false;
+    private bool canJump = false;
 
     private void Start()
     {
-
+        initialised = true;
     }
     void Update()
     {
@@ -27,27 +29,40 @@ public class PlayerJump : MonoBehaviour
         {
             nextTriggerTime -= Time.deltaTime;
         }
-        else
+    }
+
+    private void FixedUpdate()
+    {
+        if (nextTriggerTime <= 0)
         {
-            tryJump();
-            nextTriggerTime = interval;
+            {
+                TryJump();
+                nextTriggerTime = interval;
+            }
         }
     }
 
-    private void tryJump()
+    private void TryJump()
     {
         Vector3 leftMove = leftHand.position - previousLeft;
         Vector3 rightMove = rightHand.position - previousRight;
 
-        if (leftMove.y > triggerDistance && rightMove.y > triggerDistance && groundDetector.isGrounded)
+        if (leftMove.y > triggerDistance && rightMove.y > triggerDistance && groundDetector.isGrounded && initialised)
         {
             Jump();
         }
+
         previousLeft = leftHand.position;
         previousRight = rightHand.position;
     }
     private void Jump()
     {
+        if (!canJump)
+        {
+            canJump = true;
+            return;
+        }
+
         rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
     }
 }

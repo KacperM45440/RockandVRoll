@@ -2259,6 +2259,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "StoppedRotating",
+                    "type": "Value",
+                    "id": "508194d5-17a6-4c27-b493-7259c4391c75",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -2281,6 +2290,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShootRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9524a7e-ef33-4c95-b0bf-640a556a9689",
+                    "path": "<OculusTouchController>{RightHand}/thumbstick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StoppedRotating",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
