@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Rotator : MonoBehaviour
 {
     [SerializeField] Transform linkedDial;
-    [SerializeField] private int snapRotationAmount = 25;
+    [SerializeField] public int snapRotationAmount = 25;
     [SerializeField] private float angleTolerance;
     [SerializeField] private GameObject RightHandModel;
     [SerializeField] private GameObject LeftHandModel;
@@ -20,20 +20,17 @@ public class Rotator : MonoBehaviour
     private void OnEnable() {
         grabInteractor.selectEntered.AddListener(GrabbedBy);
         grabInteractor.selectExited.AddListener(GrabEnd);
-        //dzia³a OnEnable
     }
 
     private void OnDisable() {
         grabInteractor.selectEntered.AddListener(GrabbedBy);
         grabInteractor.selectExited.AddListener(GrabEnd);
-        //nie wy³¹cza siê instantly sam
     }
 
     private void GrabEnd(SelectExitEventArgs arg0) {
         shouldGetHandRotation = false;
         requiresStartAngle = true;
         HandModelVisibility(false);
-        Debug.Log("stopsGrabbing"); //nope
     }
 
     private void GrabbedBy(SelectEnterEventArgs arg0) {
@@ -44,7 +41,6 @@ public class Rotator : MonoBehaviour
         startAngle = 0f;
 
         HandModelVisibility(true);
-        Debug.Log("triesGrabbing"); //nope
     }
 
     private void HandModelVisibility(bool visibilityState) {
@@ -69,7 +65,6 @@ public class Rotator : MonoBehaviour
             if (angleDifference > angleTolerance) {
 
                 if (angleDifference > 270f) { //checking to see if the user has gone from 0 -> 360
-                    Debug.Log("isFrom0To360");
 
                     float angleCheck;
                     if (startAngle < currentAngle) {
@@ -111,13 +106,11 @@ public class Rotator : MonoBehaviour
     private float CheckAngle(float currentAngle, float startAngle) => (360f - currentAngle) + startAngle;
 
     private void RotateDialClockwise() {
-        Debug.Log("triesTurningClockwise"); //nope
         linkedDial.localEulerAngles = new Vector3(linkedDial.localEulerAngles.x, linkedDial.localEulerAngles.y, linkedDial.localEulerAngles.z + snapRotationAmount);
         if (TryGetComponent<IDial>(out IDial dial)) dial.DialChanged(linkedDial.localEulerAngles.z);
     }
 
     private void RotateDialAntiClockwise() {
-        Debug.Log("triesTurningAntiClockwise"); //nope
         linkedDial.localEulerAngles = new Vector3(linkedDial.localEulerAngles.x, linkedDial.localEulerAngles.y, linkedDial.localEulerAngles.z - snapRotationAmount);
         if (TryGetComponent<IDial>(out IDial dial)) dial.DialChanged(linkedDial.localEulerAngles.z);
     }
