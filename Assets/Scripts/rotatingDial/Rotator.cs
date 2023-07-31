@@ -1,8 +1,8 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Rotator : MonoBehaviour
-{
+public class Rotator : MonoBehaviour {
     [SerializeField] Transform linkedDial;
     [SerializeField] public int snapRotationAmount = 25;
     [SerializeField] private float angleTolerance;
@@ -10,12 +10,20 @@ public class Rotator : MonoBehaviour
     [SerializeField] private GameObject LeftHandModel;
     [SerializeField] bool shouldUseDummyHands;
 
+    public UnityEvent<float> onDialChange;
     private XRBaseInteractor interactor;
     private float startAngle;
     private bool requiresStartAngle = true;
     private bool shouldGetHandRotation = false;
 
+    public bool initialising = true;
+    public float previousDialValue = 0;
+
     private XRGrabInteractable grabInteractor => GetComponent<XRGrabInteractable>();
+
+    private void Start() {
+        if (onDialChange == null) onDialChange = new UnityEvent<float>();
+    }
 
     private void OnEnable() {
         grabInteractor.selectEntered.AddListener(GrabbedBy);
@@ -49,8 +57,7 @@ public class Rotator : MonoBehaviour
         else LeftHandModel.SetActive(visibilityState);
         // to s¹ tylko wizualia
     }
-    void Update()
-    {
+    void Update() {
         if (shouldGetHandRotation) {
             var rotationAngle = GetInteractorRotation(); //gets the current controller angle
             GetRotationDistance(rotationAngle);
@@ -91,14 +98,16 @@ public class Rotator : MonoBehaviour
                     if (startAngle < currentAngle) {
                         RotateDialAntiClockwise();
                         startAngle = currentAngle;
-                    } else if (startAngle > currentAngle) {
+                    }
+                    else if (startAngle > currentAngle) {
                         RotateDialClockwise();
                         startAngle = currentAngle;
                     }
                 }
 
             }
-        } else {
+        }
+        else {
             requiresStartAngle = false;
             startAngle = currentAngle;
         }
@@ -107,11 +116,27 @@ public class Rotator : MonoBehaviour
 
     private void RotateDialClockwise() {
         linkedDial.localEulerAngles = new Vector3(linkedDial.localEulerAngles.x, linkedDial.localEulerAngles.y, linkedDial.localEulerAngles.z + snapRotationAmount);
-        if (TryGetComponent<IDial>(out IDial dial)) dial.DialChanged(linkedDial.localEulerAngles.z);
+        DialChanged(linkedDial.localEulerAngles.z);
     }
 
     private void RotateDialAntiClockwise() {
         linkedDial.localEulerAngles = new Vector3(linkedDial.localEulerAngles.x, linkedDial.localEulerAngles.y, linkedDial.localEulerAngles.z - snapRotationAmount);
-        if (TryGetComponent<IDial>(out IDial dial)) dial.DialChanged(linkedDial.localEulerAngles.z);
+        DialChanged(linkedDial.localEulerAngles.z);
+    }
+
+    public void DialChanged(float dialValue) {
+        float dialDifference = dialValue - previousDialValue;
+        if (!initialising) previousDialValue = dialValue;
+        if (initialising) {
+            Debug.Log("Initializing");
+            initialising = false;
+        }
+        if (dialDifference > 0 && !(dialDifference > (360 - snapRotationAmount - 1)) || dialDifference < (-360 + snapRotationAmount + 1)) {
+            onDialChange.Invoke(1);
+        }
+        if (dialDifference < 0 && !(dialDifference < (-360 + snapRotationAmount + 1)) || dialDifference > (360 - snapRotationAmount - 1)) {
+            onDialChange.Invoke(-1);
+        }
+        //Debug.Log($"percentage power {Mathf.Ceil(currentDialValue)}");
     }
 }

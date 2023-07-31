@@ -1,40 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Audio;
 
-public class MusicNSFXController : MonoBehaviour, IDial
-{
-    UnityEvent changeValue;
-    //private float minValue = 0.01f;
-    //private float maxValue = 1f;
-    public float changeSignificancy = 0.03f;
-    public bool initialising = true;
-    public float previousDialValue = 0;
-    public Rotator rotator;
-    void Start()
-    {
-        if (changeValue == null) changeValue = new UnityEvent();
-        GetComponent<Rotator>();
+public class MusicNSFXController : MonoBehaviour {
+    [SerializeField] private AudioMixer musicNSFX;
+
+    private float minValue = 0.0001f;
+    private float maxValue = 1f;
+    private float currSoundValue = 0.1f;
+    private float currMusicValue = 0.1f;
+    public float changeSignificancy = 0.005f;
+    public Rotator sfxDial;
+    public Rotator musicDial;
+
+    void OnEnable() {
+        sfxDial.onDialChange.AddListener(ChangeSFXMixerValue);
+        musicDial.onDialChange.AddListener(ChangeMusicMixerValue);
+    }
+
+    private void OnDisable() {
+        sfxDial.onDialChange.RemoveListener(ChangeSFXMixerValue);
+        musicDial.onDialChange.AddListener(ChangeMusicMixerValue);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
-    public void DialChanged(float dialValue) {
-        float currentDialValue = dialValue;
-        
-        float dialDifference = currentDialValue - previousDialValue;
-        if (!initialising) previousDialValue = currentDialValue;
-        if (initialising) {
-            Debug.Log("Initializing");
-            initialising = false;
-        }
-        if (dialDifference > 0 && !(dialDifference > (360 - rotator.snapRotationAmount - 1)) || dialDifference < (-360 + rotator.snapRotationAmount + 1)) Debug.Log("Up");
-        if (dialDifference < 0 && !(dialDifference < (-360 + rotator.snapRotationAmount + 1)) || dialDifference > (360 - rotator.snapRotationAmount - 1)) Debug.Log("Down");
-        Debug.Log($"percentage power {Mathf.Ceil(currentDialValue)}");
+    public void SetVolume(float dialvalue, string param) {
+        musicNSFX.SetFloat(param, Mathf.Log10(dialvalue) * 20);
+    }
+    public void ChangeSFXMixerValue(float direction) {
+        float valueDestination = currSoundValue + (changeSignificancy * direction);
+        if (valueDestination > maxValue) currSoundValue = maxValue;
+        else if (valueDestination < minValue) currSoundValue = minValue;
+        else currSoundValue += (changeSignificancy * direction);
+        Debug.Log($"Current volume: {currSoundValue}");
+        SetVolume(currSoundValue, "SoundParam");
+    }
+    public void ChangeMusicMixerValue(float direction) {
+        float valueDestination = currMusicValue + (changeSignificancy * direction);
+        if (valueDestination > maxValue) currMusicValue = maxValue;
+        else if (valueDestination < minValue) currMusicValue = minValue;
+        else currMusicValue += (changeSignificancy * direction);
+        Debug.Log($"Current volume: {currMusicValue}");
+        SetVolume(currMusicValue, "MusicParam");
     }
 }
