@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Rotator : MonoBehaviour {
+public class Rotator : MonoBehaviour
+{
     [SerializeField] Transform linkedDial;
     [SerializeField] public int snapRotationAmount = 25;
     [SerializeField] private float angleTolerance;
@@ -21,27 +22,37 @@ public class Rotator : MonoBehaviour {
 
     private XRGrabInteractable grabInteractor => GetComponent<XRGrabInteractable>();
 
-    private void Start() {
-        if (onDialChange == null) onDialChange = new UnityEvent<float>();
+    private void Start()
+    {
+        if (onDialChange == null)
+        {
+            onDialChange = new UnityEvent<float>();
+        }
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         grabInteractor.selectEntered.AddListener(GrabbedBy);
         grabInteractor.selectExited.AddListener(GrabEnd);
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         grabInteractor.selectEntered.AddListener(GrabbedBy);
         grabInteractor.selectExited.AddListener(GrabEnd);
     }
 
-    private void GrabEnd(SelectExitEventArgs arg0) {
+    private void GrabEnd(SelectExitEventArgs arg0)
+    {
         shouldGetHandRotation = false;
         requiresStartAngle = true;
         HandModelVisibility(false);
     }
 
-    private void GrabbedBy(SelectEnterEventArgs arg0) {
+    private void GrabbedBy(SelectEnterEventArgs arg0)
+    {
+        // nie wiem czy to bedzie 0 czy 1, ale generalnie zeby ominac przestarzala metode to linijka wyglada tak 
+        // interactor = GetComponent<XRGrabInteractable>().interactorsSelecting[0] as XRBaseInteractor;
         interactor = GetComponent<XRGrabInteractable>().selectingInteractor;
         interactor.GetComponent<XRDirectInteractor>().hideControllerOnSelect = true;
 
@@ -51,14 +62,19 @@ public class Rotator : MonoBehaviour {
         HandModelVisibility(true);
     }
 
-    private void HandModelVisibility(bool visibilityState) {
+    private void HandModelVisibility(bool visibilityState)
+    {
+        // ify z nawiasami pls
         if (!shouldUseDummyHands) return;
         if (interactor.CompareTag("RightHand")) RightHandModel.SetActive(visibilityState);
         else LeftHandModel.SetActive(visibilityState);
-        // to s¹ tylko wizualia
+        //to s¹ tylko wizualia
     }
-    void Update() {
-        if (shouldGetHandRotation) {
+    void Update()
+    {
+
+        if (shouldGetHandRotation)
+        {
             var rotationAngle = GetInteractorRotation(); //gets the current controller angle
             GetRotationDistance(rotationAngle);
         }
@@ -66,40 +82,55 @@ public class Rotator : MonoBehaviour {
 
     public float GetInteractorRotation() => interactor.GetComponent<Transform>().eulerAngles.z;
 
-    private void GetRotationDistance(float currentAngle) {
-        if (!requiresStartAngle) {
-            var angleDifference = Mathf.Abs(startAngle - currentAngle);
-            if (angleDifference > angleTolerance) {
+    private void GetRotationDistance(float currentAngle)
+    {
+        // to nie dziala, ale tez nie bedziesz musial tego przepisywac bo jest na to o wiele prostszy sposob
+        // poczytaj sobie w jaki sposob dzialaja jointy w unity, bo to ma gotowe metody 
+        // https://www.youtube.com/watch?v=bYS35_hC6B0 << kozak kanal btw
 
-                if (angleDifference > 270f) { //checking to see if the user has gone from 0 -> 360
+        if (!requiresStartAngle)
+        {
+            var angleDifference = Mathf.Abs(startAngle - currentAngle);
+            if (angleDifference > angleTolerance)
+            {
+
+                if (angleDifference > 270f)
+                { //checking to see if the user has gone from 0 -> 360
 
                     float angleCheck;
-                    if (startAngle < currentAngle) {
+                    if (startAngle < currentAngle)
+                    {
                         angleCheck = CheckAngle(currentAngle, startAngle);
 
                         if (angleCheck < angleTolerance) return;
-                        else {
+                        else
+                        {
                             RotateDialClockwise();
                             startAngle = currentAngle;
                         }
                     }
-                    else if (startAngle > currentAngle) {
+                    else if (startAngle > currentAngle)
+                    {
                         angleCheck = CheckAngle(currentAngle, startAngle);
                         if (angleCheck < angleTolerance) return;
-                        else {
+                        else
+                        {
                             RotateDialAntiClockwise();
                             startAngle = currentAngle;
                         }
                     }
                 }
-                else {
+                else
+                {
 
 
-                    if (startAngle < currentAngle) {
+                    if (startAngle < currentAngle)
+                    {
                         RotateDialAntiClockwise();
                         startAngle = currentAngle;
                     }
-                    else if (startAngle > currentAngle) {
+                    else if (startAngle > currentAngle)
+                    {
                         RotateDialClockwise();
                         startAngle = currentAngle;
                     }
@@ -107,36 +138,44 @@ public class Rotator : MonoBehaviour {
 
             }
         }
-        else {
+        else
+        {
             requiresStartAngle = false;
             startAngle = currentAngle;
         }
     }
     private float CheckAngle(float currentAngle, float startAngle) => (360f - currentAngle) + startAngle;
 
-    private void RotateDialClockwise() {
+    private void RotateDialClockwise()
+    {
         linkedDial.localEulerAngles = new Vector3(linkedDial.localEulerAngles.x, linkedDial.localEulerAngles.y, linkedDial.localEulerAngles.z + snapRotationAmount);
         DialChanged(linkedDial.localEulerAngles.z);
     }
 
-    private void RotateDialAntiClockwise() {
+    private void RotateDialAntiClockwise()
+    {
         linkedDial.localEulerAngles = new Vector3(linkedDial.localEulerAngles.x, linkedDial.localEulerAngles.y, linkedDial.localEulerAngles.z - snapRotationAmount);
         DialChanged(linkedDial.localEulerAngles.z);
     }
 
-    public void DialChanged(float dialValue) {
+    public void DialChanged(float dialValue)
+    {
         float dialDifference = dialValue - previousDialValue;
         if (!initialising) previousDialValue = dialValue;
-        if (initialising) {
-            Debug.Log("Initializing");
+        if (initialising)
+        {
+            //Debug.Log("Initializing");
             initialising = false;
         }
-        if (dialDifference > 0 && !(dialDifference > (360 - snapRotationAmount - 1)) || dialDifference < (-360 + snapRotationAmount + 1)) {
+        if (dialDifference > 0 && !(dialDifference > (360 - snapRotationAmount - 1)) || dialDifference < (-360 + snapRotationAmount + 1))
+        {
             onDialChange.Invoke(1);
         }
-        if (dialDifference < 0 && !(dialDifference < (-360 + snapRotationAmount + 1)) || dialDifference > (360 - snapRotationAmount - 1)) {
+        if (dialDifference < 0 && !(dialDifference < (-360 + snapRotationAmount + 1)) || dialDifference > (360 - snapRotationAmount - 1))
+        {
             onDialChange.Invoke(-1);
         }
+        
         //Debug.Log($"percentage power {Mathf.Ceil(currentDialValue)}");
     }
 }

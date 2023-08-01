@@ -1910,13 +1910,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085833043}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1869868446}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1098291834
 GameObject:
@@ -2001,6 +2001,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 33701120}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1458809479 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5808783245349288739, guid: a16155016bd72d044a41c3934356df3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1516955365}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1488628195 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5808783245349288739, guid: a16155016bd72d044a41c3934356df3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532669654333905523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1516955365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2014,6 +2026,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicDial
       objectReference: {fileID: 0}
+    - target: {fileID: 2961123497507092166, guid: a16155016bd72d044a41c3934356df3e,
+        type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1458809479}
     - target: {fileID: 3870415841718120931, guid: a16155016bd72d044a41c3934356df3e,
         type: 3}
       propertyPath: m_RootOrder
@@ -2070,7 +2087,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1402395810383124097, guid: a16155016bd72d044a41c3934356df3e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a16155016bd72d044a41c3934356df3e, type: 3}
@@ -3064,6 +3082,7 @@ Transform:
   m_Children:
   - {fileID: 705507995}
   - {fileID: 1706528218}
+  - {fileID: 1085833046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3080,6 +3099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXDial
       objectReference: {fileID: 0}
+    - target: {fileID: 2961123497507092166, guid: a16155016bd72d044a41c3934356df3e,
+        type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1488628195}
     - target: {fileID: 3870415841718120931, guid: a16155016bd72d044a41c3934356df3e,
         type: 3}
       propertyPath: m_RootOrder
@@ -3136,7 +3160,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1402395810383124097, guid: a16155016bd72d044a41c3934356df3e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a16155016bd72d044a41c3934356df3e, type: 3}
