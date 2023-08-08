@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DoorSceneLoader : MonoBehaviour
 {
-    // próbowa³em tak zrobiæ, nie da siê
-    public string sceneName;
+    // public string sceneName;
+    public UnityEngine.Object choosenLevel;
 
     private void OnTriggerEnter(Collider other) 
     {
@@ -22,7 +22,7 @@ public class DoorSceneLoader : MonoBehaviour
     {
         bool transitionDone = false;
         ScreenFader.Instance.FadeOut(()=>transitionDone = true);
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(choosenLevel.name);
         operation.allowSceneActivation = false;
 
         yield return new WaitUntil(() => !operation.isDone && !transitionDone);
