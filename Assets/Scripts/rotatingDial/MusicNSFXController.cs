@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using TMPro;
 
 public class MusicNSFXController : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class MusicNSFXController : MonoBehaviour
     public float changeSignificancy = 0.005f;
     public Rotator sfxDial;
     public Rotator musicDial;
+    public TextMeshPro sfxText;
+    public TextMeshPro musicText;
+
+    private void Start()
+    {
+        sfxText.text = ((int)(currSoundValue * 100)).ToString();
+        musicText.text = ((int)(currMusicValue * 100)).ToString();
+    }
 
     void OnEnable()
     {
@@ -32,22 +41,38 @@ public class MusicNSFXController : MonoBehaviour
     }
     public void ChangeSFXMixerValue(float direction)
     {
-        // ify z nawiasami pls
         float valueDestination = currSoundValue + (changeSignificancy * direction);
-        if (valueDestination > maxValue) currSoundValue = maxValue;
-        else if (valueDestination < minValue) currSoundValue = minValue;
-        else currSoundValue += (changeSignificancy * direction);
-        //Debug.Log($"Current volume: {currSoundValue}");
+        if (valueDestination > maxValue)
+        {
+            currSoundValue = maxValue;
+        }
+        else if (valueDestination < minValue)
+        {
+            currSoundValue = minValue;
+        }
+        else
+        {
+            currSoundValue += (changeSignificancy * direction);
+        }
         SetVolume(currSoundValue, "SoundParam");
+        sfxText.text = ((int) (currSoundValue * 100)).ToString();
     }
     public void ChangeMusicMixerValue(float direction)
     {
-        // ify z nawiasami pls
         float valueDestination = currMusicValue + (changeSignificancy * direction);
-        if (valueDestination > maxValue) currMusicValue = maxValue;
-        else if (valueDestination < minValue) currMusicValue = minValue;
-        else currMusicValue += (changeSignificancy * direction);
-        //Debug.Log($"Current volume: {currMusicValue}");
+        if (valueDestination > maxValue)
+        {
+            currMusicValue = maxValue;
+        }
+        else if (valueDestination < minValue)
+        {
+            currMusicValue = minValue;
+        }
+        else
+        {
+            currMusicValue += (changeSignificancy * direction);
+        }
         SetVolume(currMusicValue, "MusicParam");
+        musicText.text = ((int) (currMusicValue * 100)).ToString();
     }
 }
