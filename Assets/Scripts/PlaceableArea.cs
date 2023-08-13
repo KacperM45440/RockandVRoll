@@ -53,7 +53,6 @@ public class PlaceableArea : MonoBehaviour
         // Mam dziwne wrazenie ze przy bezposrednim trzymaniu przedmiotu w rece czasami obiekt teleportuje sie do miejsca docelowego razem z graczem
         // Nie mam na razie pomyslu na to jak to zbadac ani co z tym zrobic
 
-        Debug.Log(givenObject.GetComponent<Rigidbody>().velocity);
         givenObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         givenObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
