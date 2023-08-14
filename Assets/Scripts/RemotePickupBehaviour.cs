@@ -86,7 +86,6 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
         if (gripPressedRight)
         {
-            physicsRefRight.DisableColliders();
             RecallObject(controllerRight, interactorRefRight);
         }
         else if (!gripPressedRight)
@@ -96,7 +95,6 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
         if (gripPressedLeft)
         {
-            physicsRefLeft.DisableColliders();
             RecallObject(controllerLeft, interactorRefLeft);
         }
         else if (!gripPressedLeft)
@@ -117,10 +115,20 @@ public class RemotePickupBehaviour : XRBaseInteractor
                 // Funkcjê mo¿na wywo³aæ bez trzymania jakiegokolwiek przedmiotu i mo¿e ona sypn¹æ b³êdem, w przypadku takiego wyj¹tku po prostu z niej wychodzimy 
                 grabbedObject = currentInteractor.interactablesSelected[0] as XRGrabInteractable;
             }
-            catch 
+            catch
             {
                 isRecalled = false;
                 return;
+            }
+
+            if (gripPressedRight)
+            {
+                physicsRefRight.DisableColliders();
+            }
+
+            if (gripPressedLeft)
+            {
+                physicsRefLeft.DisableColliders();
             }
 
             // Nie trzeba kombinowaæ z rêcznym przenoszeniem obiektu do rêki zmian¹ pozycji poniewa¿ XR Toolkit daje nam ju¿ tak¹ funckjê

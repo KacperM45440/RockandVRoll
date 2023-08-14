@@ -1836,34 +1836,10 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3155777587559539791}
-        m_TargetAssemblyTypeName: HandPhysics, Assembly-CSharp
-        m_MethodName: DisableColliders
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3155777587559539791}
-        m_TargetAssemblyTypeName: HandPhysics, Assembly-CSharp
-        m_MethodName: Delay
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -2295,34 +2271,10 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5428510992167889011}
-        m_TargetAssemblyTypeName: HandPhysics, Assembly-CSharp
-        m_MethodName: DisableColliders
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5428510992167889011}
-        m_TargetAssemblyTypeName: HandPhysics, Assembly-CSharp
-        m_MethodName: Delay
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -3678,7 +3630,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1666908641}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -5329,6 +5281,7 @@ GameObject:
   - component: {fileID: 1942529545}
   - component: {fileID: 1942529544}
   - component: {fileID: 1942529543}
+  - component: {fileID: 1942529548}
   m_Layer: 6
   m_Name: Lil Cube (4)
   m_TagString: Item
@@ -5401,10 +5354,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1942529548}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: CheckHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1942529548}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: ObjectDropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -5597,6 +5574,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942529541}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1942529548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942529541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe581f307c68deb48bcb28b75404baa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directLeftRef: {fileID: 734971510}
+  directRightRef: {fileID: 771798688}
+  physicsLeftRef: {fileID: 3155777587559539791}
+  physicsRightRef: {fileID: 5428510992167889011}
 --- !u!1 &1995967392
 GameObject:
   m_ObjectHideFlags: 0
@@ -5800,6 +5793,7 @@ GameObject:
   - component: {fileID: 2074556942}
   - component: {fileID: 2074556941}
   - component: {fileID: 2074556940}
+  - component: {fileID: 2074556946}
   m_Layer: 6
   m_Name: Lil Cube (2)
   m_TagString: Item
@@ -5857,10 +5851,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2074556946}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: CheckHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2074556946}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: ObjectDropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -6068,6 +6086,22 @@ Transform:
   m_Father: {fileID: 1995967393}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074556946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074556939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe581f307c68deb48bcb28b75404baa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directLeftRef: {fileID: 734971510}
+  directRightRef: {fileID: 771798688}
+  physicsLeftRef: {fileID: 3155777587559539791}
+  physicsRightRef: {fileID: 5428510992167889011}
 --- !u!1 &2080044265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,6 +6405,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -64.83276
       objectReference: {fileID: 0}
+    - target: {fileID: 2155358642928978610, guid: 79076bf1533ac774ca2121d348c95be2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2426657572027401543, guid: 79076bf1533ac774ca2121d348c95be2,
         type: 3}
       propertyPath: m_Layer
@@ -6456,6 +6495,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3838193375151840373, guid: 79076bf1533ac774ca2121d348c95be2,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 3887098381280771275, guid: 79076bf1533ac774ca2121d348c95be2,
         type: 3}
       propertyPath: m_Layer
@@ -6516,6 +6560,16 @@ PrefabInstance:
       propertyPath: ghostedHand
       value: 
       objectReference: {fileID: 1010203}
+    - target: {fileID: 5395894382245929924, guid: 79076bf1533ac774ca2121d348c95be2,
+        type: 3}
+      propertyPath: grabCollider
+      value: 
+      objectReference: {fileID: 771798687}
+    - target: {fileID: 5395894382245929924, guid: 79076bf1533ac774ca2121d348c95be2,
+        type: 3}
+      propertyPath: handDistance
+      value: 0.075
+      objectReference: {fileID: 0}
     - target: {fileID: 5421810450090735313, guid: 79076bf1533ac774ca2121d348c95be2,
         type: 3}
       propertyPath: m_Layer
@@ -6601,6 +6655,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8279696482389336880, guid: 79076bf1533ac774ca2121d348c95be2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8291517324913927863, guid: 79076bf1533ac774ca2121d348c95be2,
         type: 3}
       propertyPath: m_Name
@@ -6664,6 +6723,16 @@ PrefabInstance:
       propertyPath: ghostedHand
       value: 
       objectReference: {fileID: 566473273}
+    - target: {fileID: 335481635236019094, guid: 5afbe542e87917641b6dc549661b4e9f,
+        type: 3}
+      propertyPath: grabCollider
+      value: 
+      objectReference: {fileID: 734971509}
+    - target: {fileID: 335481635236019094, guid: 5afbe542e87917641b6dc549661b4e9f,
+        type: 3}
+      propertyPath: handDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 762667157987265901, guid: 5afbe542e87917641b6dc549661b4e9f,
         type: 3}
       propertyPath: m_Layer
@@ -6804,6 +6873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964302617836158087, guid: 5afbe542e87917641b6dc549661b4e9f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 5298027660110676161, guid: 5afbe542e87917641b6dc549661b4e9f,
         type: 3}
