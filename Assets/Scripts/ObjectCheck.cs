@@ -28,8 +28,6 @@ public class ObjectCheck : MonoBehaviour
 
     public void ObjectDropped()
     {
-        Debug.Log(lastInteractor);
-
         if (lastInteractor == null)
         {
             return;
