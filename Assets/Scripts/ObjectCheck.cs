@@ -35,16 +35,17 @@ public class ObjectCheck : MonoBehaviour
 
         if (lastInteractor.Equals(directLeftRef))
         {
-            physicsLeftRef.Delay(0.2f);
+            physicsLeftRef.Delay(0.333f);
             lastInteractor = null;
             return;
         }
 
         if (lastInteractor.Equals(directRightRef))
         {
-            physicsRightRef.Delay(0.2f);
+            physicsRightRef.Delay(0.333f);
             lastInteractor = null;
             return;
         }
     }
+
 }

@@ -9,13 +9,14 @@ public class HandPhysics : MonoBehaviour
     private Rigidbody bodyRef;
     public Renderer ghostedHand;
     public float handDistance = 0.05f;
+    public Transform colliderTransform;
     private Collider[] handColliders;
     private float smoothSpeed = 1f;
 
     void Start()
     {
         bodyRef = GetComponent<Rigidbody>();
-        handColliders = GetComponentsInChildren<Collider>();
+        handColliders = colliderTransform.GetComponentsInChildren<Collider>();
     }
 
     private void Update()
@@ -62,5 +63,4 @@ public class HandPhysics : MonoBehaviour
             colliderChild.enabled = false;
         }
     }
-
 }

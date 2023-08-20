@@ -168,12 +168,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
         if (currentInteractorRef.Equals(interactorRefRight))
         {
-            physicsRefRight.Delay(0.2f);
+            physicsRefRight.Delay(0.333f);
         }
 
         if (currentInteractorRef.Equals(interactorRefLeft))
         {
-            physicsRefLeft.Delay(0.2f);
+            physicsRefLeft.Delay(0.333f);
         }
     }
 }
