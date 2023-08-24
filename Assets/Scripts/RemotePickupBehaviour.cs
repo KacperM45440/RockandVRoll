@@ -19,7 +19,8 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public XRRayInteractor usedInteractor;
     public XRRayInteractor interactorRefLeft;
     public XRRayInteractor interactorRefRight;
-
+    public HandPhysics physicsRefLeft;
+    public HandPhysics physicsRefRight;
     [SerializeField] private float gripSensitivity = 0.3f;
 
     public GameObject controllerLeft;
@@ -114,10 +115,20 @@ public class RemotePickupBehaviour : XRBaseInteractor
                 // Funkcjê mo¿na wywo³aæ bez trzymania jakiegokolwiek przedmiotu i mo¿e ona sypn¹æ b³êdem, w przypadku takiego wyj¹tku po prostu z niej wychodzimy 
                 grabbedObject = currentInteractor.interactablesSelected[0] as XRGrabInteractable;
             }
-            catch 
+            catch
             {
                 isRecalled = false;
                 return;
+            }
+
+            if (gripPressedRight)
+            {
+                physicsRefRight.DisableColliders();
+            }
+
+            if (gripPressedLeft)
+            {
+                physicsRefLeft.DisableColliders();
             }
 
             // Nie trzeba kombinowaæ z rêcznym przenoszeniem obiektu do rêki zmian¹ pozycji poniewa¿ XR Toolkit daje nam ju¿ tak¹ funckjê
@@ -126,7 +137,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor,grabbedObject);
         }
-        StartCoroutine(WaitForRelease());
+        StartCoroutine(WaitForRelease(currentInteractor));
     }
 
     // Koñcz¹c interakcjê wy³¹czamy ForceGrab aby nastêpny podniesiony przedmiot nie by³ natychmiastowo z³apany do d³oni
@@ -150,10 +161,20 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
     // OpóŸniamy zmianê zmiennej aby funkcja CheckInput() nie próbowa³a zbyt szybko egzekwowaæ swoich czêœci kodu
     // W przeciwnym wypadku kostka driftuje po promieniu tak d³ugo, jak wciœniêty jest grip
-    IEnumerator WaitForRelease()
+    IEnumerator WaitForRelease(XRRayInteractor currentInteractorRef)
     {
         yield return new WaitForSeconds(0.1f);
-        isRecalled = false; 
+        isRecalled = false;
+
+        if (currentInteractorRef.Equals(interactorRefRight))
+        {
+            physicsRefRight.Delay(0.333f);
+        }
+
+        if (currentInteractorRef.Equals(interactorRefLeft))
+        {
+            physicsRefLeft.Delay(0.333f);
+        }
     }
 }
 
