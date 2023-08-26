@@ -7,11 +7,9 @@ public class RotationKeeper : MonoBehaviour
 {
     public XRDirectInteractor directLeftRef;
     public XRDirectInteractor directRightRef;
-    public Transform leftHand;
-    public Transform rightHand;
-    public Transform playerParent;
-
-    private Transform attachPoint;
+    public Transform physicsLeftHand;
+    public Transform physicsRightHand;
+    public Transform handParentRight;
     private Transform startParent;
     private bool leftSelecting;
     private bool rightSelecting;
@@ -26,7 +24,7 @@ public class RotationKeeper : MonoBehaviour
         {
             if (directLeftRef.interactablesSelected[0] != null && (directLeftRef.interactablesSelected[0] as XRGrabInteractable).name.Equals(gameObject.name))
             {
-                transform.rotation = leftHand.rotation;
+                transform.rotation = physicsLeftHand.rotation;
                 leftSelecting = true;
             }
             else
@@ -43,7 +41,7 @@ public class RotationKeeper : MonoBehaviour
         {
             if (directRightRef.interactablesSelected[0] != null && (directRightRef.interactablesSelected[0] as XRGrabInteractable).name.Equals(gameObject.name))
             {
-                transform.rotation = rightHand.rotation;
+                transform.rotation = physicsRightHand.rotation;
                 rightSelecting = true;
             }
             else
@@ -77,7 +75,7 @@ public class RotationKeeper : MonoBehaviour
 
     public void AssignParent()
     {
-        transform.parent = playerParent;
+        transform.parent = handParentRight;
         StartCoroutine(CreateJoint());
     }
 
@@ -94,13 +92,13 @@ public class RotationKeeper : MonoBehaviour
         if (leftSelecting)
         {
             FixedJoint newJoint = gameObject.AddComponent<FixedJoint>();
-            newJoint.connectedBody = leftHand.GetComponent<Rigidbody>();
+            newJoint.connectedBody = physicsLeftHand.GetComponent<Rigidbody>();
         }
 
         if (rightSelecting)
         {
             FixedJoint newJoint = gameObject.AddComponent<FixedJoint>();
-            newJoint.connectedBody = rightHand.GetComponent<Rigidbody>();
+            newJoint.connectedBody = physicsRightHand.GetComponent<Rigidbody>();
         }
     }
 }
