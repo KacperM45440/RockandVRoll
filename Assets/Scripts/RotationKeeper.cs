@@ -9,6 +9,7 @@ public class RotationKeeper : MonoBehaviour
     public XRDirectInteractor directRightRef;
     public Transform physicsLeftHand;
     public Transform physicsRightHand;
+    public Transform handParentLeft;
     public Transform handParentRight;
     private Transform startParent;
     private bool leftSelecting;
@@ -18,7 +19,13 @@ public class RotationKeeper : MonoBehaviour
     {
         startParent = transform.parent;
     }
-    void Update()
+    public void AssignParent()
+    {
+        CheckSelection();
+        StartCoroutine(Assign());
+    }
+
+    public void CheckSelection()
     {
         try
         {
@@ -55,34 +62,29 @@ public class RotationKeeper : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Wall"))
-        {
-            if(leftSelecting)
-            {
-                //Debug.Log("boing");
-                //leftHand.GetComponent<Rigidbody>().velocity = leftHand.GetComponent<Rigidbody>().velocity * -10;
-            }    
 
-            if(rightSelecting)
-            {
-                //Debug.Log("boing");
-                //rightHand.GetComponent<Rigidbody>().velocity = rightHand.GetComponent<Rigidbody>().velocity * -10;
-            }
-        }
-    }
-
-    public void AssignParent()
-    {
-        transform.parent = handParentRight;
-        StartCoroutine(CreateJoint());
-    }
 
     public void ReturnParent()
     {
         transform.parent = startParent;
         Destroy(gameObject.GetComponent<FixedJoint>());
+    }
+
+    IEnumerator Assign()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (leftSelecting)
+        {
+            transform.parent = handParentLeft;
+            StartCoroutine(CreateJoint());
+        }
+
+        if (rightSelecting)
+        {
+            transform.parent = handParentRight;
+            StartCoroutine(CreateJoint());
+        }
     }
 
     IEnumerator CreateJoint()

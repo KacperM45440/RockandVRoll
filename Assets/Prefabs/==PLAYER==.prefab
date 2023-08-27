@@ -274,7 +274,7 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_ImproveAccuracyWithSphereCollider: 0
+  m_ImproveAccuracyWithSphereCollider: 1
   m_PhysicsLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -298,8 +298,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.085
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.04
+  m_Center: {x: 0.03, y: -0.01, z: 0.02}
 --- !u!54 &2713515983719076667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   maskRef:
     serializedVersion: 2
     m_Bits: 243
-  animatorRef: {fileID: 1893836729167196143}
+  animatorRef: {fileID: 2339255271207486560}
   rayInteractorRef: {fileID: 5325418912413445843}
   directInteractorRef: {fileID: 5883538346087228902}
 --- !u!1 &2448468730315173245
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -702,8 +702,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 1
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -823,7 +823,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7512024900023278346}
+  m_Father: {fileID: 5944440235912310917}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3284749137319381121
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_ImproveAccuracyWithSphereCollider: 0
+  m_ImproveAccuracyWithSphereCollider: 1
   m_PhysicsLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -1408,8 +1408,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.085
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.04
+  m_Center: {x: -0.03, y: -0.01, z: 0.02}
 --- !u!54 &7151957191406799542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1784,9 +1784,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LeftController: {fileID: 1498690480046709680}
-  m_RightController: {fileID: 3847479370684876470}
+  m_RightController: {fileID: 1106205611424591161}
   m_LeftControllerOculusPackage: {fileID: 1498690480046709680}
-  m_RightControllerOculusPackage: {fileID: 3847479370684876470}
+  m_RightControllerOculusPackage: {fileID: 1106205611424591161}
 --- !u!1 &8036051766704100390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,7 +1822,7 @@ Transform:
   - {fileID: 3284507296418566383}
   - {fileID: 4918354748731414460}
   - {fileID: 4084431717376102998}
-  - {fileID: 7512024900023278346}
+  - {fileID: 5944440235912310917}
   - {fileID: 4689407396328987910}
   m_Father: {fileID: 8954908349723479178}
   m_RootOrder: 0
@@ -4088,7 +4088,7 @@ PrefabInstance:
         type: 3}
       propertyPath: colliderTransform
       value: 
-      objectReference: {fileID: 7160511479425540962}
+      objectReference: {fileID: 6440650487041968365}
     - target: {fileID: 5421810450090735313, guid: 79076bf1533ac774ca2121d348c95be2,
         type: 3}
       propertyPath: m_Layer
@@ -4228,27 +4228,27 @@ PrefabInstance:
       addedObject: {fileID: 6502061593061431279}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79076bf1533ac774ca2121d348c95be2, type: 3}
---- !u!95 &1893836729167196143 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6646714302880550894, guid: 79076bf1533ac774ca2121d348c95be2,
-    type: 3}
-  m_PrefabInstance: {fileID: 8956370168561027982}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3847479370684876470 stripped
+--- !u!1 &1106205611424591161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8291517324913927863, guid: 79076bf1533ac774ca2121d348c95be2,
     type: 3}
   m_PrefabInstance: {fileID: 8956370168561027982}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7160511479425540962 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2678131364307993443, guid: 79076bf1533ac774ca2121d348c95be2,
+--- !u!95 &2339255271207486560 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6646714302880550894, guid: 79076bf1533ac774ca2121d348c95be2,
     type: 3}
   m_PrefabInstance: {fileID: 8956370168561027982}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7512024900023278346 stripped
+--- !u!4 &5944440235912310917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3329725629199022859, guid: 79076bf1533ac774ca2121d348c95be2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8956370168561027982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6440650487041968365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2678131364307993443, guid: 79076bf1533ac774ca2121d348c95be2,
     type: 3}
   m_PrefabInstance: {fileID: 8956370168561027982}
   m_PrefabAsset: {fileID: 0}
