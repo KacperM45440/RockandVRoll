@@ -2483,6 +2483,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2586080076429403540, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586080076429403540, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3730165191076056552, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_Name
@@ -2588,12 +2598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4863167e74150524197a114e18459d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &5428510992167889008 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7512024900023278346, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
-    type: 3}
-  m_PrefabInstance: {fileID: 989342987550077464}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5916772152870272416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2774,7 +2778,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rightHand
       value: 
-      objectReference: {fileID: 5428510992167889008}
+      objectReference: {fileID: 0}
     - target: {fileID: 5955621729926657072, guid: ea9f3eedf7a471e4fbcbc8a25d0f6aa2,
         type: 3}
       propertyPath: playerParent
