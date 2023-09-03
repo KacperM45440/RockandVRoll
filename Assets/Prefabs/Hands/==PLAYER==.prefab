@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4987580821194206012}
   - component: {fileID: 1144740683922715703}
   - component: {fileID: 2586080076429403540}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145044326264133396}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 429011099689520081}
   - component: {fileID: 1092426533036848249}
   - component: {fileID: 9119256512088789281}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GroundDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,8 +925,8 @@ MonoBehaviour:
   m_MoveSpeed: 0.9
   m_EnableStrafe: 1
   m_EnableFly: 0
-  m_UseGravity: 0
-  m_GravityApplicationMode: 0
+  m_UseGravity: 1
+  m_GravityApplicationMode: 1
   m_ForwardSource: {fileID: 458594129586120477}
   m_LeftHandMoveAction:
     m_UseReference: 1
@@ -1043,7 +1043,7 @@ Transform:
   - {fileID: 8954908349723479178}
   - {fileID: 2526157262331537052}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3827959055494207074
 GameObject:
