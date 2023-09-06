@@ -31,6 +31,11 @@ public class TapScript : MonoBehaviour
 
     private void PourDrink()
     {
+        if (drinkCapsule.activeSelf.Equals(true))
+        {
+            return;
+        }
+
         drinkCapsule.SetActive(true);
         drinkAnimator.SetTrigger("FillUp");
     }
