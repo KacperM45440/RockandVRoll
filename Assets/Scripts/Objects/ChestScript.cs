@@ -6,9 +6,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ChestScript : MonoBehaviour
 {
     public GameObject usedKey;
+    public GameObject keyLock;
     public Transform chestLid;
     public Animator chestAnimator;
-
+    public void LockDestroyed()
+    {
+        keyLock.SetActive(false);
+        chestAnimator.SetTrigger("OpenLid");
+    }
     public void OpenChest()
     {
         StartCoroutine(DisableKey());

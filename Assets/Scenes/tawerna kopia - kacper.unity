@@ -11416,6 +11416,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1677055469974894552, guid: b7cb765dcacb15a4f87ec8af5ad58160,
         type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 2002673003}
+    - target: {fileID: 1677055469974894552, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 2002673002}
+    - target: {fileID: 1677055469974894552, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
       propertyPath: drinkCapsule
       value: 
       objectReference: {fileID: 530687116}
@@ -11424,6 +11434,16 @@ PrefabInstance:
       propertyPath: drinkAnimator
       value: 
       objectReference: {fileID: 530687121}
+    - target: {fileID: 1964487180490748684, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396726475050242787, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3722828244752362211, guid: b7cb765dcacb15a4f87ec8af5ad58160,
         type: 3}
       propertyPath: m_Name
@@ -11484,11 +11504,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5375135746298382929, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7084383286803108250, guid: b7cb765dcacb15a4f87ec8af5ad58160,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 702851840}
+    - target: {fileID: 8692416249721695987, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692416249721695987, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692416249721695987, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692416249721695987, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9978
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692416249721695987, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964332328136815580, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_UseSpring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964332328136815580, guid: b7cb765dcacb15a4f87ec8af5ad58160,
+        type: 3}
+      propertyPath: m_Spring.damper
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9164887246709105062, guid: b7cb765dcacb15a4f87ec8af5ad58160,
         type: 3}
       propertyPath: m_InteractionManager
@@ -11620,11 +11680,6 @@ PrefabInstance:
     - target: {fileID: 8962708033611971854, guid: 23bd7409d74b7504eb2b1a1b281a13eb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9022403542247351204, guid: 23bd7409d74b7504eb2b1a1b281a13eb,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
