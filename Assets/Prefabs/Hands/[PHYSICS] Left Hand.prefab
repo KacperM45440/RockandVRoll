@@ -948,7 +948,7 @@ Animator:
   m_GameObject: {fileID: 7941375236028375970}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f02d4f0381959d3478acc33f39fd8cb4, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3dcf2bbfc2d710a4cb74a95049033dfc, type: 2}
+  m_Controller: {fileID: 9100000, guid: d536045b8caeecb489ab4dc91fbf0d9f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1027,6 +1027,7 @@ MonoBehaviour:
   target: {fileID: 0}
   ghostedHand: {fileID: 0}
   handDistance: 0.125
+  colliderTransform: {fileID: 0}
 --- !u!1 &7992995362144825527
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandParticles : MonoBehaviour
 {
+    Animator leftHandAnimator;
+
+
     [SerializeField] private InputActionReference shootTrail;
 
     //public ParticleSystem trailSystem;
@@ -61,6 +64,7 @@ public class HandParticles : MonoBehaviour
         {
             TrailRenderer trail = Instantiate(tracerTrail, tracerSpawnPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
+            leftHandAnimator.SetBool("telekinesis", true);
         }
     }
 

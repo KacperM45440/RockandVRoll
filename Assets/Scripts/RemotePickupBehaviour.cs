@@ -9,6 +9,9 @@ using System.Linq;
 
 public class RemotePickupBehaviour : XRBaseInteractor
 {
+    Animator leftHandAnimator;
+
+
     private static RemotePickupBehaviour _instance;
     public static RemotePickupBehaviour Instance { get { return _instance; } }
 
@@ -96,10 +99,13 @@ public class RemotePickupBehaviour : XRBaseInteractor
         if (gripPressedLeft)
         {
             RecallObject(controllerLeft, interactorRefLeft);
+            leftHandAnimator.SetBool("grabbing", true);
         }
         else if (!gripPressedLeft)
         {
             ReleaseObject(interactorRefLeft);
+            leftHandAnimator.SetBool("telekinesis", false);
+            leftHandAnimator.SetBool("grabbing", false);
         }
     }
 
