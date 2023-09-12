@@ -5,6 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RotationKeeper : MonoBehaviour
 {
+    // Skrypt nie jest ju¿ odpowiedzialny za weryfikowanie obracania przedmiotu, natomiast nie ma sensu psuæ scen refaktoryzacj¹ dlatego zostaje z nazw¹ jaka jest
+    // Je¿eli zostanie czas: zmieniæ nazwê na "ParentKeeper" albo "JointKeeper"
+
     public XRDirectInteractor directLeftRef;
     public XRDirectInteractor directRightRef;
     public Transform physicsLeftHand;
@@ -31,7 +34,6 @@ public class RotationKeeper : MonoBehaviour
         {
             if (directLeftRef.interactablesSelected[0] != null && (directLeftRef.interactablesSelected[0] as XRGrabInteractable).name.Equals(gameObject.name))
             {
-                transform.rotation = physicsLeftHand.rotation;
                 leftSelecting = true;
             }
             else
@@ -48,7 +50,6 @@ public class RotationKeeper : MonoBehaviour
         {
             if (directRightRef.interactablesSelected[0] != null && (directRightRef.interactablesSelected[0] as XRGrabInteractable).name.Equals(gameObject.name))
             {
-                transform.rotation = physicsRightHand.rotation;
                 rightSelecting = true;
             }
             else
@@ -61,8 +62,6 @@ public class RotationKeeper : MonoBehaviour
             rightSelecting = false;
         }
     }
-
-
 
     public void ReturnParent()
     {
