@@ -9,7 +9,7 @@ using System.Linq;
 
 public class RemotePickupBehaviour : XRBaseInteractor
 {
-    Animator leftHandAnimator;
+    public Animator leftHandAnimator;
 
 
     private static RemotePickupBehaviour _instance;

@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandParticles : MonoBehaviour
 {
-    Animator leftHandAnimator;
+    public Animator leftHandAnimator;
 
 
     [SerializeField] private InputActionReference shootTrail;
