@@ -10,6 +10,7 @@ using System.Linq;
 public class RemotePickupBehaviour : XRBaseInteractor
 {
     public Animator leftHandAnimator;
+    public Animator rightHandAnimator;
 
 
     private static RemotePickupBehaviour _instance;
@@ -86,14 +87,19 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
         gripPressedRight = Input.GetAxis("XRI_Right_Grip") > gripSensitivity;
         gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > gripSensitivity;
+        bool triggerPressedRight = Input.GetAxis("XRI_Right_Trigger") > 0.1;
+        bool triggerPressedLeft = Input.GetAxis("XRI_Left_Trigger") > 0.1;
 
         if (gripPressedRight)
         {
-            RecallObject(controllerRight, interactorRefRight);
+            RecallObject(controllerRight, interactorRefRight); //merge into one
+            rightHandAnimator.SetBool("grabbing", true);
         }
         else if (!gripPressedRight)
         {
             ReleaseObject(interactorRefRight);
+            //rightHandAnimator.SetBool("telekinesis", false);
+            rightHandAnimator.SetBool("grabbing", false);
         }
 
         if (gripPressedLeft)
@@ -104,8 +110,16 @@ public class RemotePickupBehaviour : XRBaseInteractor
         else if (!gripPressedLeft)
         {
             ReleaseObject(interactorRefLeft);
-            leftHandAnimator.SetBool("telekinesis", false);
+            //leftHandAnimator.SetBool("telekinesis", false);
             leftHandAnimator.SetBool("grabbing", false);
+        }
+
+        if (!triggerPressedRight) {
+            rightHandAnimator.SetBool("telekinesis", false);
+        }
+        if (!triggerPressedLeft)
+        {
+            leftHandAnimator.SetBool("telekinesis", false);
         }
     }
 

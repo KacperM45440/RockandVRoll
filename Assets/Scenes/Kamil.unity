@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f8c298f0dd8544d97b51a1153f6951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandAnimator: {fileID: 0}
+  handAnimator: {fileID: 0}
   shootTrail: {fileID: 8930233997769145049, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   tracerSpawnPoint: {fileID: 288603475}
@@ -1661,6 +1661,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!95 &743339668 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1893836729167196143, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1719503093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819168655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,6 +2290,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   leftHandAnimator: {fileID: 1719503103}
+  rightHandAnimator: {fileID: 743339668}
   grabbedObject: {fileID: 0}
   usedInteractor: {fileID: 0}
   interactorRefLeft: {fileID: 1719503095}
@@ -2322,7 +2329,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_InteractionManager
       value: 
-      objectReference: {fileID: 1358844059}
+      objectReference: {fileID: 0}
     - target: {fileID: 2961123497507092166, guid: a16155016bd72d044a41c3934356df3e,
         type: 3}
       propertyPath: m_Colliders.Array.data[0]
@@ -2732,6 +2739,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1358844059}
+    - target: {fileID: 3976889142781203880, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_Flags
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4283948076518136291, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2752,6 +2764,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.6670094
       objectReference: {fileID: 0}
+    - target: {fileID: 4413601863623642179, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: db6f0331c4e6ba0419870d31593c61b7, type: 2}
     - target: {fileID: 5163181496988296904, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2809,24 +2826,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325418912413445843, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325418912413445843, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1358844059}
+    - target: {fileID: 5325418912413445843, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5426281616469377219, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1358844059}
+    - target: {fileID: 5426281616469377219, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463713631714702241, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: handAnimator
+      value: 
+      objectReference: {fileID: 743339668}
+    - target: {fileID: 5463713631714702241, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: leftHandAnimator
+      value: 
+      objectReference: {fileID: 1719503103}
+    - target: {fileID: 5463713631714702241, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: rightHandAnimator
+      value: 
+      objectReference: {fileID: 743339668}
+    - target: {fileID: 5688423262833142493, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: handAnimator
+      value: 
+      objectReference: {fileID: 1719503103}
     - target: {fileID: 5688423262833142493, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: leftHandAnimator
       value: 
       objectReference: {fileID: 1719503103}
+    - target: {fileID: 5688423262833142493, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: rightHandAnimator
+      value: 
+      objectReference: {fileID: 743339668}
     - target: {fileID: 5883538346087228902, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1358844059}
+    - target: {fileID: 6399477412240265046, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6431136892881061960, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2867,6 +2929,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.16337414
       objectReference: {fileID: 0}
+    - target: {fileID: 7245361355367042110, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389168846726652821, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7500060072273515637, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2896,6 +2968,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.029398898
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987681323557652373, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604661814102241192, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929371446892052876, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3388,12 +3475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fff0fd3020a1e14abe3dae223670322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1802186542 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 506505850710810057, guid: adf4cff9b85e0fb45a1c50bca541048e,
-    type: 3}
-  m_PrefabInstance: {fileID: 31169810}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1862892334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,7 +3525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f8c298f0dd8544d97b51a1153f6951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandAnimator: {fileID: 0}
+  handAnimator: {fileID: 0}
   shootTrail: {fileID: -1607767454553763182, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   tracerSpawnPoint: {fileID: 1862892335}
@@ -3872,12 +3953,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869868445}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0c1b88374e079841a52a75ee20d120e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandAnimator: {fileID: 1802186542}
+  leftHandAnimator: {fileID: 1719503103}
 --- !u!1 &1977578023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,7 +4066,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_InteractionManager
       value: 
-      objectReference: {fileID: 1358844059}
+      objectReference: {fileID: 0}
     - target: {fileID: 2961123497507092166, guid: a16155016bd72d044a41c3934356df3e,
         type: 3}
       propertyPath: m_Colliders.Array.data[0]

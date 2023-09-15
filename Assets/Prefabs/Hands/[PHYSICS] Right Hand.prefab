@@ -1104,7 +1104,7 @@ Transform:
   - {fileID: 6648144063164163318}
   - {fileID: 8470864341773202622}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6646714302880550894
 Animator:
@@ -1116,7 +1116,7 @@ Animator:
   m_GameObject: {fileID: 8291517324913927863}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b631d3302246d2645946a625b9da3bf2, type: 3}
-  m_Controller: {fileID: 9100000, guid: dd2e4ea907fe64140a88412bd7486776, type: 2}
+  m_Controller: {fileID: 9100000, guid: db6f0331c4e6ba0419870d31593c61b7, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1195,6 +1195,7 @@ MonoBehaviour:
   target: {fileID: 0}
   ghostedHand: {fileID: 0}
   handDistance: 0.125
+  colliderTransform: {fileID: 0}
 --- !u!1 &8306452203720347728
 GameObject:
   m_ObjectHideFlags: 0
