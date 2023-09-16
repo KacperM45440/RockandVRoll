@@ -11,6 +11,11 @@ public class Rotator : MonoBehaviour
     [SerializeField] private GameObject LeftHandModel;
     [SerializeField] bool shouldUseDummyHands;
 
+    [SerializeField] private GameObject PhysicalRightHand;
+    [SerializeField] private GameObject PhysicalLeftHand;
+    [SerializeField] private GameObject RightHand;
+    [SerializeField] private GameObject LeftHand;
+
     public UnityEvent<float> onDialChange;
     private XRBaseInteractor interactor;
     private Transform interactorTransform;
@@ -52,11 +57,13 @@ public class Rotator : MonoBehaviour
     {
         interactor = GetComponent<XRGrabInteractable>().interactorsSelecting[0] as XRBaseInteractor;
         interactor.GetComponent<XRDirectInteractor>().hideControllerOnSelect = true;
+        
         interactorTransform = interactor.GetComponent<Transform>();
         isInteracting = true;
         startAngle = GetInteractorRotation();
 
         HandModelVisibility(true);
+        
     }
 
     private void HandModelVisibility(bool visibilityState)
@@ -69,10 +76,12 @@ public class Rotator : MonoBehaviour
         if (interactor.CompareTag("RightHand"))
         {
             RightHandModel.SetActive(visibilityState);
+            NonDialHandVisible(!visibilityState, true);
         }
-        else
+        else if (interactor.CompareTag("LeftHand"))
         {
             LeftHandModel.SetActive(visibilityState);
+            NonDialHandVisible(!visibilityState, false);
         }
     }
     public float GetInteractorRotation()
@@ -122,5 +131,17 @@ public class Rotator : MonoBehaviour
             linkedDial.localEulerAngles.y,
             linkedDial.localEulerAngles.z + (snapRotationAmount * turnDirection)
         );
+    }
+
+    private void NonDialHandVisible(bool isVisibile, bool isRight) {
+        if (isRight)
+        {
+            PhysicalRightHand.SetActive(isVisibile);
+            RightHand.SetActive(isVisibile);
+        }
+        else {
+            PhysicalLeftHand.SetActive(isVisibile);
+            LeftHand.SetActive(isVisibile);
+        }
     }
 }
