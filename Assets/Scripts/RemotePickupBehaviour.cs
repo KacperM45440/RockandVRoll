@@ -15,13 +15,16 @@ public class RemotePickupBehaviour : XRBaseInteractor
     private bool isRecalled = false;
     private bool gripPressedRight = false;
     private bool gripPressedLeft = false;
+    private bool triggerPressedLeft = false;
+    private bool triggerPressedRight = false;
+    private RotationKeeper rotationRef;
     public XRGrabInteractable grabbedObject;
     public XRRayInteractor usedInteractor;
     public XRRayInteractor interactorRefLeft;
     public XRRayInteractor interactorRefRight;
     public HandPhysics physicsRefLeft;
     public HandPhysics physicsRefRight;
-    [SerializeField] private float gripSensitivity = 0.3f;
+    [SerializeField] private float buttonSensitivity = 0.25f;
 
     public GameObject controllerLeft;
     public GameObject controllerRight;
@@ -44,6 +47,52 @@ public class RemotePickupBehaviour : XRBaseInteractor
     {
         CheckForInput();
         CheckForSelection();
+    }
+
+    // Przywróæ zaznaczony (promieniem) przedmiot do rêki
+    public void RecallObject(GameObject currentController, XRRayInteractor currentInteractor)
+    {
+        if (isRecalled)
+        {
+            return;
+        }
+
+        if (gripPressedRight && currentController == controllerRight || gripPressedLeft && currentController == controllerLeft)
+        {
+            isRecalled = true;
+
+            try
+            {
+                // Funkcjê mo¿na wywo³aæ bez trzymania jakiegokolwiek przedmiotu i mo¿e ona sypn¹æ b³êdem, w przypadku takiego wyj¹tku po prostu z niej wychodzimy 
+                grabbedObject = currentInteractor.interactablesSelected[0] as XRGrabInteractable;
+            }
+            catch
+            {
+                isRecalled = false;
+                return;
+            }
+
+            if (gripPressedRight)
+            {
+                physicsRefRight.DisableColliders();
+            }
+
+            if (gripPressedLeft)
+            {
+                physicsRefLeft.DisableColliders();
+            }
+
+            // Nie trzeba kombinowaæ z rêcznym przenoszeniem obiektu do rêki zmian¹ pozycji poniewa¿ XR Toolkit daje nam ju¿ tak¹ funckjê
+            // Jedyne co trzeba zrobiæ to j¹ w³¹czyæ podczas "zrestartowania" zaznaczenia
+
+            PrepareRotation(currentInteractor);
+            DisableCollisionsInObject();
+            ForceDeselect(currentInteractor);
+            
+            currentInteractor.useForceGrab = true;
+            ForceSelect(currentInteractor, grabbedObject);
+            StartCoroutine(EnableCollisionsInObject(currentInteractor));
+        }
     }
 
     // Podczas pracy bezpoœredniego interactora, wy³¹czamy interakcjê promieniem aby nie da³o siê ruszaæ rêk¹ dwóch obiektów naraz (b¹dŸ bugowaæ te obecnie z³apane)
@@ -81,70 +130,56 @@ public class RemotePickupBehaviour : XRBaseInteractor
             return;
         }
 
-        gripPressedRight = Input.GetAxis("XRI_Right_Grip") > gripSensitivity;
-        gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > gripSensitivity;
+        gripPressedRight = Input.GetAxis("XRI_Right_Grip") > buttonSensitivity;
+        gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > buttonSensitivity;
+        triggerPressedLeft = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
+        triggerPressedRight = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
 
         if (gripPressedRight)
         {
             RecallObject(controllerRight, interactorRefRight);
-        }
-        else if (!gripPressedRight)
-        {
-            ReleaseObject(interactorRefRight);
         }
 
         if (gripPressedLeft)
         {
             RecallObject(controllerLeft, interactorRefLeft);
         }
-        else if (!gripPressedLeft)
-        {
-            ReleaseObject(interactorRefLeft);
-        }
     }
 
-    // Przywróæ zaznaczony (promieniem) przedmiot do rêki
-    public void RecallObject(GameObject currentController, XRRayInteractor currentInteractor)
+    private void DisableCollisionsInObject()
     {
-        if (gripPressedRight && currentController == controllerRight || gripPressedLeft && currentController == controllerLeft)
+        try
         {
-            isRecalled = true;
-
-            try
+            foreach (Transform child in grabbedObject.transform.GetChild(0))
             {
-                // Funkcjê mo¿na wywo³aæ bez trzymania jakiegokolwiek przedmiotu i mo¿e ona sypn¹æ b³êdem, w przypadku takiego wyj¹tku po prostu z niej wychodzimy 
-                grabbedObject = currentInteractor.interactablesSelected[0] as XRGrabInteractable;
+                child.gameObject.SetActive(false);
             }
-            catch
-            {
-                isRecalled = false;
-                return;
-            }
-
-            if (gripPressedRight)
-            {
-                physicsRefRight.DisableColliders();
-            }
-
-            if (gripPressedLeft)
-            {
-                physicsRefLeft.DisableColliders();
-            }
-
-            // Nie trzeba kombinowaæ z rêcznym przenoszeniem obiektu do rêki zmian¹ pozycji poniewa¿ XR Toolkit daje nam ju¿ tak¹ funckjê
-            // Jedyne co trzeba zrobiæ to j¹ w³¹czyæ podczas "zrestartowania" zaznaczenia
-            ForceDeselect(currentInteractor);
-            currentInteractor.useForceGrab = true;
-            ForceSelect(currentInteractor,grabbedObject);
         }
+        catch { }
+    }
+    private IEnumerator EnableCollisionsInObject(XRRayInteractor currentInteractor)
+    {
+        yield return new WaitForSeconds(0.1f);
+        try
+        {
+            foreach (Transform child in grabbedObject.transform.GetChild(0))
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
+        catch { }
+
+        Debug.Log("hi");
         StartCoroutine(WaitForRelease(currentInteractor));
+        StartCoroutine(WaitForObject(currentInteractor));
     }
-
-    // Koñcz¹c interakcjê wy³¹czamy ForceGrab aby nastêpny podniesiony przedmiot nie by³ natychmiastowo z³apany do d³oni
-    public void ReleaseObject(XRRayInteractor currentInteractorRef)
+    private void PrepareRotation(XRRayInteractor currentInteractor)
     {
-        currentInteractorRef.useForceGrab = false;
-        grabbedObject = null;
+        rotationRef = grabbedObject.GetComponent<RotationKeeper>();
+        rotationRef.preferredRotation.x *= IsRightInteractFloat(currentInteractor);
+        rotationRef.preferredRotation.y *= IsRightInteractFloat(currentInteractor);
+        rotationRef.preferredRotation.z *= IsRightInteractFloat(currentInteractor);
+        rotationRef.SetRotation(grabbedObject.gameObject, physicsRefRight.gameObject);
     }
 
     // Wymuœ wypuszczenie obiektu przez interactor (tak, jak przy puszczeniu triggera)
@@ -157,24 +192,87 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public void ForceSelect(XRBaseInteractor interactor, IXRSelectInteractable interactable)
     {
         gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactor, interactable);
+        
+        try
+        {
+            grabbedObject = interactor.interactablesSelected[0] as XRGrabInteractable;
+        }
+        catch
+        {
+            isRecalled = false;
+        }
     }
 
     // OpóŸniamy zmianê zmiennej aby funkcja CheckInput() nie próbowa³a zbyt szybko egzekwowaæ swoich czêœci kodu
     // W przeciwnym wypadku kostka driftuje po promieniu tak d³ugo, jak wciœniêty jest grip
-    IEnumerator WaitForRelease(XRRayInteractor currentInteractorRef)
+    IEnumerator WaitForRelease(XRRayInteractor interactor)
     {
         yield return new WaitForSeconds(0.1f);
         isRecalled = false;
 
-        if (currentInteractorRef.Equals(interactorRefRight))
+        if (IsRightInteractBool(interactor))
         {
             physicsRefRight.Delay(0.333f);
+        }
+        else
+        {
+            physicsRefLeft.Delay(0.333f);
+        }
+    }
+
+    IEnumerator WaitForObject(XRRayInteractor interactor)
+    {
+        if (IsRightInteractBool(interactor))
+        {
+            yield return new WaitUntil(() => (!gripPressedRight || !triggerPressedRight));
+            {
+                ReleaseObject(interactorRefRight);
+            }
+        }
+        else
+        {
+            yield return new WaitUntil(() => (!gripPressedLeft || !triggerPressedLeft));
+            {
+                ReleaseObject(interactorRefLeft);
+            }
+        }
+    }
+
+    // Koñcz¹c interakcjê wy³¹czamy ForceGrab aby nastêpny podniesiony przedmiot nie by³ natychmiastowo z³apany do d³oni
+    public void ReleaseObject(XRRayInteractor currentInteractorRef)
+    {
+        currentInteractorRef.useForceGrab = false;
+        grabbedObject = null;
+    }
+
+    public bool IsRightInteractBool(XRRayInteractor currentInteractorRef)
+    {
+        if (currentInteractorRef.Equals(interactorRefRight))
+        {
+            return true;
         }
 
         if (currentInteractorRef.Equals(interactorRefLeft))
         {
-            physicsRefLeft.Delay(0.333f);
+            return false;
         }
+
+        throw new Exception("Neither of right or left");
+    }
+
+    public float IsRightInteractFloat(XRRayInteractor currentInteractorRef)
+    {
+        if (currentInteractorRef.Equals(interactorRefRight))
+        {
+            return 1f;
+        }
+
+        if (currentInteractorRef.Equals(interactorRefLeft))
+        {
+            return -1f;
+        }
+
+        throw new Exception("Neither of right or left");
     }
 }
 

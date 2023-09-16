@@ -8,6 +8,7 @@ public class RotationKeeper : MonoBehaviour
     // Skrypt nie jest ju¿ odpowiedzialny za weryfikowanie obracania przedmiotu, natomiast nie ma sensu psuæ scen refaktoryzacj¹ dlatego zostaje z nazw¹ jaka jest
     // Je¿eli zostanie czas: zmieniæ nazwê na "ParentKeeper" albo "JointKeeper"
 
+    public Vector3 preferredRotation;
     public XRDirectInteractor directLeftRef;
     public XRDirectInteractor directRightRef;
     public Transform physicsLeftHand;
@@ -21,6 +22,11 @@ public class RotationKeeper : MonoBehaviour
     private void Start()
     {
         startParent = transform.parent;
+    }
+
+    public void SetRotation(GameObject rotatedObject, GameObject givenHand)
+    {
+        rotatedObject.transform.eulerAngles = preferredRotation + givenHand.transform.eulerAngles;
     }
     public void AssignParent()
     {

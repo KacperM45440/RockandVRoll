@@ -84,6 +84,8 @@ public class PlaceableArea : MonoBehaviour
         // Obiekty s¹ sprawdzane po nazwie, a nie przy pomocy GameObject.referenceEquals poniewa¿ 1) kostka na ziemii jest typu GameObject a z³apana XRGrabInteractable, a 2) z³apana kostka ma jeszcze doczepiane dziecko z DynamicAttacha i te sprawdzenia nie przechodz¹
         // Prawdopodobnie da³oby siê to omin¹æ gdyby da³o siê przerzutowaæ XRGrabInteractable > GameObject, ale nie znalaz³em takiego rozwi¹zania w internecie
 
+        // Update: wystarczy zrobiæ xrgrabinteractable.gameobject, poprawiæ jak znajdzie sie czas
+
         try
         {
             firstLeftCheck = (givenCollider.gameObject.name.Equals((pickupRef.interactorRefLeft.interactablesSelected[0] as XRGrabInteractable).name));

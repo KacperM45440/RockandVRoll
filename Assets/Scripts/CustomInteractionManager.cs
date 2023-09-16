@@ -5,7 +5,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CustomInteractionManager : XRInteractionManager
 {
-
     private void Start()
     {
         Application.targetFrameRate = 120;
