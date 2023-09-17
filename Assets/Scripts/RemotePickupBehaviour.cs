@@ -57,7 +57,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
             return;
         }
 
-        if (gripPressedRight && currentController == controllerRight || gripPressedLeft && currentController == controllerLeft)
+        if ((triggerPressedRight && currentController == controllerRight) || (triggerPressedLeft && currentController == controllerLeft))
         {
             isRecalled = true;
 
@@ -72,12 +72,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
                 return;
             }
 
-            if (gripPressedRight)
+            if (triggerPressedRight)
             {
                 physicsRefRight.DisableColliders();
             }
 
-            if (gripPressedLeft)
+            if (triggerPressedLeft)
             {
                 physicsRefLeft.DisableColliders();
             }
@@ -88,7 +88,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
             PrepareRotation(currentInteractor);
             DisableCollisionsInObject();
             ForceDeselect(currentInteractor);
-            
+
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor, grabbedObject);
             StartCoroutine(EnableCollisionsInObject(currentInteractor));
@@ -132,15 +132,15 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
         gripPressedRight = Input.GetAxis("XRI_Right_Grip") > buttonSensitivity;
         gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > buttonSensitivity;
-        triggerPressedLeft = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
-        triggerPressedRight = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
+        triggerPressedRight = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
+        triggerPressedLeft = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
 
-        if (gripPressedRight)
+        if (triggerPressedRight)
         {
             RecallObject(controllerRight, interactorRefRight);
         }
 
-        if (gripPressedLeft)
+        if (triggerPressedLeft)
         {
             RecallObject(controllerLeft, interactorRefLeft);
         }
@@ -169,7 +169,6 @@ public class RemotePickupBehaviour : XRBaseInteractor
         }
         catch { }
 
-        Debug.Log("hi");
         StartCoroutine(WaitForRelease(currentInteractor));
         StartCoroutine(WaitForObject(currentInteractor));
     }
@@ -179,7 +178,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
         rotationRef.preferredRotation.x *= IsRightInteractFloat(currentInteractor);
         rotationRef.preferredRotation.y *= IsRightInteractFloat(currentInteractor);
         rotationRef.preferredRotation.z *= IsRightInteractFloat(currentInteractor);
-        rotationRef.SetRotation(grabbedObject.gameObject, physicsRefRight.gameObject);
+        rotationRef.SetRotation(grabbedObject.gameObject, HandFromRay(currentInteractor));
     }
 
     // Wymuœ wypuszczenie obiektu przez interactor (tak, jak przy puszczeniu triggera)
@@ -192,7 +191,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public void ForceSelect(XRBaseInteractor interactor, IXRSelectInteractable interactable)
     {
         gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactor, interactable);
-        
+
         try
         {
             grabbedObject = interactor.interactablesSelected[0] as XRGrabInteractable;
@@ -224,17 +223,13 @@ public class RemotePickupBehaviour : XRBaseInteractor
     {
         if (IsRightInteractBool(interactor))
         {
-            yield return new WaitUntil(() => (!gripPressedRight || !triggerPressedRight));
-            {
-                ReleaseObject(interactorRefRight);
-            }
+            yield return new WaitUntil(() => (!triggerPressedRight || !gripPressedRight));
+            ReleaseObject(interactorRefRight);
         }
         else
         {
-            yield return new WaitUntil(() => (!gripPressedLeft || !triggerPressedLeft));
-            {
-                ReleaseObject(interactorRefLeft);
-            }
+            yield return new WaitUntil(() => (!triggerPressedLeft || !gripPressedLeft));
+            ReleaseObject(interactorRefLeft);
         }
     }
 
@@ -257,7 +252,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
             return false;
         }
 
-        throw new Exception("Neither of right or left");
+        throw new Exception("Neither right nor left");
     }
 
     public float IsRightInteractFloat(XRRayInteractor currentInteractorRef)
@@ -272,7 +267,22 @@ public class RemotePickupBehaviour : XRBaseInteractor
             return -1f;
         }
 
-        throw new Exception("Neither of right or left");
+        throw new Exception("Neither right nor left");
+    }
+
+    public GameObject HandFromRay(XRRayInteractor currentInteractorRef)
+    {
+        if (currentInteractorRef.Equals(interactorRefRight))
+        {
+            return physicsRefRight.gameObject;
+        }
+
+        if (currentInteractorRef.Equals(interactorRefLeft))
+        {
+            return physicsRefLeft.gameObject;
+        }
+
+        throw new Exception("Neither right nor left");
     }
 }
 
