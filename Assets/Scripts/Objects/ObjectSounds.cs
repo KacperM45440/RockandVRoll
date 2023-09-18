@@ -53,7 +53,6 @@ public class ObjectSounds : MonoBehaviour
             previousSound = i;
         }
 
-        Debug.Log(i);
         return nextSound;
     }
 }

@@ -758,7 +758,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""71a4d23f-3e9a-4513-923b-ba388c5e84bf"",
-                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -780,7 +780,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""49a23327-a116-48c0-8af9-0d2c50c15a88"",
-                    ""path"": ""<XRController>{LeftHand}/grip"",
+                    ""path"": ""<XRController>{LeftHand}/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -901,7 +901,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""8b9098e1-b9ac-4541-941c-8e1232a1bb98"",
-                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
+                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -1514,7 +1514,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""1ce80054-410d-4112-a332-50faa7fb4f23"",
-                    ""path"": ""<XRController>{RightHand}/gripPressed"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -1536,7 +1536,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""dd433817-216c-46b9-8dd3-f3a4ea1767b9"",
-                    ""path"": ""<XRController>{RightHand}/grip"",
+                    ""path"": ""<XRController>{RightHand}/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -1657,7 +1657,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""221277f0-e905-4610-aad7-c24f7539a55b"",
-                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""path"": ""<XRController>{RightHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -2336,7 +2336,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""dd9abb1e-bbc7-4909-86d7-d661f8b08b02"",
-                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
+                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -2347,7 +2347,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""8523252d-e0ab-4813-ba37-32d29362fd35"",
-                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""path"": ""<XRController>{RightHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
