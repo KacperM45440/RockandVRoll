@@ -151,12 +151,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
             leftHandAnimator.SetBool("grabbing", true);
         }
         
-        if (!triggerPressedRight) 
+        if (!gripPressedRight) 
         {
             rightHandAnimator.SetBool("telekinesis", false);
         }
         
-        if (!triggerPressedLeft)
+        if (!gripPressedLeft)
         {
             leftHandAnimator.SetBool("telekinesis", false);
         }
