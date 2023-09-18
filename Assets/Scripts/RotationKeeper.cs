@@ -5,13 +5,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RotationKeeper : MonoBehaviour
 {
+    // Skrypt nie jest ju¿ odpowiedzialny za weryfikowanie obracania przedmiotu, natomiast nie ma sensu psuæ scen refaktoryzacj¹ dlatego zostaje z nazw¹ jaka jest
+    // Je¿eli zostanie czas: zmieniæ nazwê na "ParentKeeper" albo "JointKeeper"
+
+    public Vector3 preferredRotation;
     public XRDirectInteractor directLeftRef;
     public XRDirectInteractor directRightRef;
-    public Transform leftHand;
-    public Transform rightHand;
-    public Transform playerParent;
-
-    private Transform attachPoint;
+    public Transform physicsLeftHand;
+    public Transform physicsRightHand;
+    public Transform handParentLeft;
+    public Transform handParentRight;
     private Transform startParent;
     private bool leftSelecting;
     private bool rightSelecting;
@@ -20,13 +23,23 @@ public class RotationKeeper : MonoBehaviour
     {
         startParent = transform.parent;
     }
-    void Update()
+
+    public void SetRotation(GameObject rotatedObject, GameObject givenHand)
+    {
+        rotatedObject.transform.eulerAngles = preferredRotation + givenHand.transform.eulerAngles;
+    }
+    public void AssignParent()
+    {
+        CheckSelection();
+        StartCoroutine(Assign());
+    }
+
+    public void CheckSelection()
     {
         try
         {
             if (directLeftRef.interactablesSelected[0] != null && (directLeftRef.interactablesSelected[0] as XRGrabInteractable).name.Equals(gameObject.name))
             {
-                transform.rotation = leftHand.rotation;
                 leftSelecting = true;
             }
             else
@@ -43,7 +56,6 @@ public class RotationKeeper : MonoBehaviour
         {
             if (directRightRef.interactablesSelected[0] != null && (directRightRef.interactablesSelected[0] as XRGrabInteractable).name.Equals(gameObject.name))
             {
-                transform.rotation = rightHand.rotation;
                 rightSelecting = true;
             }
             else
@@ -57,34 +69,27 @@ public class RotationKeeper : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Wall"))
-        {
-            if(leftSelecting)
-            {
-                //Debug.Log("boing");
-                //leftHand.GetComponent<Rigidbody>().velocity = leftHand.GetComponent<Rigidbody>().velocity * -10;
-            }    
-
-            if(rightSelecting)
-            {
-                //Debug.Log("boing");
-                //rightHand.GetComponent<Rigidbody>().velocity = rightHand.GetComponent<Rigidbody>().velocity * -10;
-            }
-        }
-    }
-
-    public void AssignParent()
-    {
-        transform.parent = playerParent;
-        StartCoroutine(CreateJoint());
-    }
-
     public void ReturnParent()
     {
         transform.parent = startParent;
         Destroy(gameObject.GetComponent<FixedJoint>());
+    }
+
+    IEnumerator Assign()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (leftSelecting)
+        {
+            transform.parent = handParentLeft;
+            StartCoroutine(CreateJoint());
+        }
+
+        if (rightSelecting)
+        {
+            transform.parent = handParentRight;
+            StartCoroutine(CreateJoint());
+        }
     }
 
     IEnumerator CreateJoint()
@@ -94,13 +99,13 @@ public class RotationKeeper : MonoBehaviour
         if (leftSelecting)
         {
             FixedJoint newJoint = gameObject.AddComponent<FixedJoint>();
-            newJoint.connectedBody = leftHand.GetComponent<Rigidbody>();
+            newJoint.connectedBody = physicsLeftHand.GetComponent<Rigidbody>();
         }
 
         if (rightSelecting)
         {
             FixedJoint newJoint = gameObject.AddComponent<FixedJoint>();
-            newJoint.connectedBody = rightHand.GetComponent<Rigidbody>();
+            newJoint.connectedBody = physicsRightHand.GetComponent<Rigidbody>();
         }
     }
 }
