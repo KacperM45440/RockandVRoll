@@ -9,6 +9,10 @@ using System.Linq;
 
 public class RemotePickupBehaviour : XRBaseInteractor
 {
+    public Animator leftHandAnimator;
+    public Animator rightHandAnimator;
+
+
     private static RemotePickupBehaviour _instance;
     public static RemotePickupBehaviour Instance { get { return _instance; } }
 
@@ -29,7 +33,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public GameObject controllerLeft;
     public GameObject controllerRight;
 
-    // Poniewa¿ jest to gra jednoosobowa i zestaw kontrolerów jest zawsze jeden, to z mo¿emy zrobiæ z managera interakcji singleton
+    // PoniewaÂ¿ jest to gra jednoosobowa i zestaw kontrolerÃ³w jest zawsze jeden, to z moÂ¿emy zrobiÃ¦ z managera interakcji singleton
     private new void Awake()
     {
         base.Awake();
@@ -49,7 +53,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
         CheckForSelection();
     }
 
-    // Przywróæ zaznaczony (promieniem) przedmiot do rêki
+    // PrzywrÃ³Ã¦ zaznaczony (promieniem) przedmiot do rÃªki
     public void RecallObject(GameObject currentController, XRRayInteractor currentInteractor)
     {
         if (isRecalled)
@@ -63,7 +67,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
             try
             {
-                // Funkcjê mo¿na wywo³aæ bez trzymania jakiegokolwiek przedmiotu i mo¿e ona sypn¹æ b³êdem, w przypadku takiego wyj¹tku po prostu z niej wychodzimy 
+                // FunkcjÃª moÂ¿na wywoÂ³aÃ¦ bez trzymania jakiegokolwiek przedmiotu i moÂ¿e ona sypnÂ¹Ã¦ bÂ³Ãªdem, w przypadku takiego wyjÂ¹tku po prostu z niej wychodzimy 
                 grabbedObject = currentInteractor.interactablesSelected[0] as XRGrabInteractable;
             }
             catch
@@ -82,8 +86,8 @@ public class RemotePickupBehaviour : XRBaseInteractor
                 physicsRefLeft.DisableColliders();
             }
 
-            // Nie trzeba kombinowaæ z rêcznym przenoszeniem obiektu do rêki zmian¹ pozycji poniewa¿ XR Toolkit daje nam ju¿ tak¹ funckjê
-            // Jedyne co trzeba zrobiæ to j¹ w³¹czyæ podczas "zrestartowania" zaznaczenia
+            // Nie trzeba kombinowaÃ¦ z rÃªcznym przenoszeniem obiektu do rÃªki zmianÂ¹ pozycji poniewaÂ¿ XR Toolkit daje nam juÂ¿ takÂ¹ funckjÃª
+            // Jedyne co trzeba zrobiÃ¦ to jÂ¹ wÂ³Â¹czyÃ¦ podczas "zrestartowania" zaznaczenia
 
             PrepareRotation(currentInteractor);
             DisableCollisionsInObject();
@@ -95,7 +99,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
         }
     }
 
-    // Podczas pracy bezpoœredniego interactora, wy³¹czamy interakcjê promieniem aby nie da³o siê ruszaæ rêk¹ dwóch obiektów naraz (b¹dŸ bugowaæ te obecnie z³apane)
+    // Podczas pracy bezpoÅ“redniego interactora, wyÂ³Â¹czamy interakcjÃª promieniem aby nie daÂ³o siÃª ruszaÃ¦ rÃªkÂ¹ dwÃ³ch obiektÃ³w naraz (bÂ¹dÅ¸ bugowaÃ¦ te obecnie zÂ³apane)
     public void CheckForSelection()
     {
         if (controllerLeft.GetComponent<XRDirectInteractor>().hasSelection)
@@ -121,8 +125,8 @@ public class RemotePickupBehaviour : XRBaseInteractor
         }
     }
 
-    // SprawdŸ, czy klikane s¹ obecnie jakiekolwiek guziki
-    // Teoretycznie lepiej by by³o zrobiæ jakiœ event przy guzikach który wywyo³a funkcjê ni¿ wciskaæ to w update, ale póki co jest git
+    // SprawdÅ¸, czy klikane sÂ¹ obecnie jakiekolwiek guziki
+    // Teoretycznie lepiej by byÂ³o zrobiÃ¦ jakiÅ“ event przy guzikach ktÃ³ry wywyoÂ³a funkcjÃª niÂ¿ wciskaÃ¦ to w update, ale pÃ³ki co jest git
     public void CheckForInput()
     {
         if (isRecalled)
@@ -137,12 +141,24 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
         if (triggerPressedRight)
         {
-            RecallObject(controllerRight, interactorRefRight);
+            RecallObject(controllerRight, interactorRefRight); //merge into one
+            rightHandAnimator.SetBool("grabbing", true);
         }
 
         if (triggerPressedLeft)
         {
             RecallObject(controllerLeft, interactorRefLeft);
+            leftHandAnimator.SetBool("grabbing", true);
+        }
+        
+        if (!triggerPressedRight) 
+        {
+            rightHandAnimator.SetBool("telekinesis", false);
+        }
+        
+        if (!triggerPressedLeft)
+        {
+            leftHandAnimator.SetBool("telekinesis", false);
         }
     }
 
@@ -181,13 +197,13 @@ public class RemotePickupBehaviour : XRBaseInteractor
         rotationRef.SetRotation(grabbedObject.gameObject, HandFromRay(currentInteractor));
     }
 
-    // Wymuœ wypuszczenie obiektu przez interactor (tak, jak przy puszczeniu triggera)
+    // WymuÅ“ wypuszczenie obiektu przez interactor (tak, jak przy puszczeniu triggera)
     public void ForceDeselect(XRBaseInteractor interactor)
     {
         gameObject.GetComponent<CustomInteractionManager>().ForceDeselect(interactor);
     }
 
-    // Wymuœ zaznaczenie obiektu przez interactor (tak, jakby rêcznie klikniêto trigger)
+    // WymuÅ“ zaznaczenie obiektu przez interactor (tak, jakby rÃªcznie klikniÃªto trigger)
     public void ForceSelect(XRBaseInteractor interactor, IXRSelectInteractable interactable)
     {
         gameObject.GetComponent<CustomInteractionManager>().SelectEnter(interactor, interactable);
@@ -202,8 +218,8 @@ public class RemotePickupBehaviour : XRBaseInteractor
         }
     }
 
-    // OpóŸniamy zmianê zmiennej aby funkcja CheckInput() nie próbowa³a zbyt szybko egzekwowaæ swoich czêœci kodu
-    // W przeciwnym wypadku kostka driftuje po promieniu tak d³ugo, jak wciœniêty jest grip
+    // OpÃ³Å¸niamy zmianÃª zmiennej aby funkcja CheckInput() nie prÃ³bowaÂ³a zbyt szybko egzekwowaÃ¦ swoich czÃªÅ“ci kodu
+    // W przeciwnym wypadku kostka driftuje po promieniu tak dÂ³ugo, jak wciÅ“niÃªty jest grip
     IEnumerator WaitForRelease(XRRayInteractor interactor)
     {
         yield return new WaitForSeconds(0.1f);
@@ -225,15 +241,19 @@ public class RemotePickupBehaviour : XRBaseInteractor
         {
             yield return new WaitUntil(() => (!triggerPressedRight || !gripPressedRight));
             ReleaseObject(interactorRefRight);
+            //rightHandAnimator.SetBool("telekinesis", false);
+            rightHandAnimator.SetBool("grabbing", false);
         }
         else
         {
             yield return new WaitUntil(() => (!triggerPressedLeft || !gripPressedLeft));
             ReleaseObject(interactorRefLeft);
+            //leftHandAnimator.SetBool("telekinesis", false);
+            leftHandAnimator.SetBool("grabbing", false);
         }
     }
 
-    // Koñcz¹c interakcjê wy³¹czamy ForceGrab aby nastêpny podniesiony przedmiot nie by³ natychmiastowo z³apany do d³oni
+    // KoÃ±czÂ¹c interakcjÃª wyÂ³Â¹czamy ForceGrab aby nastÃªpny podniesiony przedmiot nie byÂ³ natychmiastowo zÂ³apany do dÂ³oni
     public void ReleaseObject(XRRayInteractor currentInteractorRef)
     {
         currentInteractorRef.useForceGrab = false;

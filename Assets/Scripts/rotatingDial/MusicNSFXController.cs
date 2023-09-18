@@ -24,7 +24,7 @@ public class MusicNSFXController : MonoBehaviour
         musicText.text = ((int)(currMusicValue * 100)).ToString();
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         sfxDial.onDialChange.AddListener(ChangeSFXMixerValue);
         musicDial.onDialChange.AddListener(ChangeMusicMixerValue);
@@ -33,7 +33,7 @@ public class MusicNSFXController : MonoBehaviour
     private void OnDisable()
     {
         sfxDial.onDialChange.RemoveListener(ChangeSFXMixerValue);
-        musicDial.onDialChange.AddListener(ChangeMusicMixerValue);
+        musicDial.onDialChange.RemoveListener(ChangeMusicMixerValue);
     }
     public void SetVolume(float dialvalue, string param)
     {

@@ -23,12 +23,12 @@ public class AnimateOnInput : MonoBehaviour
     public void GrabStarted(InputAction.CallbackContext obj)
     {
         float triggerValue = grabAnimation.action.ReadValue<float>();
-        handAnimator.SetFloat("grabTrigger", triggerValue);
+        handAnimator.SetFloat("grabbing", triggerValue);
     }
 
     public void GrabCanceled(InputAction.CallbackContext obj)
     {
         float triggerValue = grabAnimation.action.ReadValue<float>();
-        handAnimator.SetFloat("grabTrigger", triggerValue);
+        handAnimator.SetFloat("grabbing", triggerValue);
     }
 }

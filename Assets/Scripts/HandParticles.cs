@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandParticles : MonoBehaviour
 {
+    public Animator handAnimator;
+
+
     [SerializeField] private InputActionReference shootTrail;
 
     //public ParticleSystem trailSystem;
@@ -49,10 +52,10 @@ public class HandParticles : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         if (rayInteractorRef.hasSelection || directInteractorRef.hasSelection)
         {
+            handAnimator.SetBool("telekinesis", true);
             yield break;
         }
 
-        animatorRef.SetBool("isShooting", true);
         //trailSystem.Play();
         Vector3 direction = GetDirection();
 
@@ -78,10 +81,10 @@ public class HandParticles : MonoBehaviour
             yield return null;
         }
 
-        animatorRef.SetBool("isShooting", false);
         trail.transform.position = hit.point;
         //Instantiate(impactSystem, hit.point, Quaternion.LookRotation(hit.normal));
 
         Destroy(trail.gameObject, trail.time);
     }
+    
 }
