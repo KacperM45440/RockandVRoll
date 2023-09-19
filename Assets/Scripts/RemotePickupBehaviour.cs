@@ -95,6 +95,14 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor, grabbedObject);
+            if(IsRightInteractBool(currentInteractor))
+            {
+                rightHandAnimator.SetTrigger("remoteCatch");
+            }
+            else
+            {
+                leftHandAnimator.SetTrigger("remoteCatch");
+            }    
             StartCoroutine(EnableCollisionsInObject(currentInteractor));
         }
     }
@@ -129,37 +137,51 @@ public class RemotePickupBehaviour : XRBaseInteractor
     // Teoretycznie lepiej by by³o zrobiæ jakiœ event przy guzikach który wywyo³a funkcjê ni¿ wciskaæ to w update, ale póki co jest git
     public void CheckForInput()
     {
+        gripPressedRight = Input.GetAxis("XRI_Right_Grip") > buttonSensitivity;
+        gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > buttonSensitivity;
+        triggerPressedRight = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
+        triggerPressedLeft = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
+        
+        rightHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Right_Grip"));
+        leftHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Left_Grip"));
+        rightHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Right_Trigger"));
+        leftHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Left_Trigger"));
+
+        if (gripPressedRight && interactorRefRight.hasSelection)
+        {
+            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Right_Grip"), Time.deltaTime * 4f));
+        }
+        else
+        {
+            rightHandAnimator.SetFloat("clawTime", 0);
+            rightHandAnimator.SetFloat("turnTime", 0);
+        }
+
         if (isRecalled)
         {
             return;
         }
 
-        gripPressedRight = Input.GetAxis("XRI_Right_Grip") > buttonSensitivity;
-        gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > buttonSensitivity;
-        triggerPressedRight = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
-        triggerPressedLeft = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
-
         if (triggerPressedRight)
         {
             RecallObject(controllerRight, interactorRefRight); //merge into one
-            rightHandAnimator.SetBool("grabbing", true);
         }
 
         if (triggerPressedLeft)
         {
             RecallObject(controllerLeft, interactorRefLeft);
-            leftHandAnimator.SetBool("grabbing", true);
         }
 
-        if (!gripPressedRight)
-        {
-            rightHandAnimator.SetBool("telekinesis", false);
-        }
+        //if (!gripPressedRight)
+        //{
+        //    rightHandAnimator.SetBool("telekinesis", false);
+        //}
 
-        if (!gripPressedLeft)
-        {
-            leftHandAnimator.SetBool("telekinesis", false);
-        }
+        //if (!gripPressedLeft)
+        //{
+        //    leftHandAnimator.SetBool("telekinesis", false);
+        //}
     }
 
     private void DisableCollisionsInObject()
@@ -241,13 +263,13 @@ public class RemotePickupBehaviour : XRBaseInteractor
         {
             yield return new WaitUntil(() => (!triggerPressedRight || !gripPressedRight));
             ReleaseObject(interactorRefRight);
-            rightHandAnimator.SetBool("grabbing", false);
+            //rightHandAnimator.SetBool("grabbing", false);
         }
         else
         {
             yield return new WaitUntil(() => (!triggerPressedLeft || !gripPressedLeft));
             ReleaseObject(interactorRefLeft);
-            leftHandAnimator.SetBool("grabbing", false);
+            //leftHandAnimator.SetBool("grabbing", false);
         }
     }
 
