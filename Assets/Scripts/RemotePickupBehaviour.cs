@@ -150,12 +150,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
             RecallObject(controllerLeft, interactorRefLeft);
             leftHandAnimator.SetBool("grabbing", true);
         }
-        
-        if (!gripPressedRight) 
+
+        if (!gripPressedRight)
         {
             rightHandAnimator.SetBool("telekinesis", false);
         }
-        
+
         if (!gripPressedLeft)
         {
             leftHandAnimator.SetBool("telekinesis", false);
@@ -241,14 +241,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
         {
             yield return new WaitUntil(() => (!triggerPressedRight || !gripPressedRight));
             ReleaseObject(interactorRefRight);
-            //rightHandAnimator.SetBool("telekinesis", false);
             rightHandAnimator.SetBool("grabbing", false);
         }
         else
         {
             yield return new WaitUntil(() => (!triggerPressedLeft || !gripPressedLeft));
             ReleaseObject(interactorRefLeft);
-            //leftHandAnimator.SetBool("telekinesis", false);
             leftHandAnimator.SetBool("grabbing", false);
         }
     }

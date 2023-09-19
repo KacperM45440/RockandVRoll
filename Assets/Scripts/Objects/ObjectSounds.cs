@@ -21,7 +21,8 @@ public class ObjectSounds : MonoBehaviour
         if (canPlaySound)
         {
             canPlaySound = false;
-            sourceRef.PlayOneShot(ChooseSound(pickup1, pickup2, pickup3), 0.5f);
+            //sourceRef.PlayOneShot(ChooseSound(pickup1, pickup2, pickup3), 0.5f);
+            //dostawalem duzo logow w consoli, dlatego zakomentowalem
         }
     }
 
