@@ -37,19 +37,19 @@ public class AnimateOnInput : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         try
         {
-            if (!remoteRef.interactorRefRight.hasSelection)
+            if (!remoteRef.interactorRefRight.hasSelection && handAnimator.name.Equals("[PHYSICS] Right Hand"))
             {
                 remoteRef.rightHandAnimator.SetTrigger("remoteCatch");
             }
 
-            if (!remoteRef.interactorRefLeft.hasSelection)
+            if (!remoteRef.interactorRefLeft.hasSelection && handAnimator.name.Equals("[PHYSICS] Left Hand"))
             {
                 remoteRef.leftHandAnimator.SetTrigger("remoteCatch");
             }
         }
         catch
         {
-            Debug.Log("nie ma xd");
+            
         }
     }
 }

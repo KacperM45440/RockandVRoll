@@ -16,6 +16,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
     private static RemotePickupBehaviour _instance;
     public static RemotePickupBehaviour Instance { get { return _instance; } }
 
+    private bool canLeave = true;
     private bool isRecalled = false;
     private bool gripPressedRight = false;
     private bool gripPressedLeft = false;
@@ -91,17 +92,19 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
             PrepareRotation(currentInteractor);
             DisableCollisionsInObject();
+            canLeave = false;
             ForceDeselect(currentInteractor);
+
 
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor, grabbedObject);
             if(IsRightInteractBool(currentInteractor))
             {
-                rightHandAnimator.SetTrigger("remoteCatch");
+                rightHandAnimator.SetTrigger("recallObject");
             }
             else
             {
-                leftHandAnimator.SetTrigger("remoteCatch");
+                leftHandAnimator.SetTrigger("recallObject");
             }    
             StartCoroutine(EnableCollisionsInObject(currentInteractor));
         }
@@ -141,22 +144,8 @@ public class RemotePickupBehaviour : XRBaseInteractor
         gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > buttonSensitivity;
         triggerPressedRight = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
         triggerPressedLeft = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
-        
-        rightHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Right_Grip"));
-        leftHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Left_Grip"));
-        rightHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Right_Trigger"));
-        leftHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Left_Trigger"));
 
-        if (gripPressedRight && interactorRefRight.hasSelection)
-        {
-            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
-            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Right_Grip"), Time.deltaTime * 4f));
-        }
-        else
-        {
-            rightHandAnimator.SetFloat("clawTime", 0);
-            rightHandAnimator.SetFloat("turnTime", 0);
-        }
+        AnimationLogic();
 
         if (isRecalled)
         {
@@ -184,6 +173,56 @@ public class RemotePickupBehaviour : XRBaseInteractor
         //}
     }
 
+    public void AnimationLogic()
+    {
+        rightHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Right_Grip"));
+        leftHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Left_Grip"));
+        rightHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Right_Trigger"));
+        leftHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Left_Trigger"));
+
+        if (gripPressedRight && interactorRefRight.hasSelection)
+        {
+            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Right_Grip"), Time.deltaTime * 4f));
+        }
+        else
+        {
+            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+        }
+
+        if (gripPressedLeft && interactorRefLeft.hasSelection)
+        {
+            leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
+            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Left_Grip"), Time.deltaTime * 4f));
+        }
+        else
+        {
+            leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+        }
+    }
+
+    public void LostFocus(XRRayInteractor currentInteractor)
+    {
+        if (!canLeave)
+        {
+            return;
+        }
+
+        if (IsRightInteractBool(currentInteractor))
+        {
+            //rightHandAnimator.SetTrigger("lostFocus");
+            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+        }
+        else
+        {
+            //leftHandAnimator.SetTrigger("lostFocus");
+            leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+        }
+    }
     private void DisableCollisionsInObject()
     {
         try
@@ -198,6 +237,9 @@ public class RemotePickupBehaviour : XRBaseInteractor
     private IEnumerator EnableCollisionsInObject(XRRayInteractor currentInteractor)
     {
         yield return new WaitForSeconds(0.1f);
+
+        canLeave = true;
+
         try
         {
             foreach (Transform child in grabbedObject.transform.GetChild(0))
