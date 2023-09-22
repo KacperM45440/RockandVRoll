@@ -50,7 +50,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 64
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 6577092979320091691}
-  m_MoveSpeed: 0.9
+  m_MoveSpeed: 2.01
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -1015,7 +1015,7 @@ Transform:
   - {fileID: 2526157262331537052}
   - {fileID: 2323478994399387895}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4678346686545499710
 MonoBehaviour:
@@ -1029,10 +1029,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ab8cebdcc9e914b8de06fc523c0bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultHeight: 0.5
+  defaultHeight: 1.3
   camera: {fileID: 5139293477726759422}
-  attachPointLeft: {fileID: 5762655525053131262}
-  attachPointRight: {fileID: 5978710527410479735}
+  scaleList:
+  - {fileID: 5762655525053131262}
+  - {fileID: 5978710527410479735}
+  - {fileID: 3284507296418566383}
+  - {fileID: 4918354748731414460}
+  rescaleList:
+  - {fileID: 1717921366628827526}
+  - {fileID: 5045770433832333553}
+  rightHandChild: {fileID: 0}
+  rightHandGameObj: {fileID: 5721163330149848893}
 --- !u!1 &3827959055494207074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,12 +3858,12 @@ PrefabInstance:
     - target: {fileID: 1235697495925027930, guid: 5afbe542e87917641b6dc549661b4e9f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.004905618
+      value: 0.0049056183
       objectReference: {fileID: 0}
     - target: {fileID: 1235697495925027930, guid: 5afbe542e87917641b6dc549661b4e9f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.029398901
+      value: 0.029398903
       objectReference: {fileID: 0}
     - target: {fileID: 1235697495925027930, guid: 5afbe542e87917641b6dc549661b4e9f,
         type: 3}
