@@ -52,7 +52,7 @@ public class HandParticles : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         if (rayInteractorRef.hasSelection || directInteractorRef.hasSelection)
         {
-            handAnimator.SetBool("telekinesis", true);
+            //handAnimator.SetBool("telekinesis", true);
             yield break;
         }
 

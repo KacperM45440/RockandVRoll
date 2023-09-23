@@ -16,6 +16,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
     private static RemotePickupBehaviour _instance;
     public static RemotePickupBehaviour Instance { get { return _instance; } }
 
+    private bool canLeave = true;
     private bool isRecalled = false;
     private bool gripPressedRight = false;
     private bool gripPressedLeft = false;
@@ -91,10 +92,20 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
             PrepareRotation(currentInteractor);
             DisableCollisionsInObject();
+            canLeave = false;
             ForceDeselect(currentInteractor);
+
 
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor, grabbedObject);
+            if(IsRightInteractBool(currentInteractor))
+            {
+                rightHandAnimator.SetTrigger("recallObject");
+            }
+            else
+            {
+                leftHandAnimator.SetTrigger("recallObject");
+            }    
             StartCoroutine(EnableCollisionsInObject(currentInteractor));
         }
     }
@@ -129,39 +140,89 @@ public class RemotePickupBehaviour : XRBaseInteractor
     // Teoretycznie lepiej by by³o zrobiæ jakiœ event przy guzikach który wywyo³a funkcjê ni¿ wciskaæ to w update, ale póki co jest git
     public void CheckForInput()
     {
-        if (isRecalled)
-        {
-            return;
-        }
-
         gripPressedRight = Input.GetAxis("XRI_Right_Grip") > buttonSensitivity;
         gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > buttonSensitivity;
         triggerPressedRight = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
         triggerPressedLeft = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
 
+        AnimationLogic();
+
+        if (isRecalled)
+        {
+            return;
+        }
+
         if (triggerPressedRight)
         {
             RecallObject(controllerRight, interactorRefRight); //merge into one
-            rightHandAnimator.SetBool("grabbing", true);
         }
 
         if (triggerPressedLeft)
         {
             RecallObject(controllerLeft, interactorRefLeft);
-            leftHandAnimator.SetBool("grabbing", true);
         }
-        
-        if (!gripPressedRight) 
+
+        //if (!gripPressedRight)
+        //{
+        //    rightHandAnimator.SetBool("telekinesis", false);
+        //}
+
+        //if (!gripPressedLeft)
+        //{
+        //    leftHandAnimator.SetBool("telekinesis", false);
+        //}
+    }
+
+    public void AnimationLogic()
+    {
+        rightHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Right_Grip"));
+        leftHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Left_Grip"));
+        rightHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Right_Trigger"));
+        leftHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Left_Trigger"));
+
+        if (gripPressedRight && interactorRefRight.hasSelection)
         {
-            rightHandAnimator.SetBool("telekinesis", false);
+            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Right_Grip"), Time.deltaTime * 4f));
         }
-        
-        if (!gripPressedLeft)
+        else
         {
-            leftHandAnimator.SetBool("telekinesis", false);
+            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+        }
+
+        if (gripPressedLeft && interactorRefLeft.hasSelection)
+        {
+            leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
+            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Left_Grip"), Time.deltaTime * 4f));
+        }
+        else
+        {
+            leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
         }
     }
 
+    public void LostFocus(XRRayInteractor currentInteractor)
+    {
+        if (!canLeave)
+        {
+            return;
+        }
+
+        if (IsRightInteractBool(currentInteractor))
+        {
+            //rightHandAnimator.SetTrigger("lostFocus");
+            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+        }
+        else
+        {
+            //leftHandAnimator.SetTrigger("lostFocus");
+            leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+        }
+    }
     private void DisableCollisionsInObject()
     {
         try
@@ -176,6 +237,9 @@ public class RemotePickupBehaviour : XRBaseInteractor
     private IEnumerator EnableCollisionsInObject(XRRayInteractor currentInteractor)
     {
         yield return new WaitForSeconds(0.1f);
+
+        canLeave = true;
+
         try
         {
             foreach (Transform child in grabbedObject.transform.GetChild(0))
@@ -241,15 +305,13 @@ public class RemotePickupBehaviour : XRBaseInteractor
         {
             yield return new WaitUntil(() => (!triggerPressedRight || !gripPressedRight));
             ReleaseObject(interactorRefRight);
-            //rightHandAnimator.SetBool("telekinesis", false);
-            rightHandAnimator.SetBool("grabbing", false);
+            //rightHandAnimator.SetBool("grabbing", false);
         }
         else
         {
             yield return new WaitUntil(() => (!triggerPressedLeft || !gripPressedLeft));
             ReleaseObject(interactorRefLeft);
-            //leftHandAnimator.SetBool("telekinesis", false);
-            leftHandAnimator.SetBool("grabbing", false);
+            //leftHandAnimator.SetBool("grabbing", false);
         }
     }
 
