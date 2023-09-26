@@ -1,99 +1,275 @@
 fileFormatVersion: 2
 guid: 2fcf65de41468b04ca059b0b9ae65dcb
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Board_191
-    100002: Board_206
-    100004: Boards_037
-    100006: Boards_038
-    100008: Cloth
-    100010: //RootNode
-    100012: Metal_095
-    100014: Metal_096
-    100016: Metal_098
-    100018: Metal_099
-    100020: Metal_100
-    100022: Metal_101
-    100024: Metal_103
-    100026: Metal_104
-    100028: Metal_107
-    100030: Metal_108
-    100032: Wood_1
-    100034: Wood_2
-    400000: Board_191
-    400002: Board_206
-    400004: Boards_037
-    400006: Boards_038
-    400008: Cloth
-    400010: //RootNode
-    400012: Metal_095
-    400014: Metal_096
-    400016: Metal_098
-    400018: Metal_099
-    400020: Metal_100
-    400022: Metal_101
-    400024: Metal_103
-    400026: Metal_104
-    400028: Metal_107
-    400030: Metal_108
-    400032: Wood_1
-    400034: Wood_2
-    2100000: Airing
-    2300000: Board_191
-    2300002: Board_206
-    2300004: Boards_037
-    2300006: Boards_038
-    2300008: Cloth
-    2300010: Metal_095
-    2300012: Metal_096
-    2300014: Metal_098
-    2300016: Metal_099
-    2300018: Metal_100
-    2300020: Metal_101
-    2300022: Metal_103
-    2300024: Metal_104
-    2300026: Metal_107
-    2300028: Metal_108
-    2300030: Wood_1
-    2300032: Wood_2
-    3300000: Board_191
-    3300002: Board_206
-    3300004: Boards_037
-    3300006: Boards_038
-    3300008: Cloth
-    3300010: Metal_095
-    3300012: Metal_096
-    3300014: Metal_098
-    3300016: Metal_099
-    3300018: Metal_100
-    3300020: Metal_101
-    3300022: Metal_103
-    3300024: Metal_104
-    3300026: Metal_107
-    3300028: Metal_108
-    3300030: Wood_1
-    3300032: Wood_2
-    4300000: Metal_096
-    4300002: Boards_038
-    4300004: Board_191
-    4300006: Metal_101
-    4300008: Metal_100
-    4300010: Wood_1
-    4300012: Boards_037
-    4300014: Cloth
-    4300016: Metal_103
-    4300018: Metal_099
-    4300020: Wood_2
-    4300022: Metal_104
-    4300024: Metal_095
-    4300026: Metal_107
-    4300028: Board_206
-    4300030: Metal_098
-    4300032: Metal_108
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Board_191
+  - first:
+      1: 100002
+    second: Board_206
+  - first:
+      1: 100004
+    second: Boards_037
+  - first:
+      1: 100006
+    second: Boards_038
+  - first:
+      1: 100008
+    second: Cloth
+  - first:
+      1: 100010
+    second: //RootNode
+  - first:
+      1: 100012
+    second: Metal_095
+  - first:
+      1: 100014
+    second: Metal_096
+  - first:
+      1: 100016
+    second: Metal_098
+  - first:
+      1: 100018
+    second: Metal_099
+  - first:
+      1: 100020
+    second: Metal_100
+  - first:
+      1: 100022
+    second: Metal_101
+  - first:
+      1: 100024
+    second: Metal_103
+  - first:
+      1: 100026
+    second: Metal_104
+  - first:
+      1: 100028
+    second: Metal_107
+  - first:
+      1: 100030
+    second: Metal_108
+  - first:
+      1: 100032
+    second: Wood_1
+  - first:
+      1: 100034
+    second: Wood_2
+  - first:
+      4: 400000
+    second: Board_191
+  - first:
+      4: 400002
+    second: Board_206
+  - first:
+      4: 400004
+    second: Boards_037
+  - first:
+      4: 400006
+    second: Boards_038
+  - first:
+      4: 400008
+    second: Cloth
+  - first:
+      4: 400010
+    second: //RootNode
+  - first:
+      4: 400012
+    second: Metal_095
+  - first:
+      4: 400014
+    second: Metal_096
+  - first:
+      4: 400016
+    second: Metal_098
+  - first:
+      4: 400018
+    second: Metal_099
+  - first:
+      4: 400020
+    second: Metal_100
+  - first:
+      4: 400022
+    second: Metal_101
+  - first:
+      4: 400024
+    second: Metal_103
+  - first:
+      4: 400026
+    second: Metal_104
+  - first:
+      4: 400028
+    second: Metal_107
+  - first:
+      4: 400030
+    second: Metal_108
+  - first:
+      4: 400032
+    second: Wood_1
+  - first:
+      4: 400034
+    second: Wood_2
+  - first:
+      21: 2100000
+    second: Airing
+  - first:
+      23: 2300000
+    second: Board_191
+  - first:
+      23: 2300002
+    second: Board_206
+  - first:
+      23: 2300004
+    second: Boards_037
+  - first:
+      23: 2300006
+    second: Boards_038
+  - first:
+      23: 2300008
+    second: Cloth
+  - first:
+      23: 2300010
+    second: Metal_095
+  - first:
+      23: 2300012
+    second: Metal_096
+  - first:
+      23: 2300014
+    second: Metal_098
+  - first:
+      23: 2300016
+    second: Metal_099
+  - first:
+      23: 2300018
+    second: Metal_100
+  - first:
+      23: 2300020
+    second: Metal_101
+  - first:
+      23: 2300022
+    second: Metal_103
+  - first:
+      23: 2300024
+    second: Metal_104
+  - first:
+      23: 2300026
+    second: Metal_107
+  - first:
+      23: 2300028
+    second: Metal_108
+  - first:
+      23: 2300030
+    second: Wood_1
+  - first:
+      23: 2300032
+    second: Wood_2
+  - first:
+      33: 3300000
+    second: Board_191
+  - first:
+      33: 3300002
+    second: Board_206
+  - first:
+      33: 3300004
+    second: Boards_037
+  - first:
+      33: 3300006
+    second: Boards_038
+  - first:
+      33: 3300008
+    second: Cloth
+  - first:
+      33: 3300010
+    second: Metal_095
+  - first:
+      33: 3300012
+    second: Metal_096
+  - first:
+      33: 3300014
+    second: Metal_098
+  - first:
+      33: 3300016
+    second: Metal_099
+  - first:
+      33: 3300018
+    second: Metal_100
+  - first:
+      33: 3300020
+    second: Metal_101
+  - first:
+      33: 3300022
+    second: Metal_103
+  - first:
+      33: 3300024
+    second: Metal_104
+  - first:
+      33: 3300026
+    second: Metal_107
+  - first:
+      33: 3300028
+    second: Metal_108
+  - first:
+      33: 3300030
+    second: Wood_1
+  - first:
+      33: 3300032
+    second: Wood_2
+  - first:
+      43: 4300000
+    second: Metal_096
+  - first:
+      43: 4300002
+    second: Boards_038
+  - first:
+      43: 4300004
+    second: Board_191
+  - first:
+      43: 4300006
+    second: Metal_101
+  - first:
+      43: 4300008
+    second: Metal_100
+  - first:
+      43: 4300010
+    second: Wood_1
+  - first:
+      43: 4300012
+    second: Boards_037
+  - first:
+      43: 4300014
+    second: Cloth
+  - first:
+      43: 4300016
+    second: Metal_103
+  - first:
+      43: 4300018
+    second: Metal_099
+  - first:
+      43: 4300020
+    second: Wood_2
+  - first:
+      43: 4300022
+    second: Metal_104
+  - first:
+      43: 4300024
+    second: Metal_095
+  - first:
+      43: 4300026
+    second: Metal_107
+  - first:
+      43: 4300028
+    second: Board_206
+  - first:
+      43: 4300030
+    second: Metal_098
+  - first:
+      43: 4300032
+    second: Metal_108
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -102,6 +278,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -125,34 +302,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 10
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -162,14 +354,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
