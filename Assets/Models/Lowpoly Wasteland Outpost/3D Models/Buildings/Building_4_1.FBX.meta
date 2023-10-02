@@ -1,95 +1,263 @@
 fileFormatVersion: 2
 guid: 859aceb84ce2aa34786d7e8fcb91caab
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Boards_060
-    100002: Boards_061
-    100004: Boards_062
-    100006: //RootNode
-    100008: Cloth001
-    100010: Metal_176
-    100012: Metal_177
-    100014: Metal_182
-    100016: Metal_185
-    100018: Metal_187
-    100020: Metal_188
-    100022: Metal_189
-    100024: Metal_191
-    100026: Sign_008
-    100028: Stairs001
-    100030: Wood_006
-    100032: Wood_007
-    400000: Boards_060
-    400002: Boards_061
-    400004: Boards_062
-    400006: //RootNode
-    400008: Cloth001
-    400010: Metal_176
-    400012: Metal_177
-    400014: Metal_182
-    400016: Metal_185
-    400018: Metal_187
-    400020: Metal_188
-    400022: Metal_189
-    400024: Metal_191
-    400026: Sign_008
-    400028: Stairs001
-    400030: Wood_006
-    400032: Wood_007
-    2100000: Airing
-    2300000: Boards_060
-    2300002: Boards_061
-    2300004: Boards_062
-    2300006: Cloth001
-    2300008: Metal_176
-    2300010: Metal_177
-    2300012: Metal_182
-    2300014: Metal_185
-    2300016: Metal_187
-    2300018: Metal_188
-    2300020: Metal_189
-    2300022: Metal_191
-    2300024: Sign_008
-    2300026: Stairs001
-    2300028: Wood_006
-    2300030: Wood_007
-    3300000: Boards_060
-    3300002: Boards_061
-    3300004: Boards_062
-    3300006: Cloth001
-    3300008: Metal_176
-    3300010: Metal_177
-    3300012: Metal_182
-    3300014: Metal_185
-    3300016: Metal_187
-    3300018: Metal_188
-    3300020: Metal_189
-    3300022: Metal_191
-    3300024: Sign_008
-    3300026: Stairs001
-    3300028: Wood_006
-    3300030: Wood_007
-    4300000: Wood_006
-    4300002: Sign_008
-    4300004: Wood_007
-    4300006: Metal_188
-    4300008: Metal_191
-    4300010: Metal_176
-    4300012: Metal_177
-    4300014: Boards_060
-    4300016: Boards_061
-    4300018: Boards_062
-    4300020: Metal_182
-    4300022: Cloth001
-    4300024: Metal_185
-    4300026: Metal_187
-    4300028: Stairs001
-    4300030: Metal_189
-    2186277476908879412: ImportLogs
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Boards_060
+  - first:
+      1: 100002
+    second: Boards_061
+  - first:
+      1: 100004
+    second: Boards_062
+  - first:
+      1: 100006
+    second: //RootNode
+  - first:
+      1: 100008
+    second: Cloth001
+  - first:
+      1: 100010
+    second: Metal_176
+  - first:
+      1: 100012
+    second: Metal_177
+  - first:
+      1: 100014
+    second: Metal_182
+  - first:
+      1: 100016
+    second: Metal_185
+  - first:
+      1: 100018
+    second: Metal_187
+  - first:
+      1: 100020
+    second: Metal_188
+  - first:
+      1: 100022
+    second: Metal_189
+  - first:
+      1: 100024
+    second: Metal_191
+  - first:
+      1: 100026
+    second: Sign_008
+  - first:
+      1: 100028
+    second: Stairs001
+  - first:
+      1: 100030
+    second: Wood_006
+  - first:
+      1: 100032
+    second: Wood_007
+  - first:
+      4: 400000
+    second: Boards_060
+  - first:
+      4: 400002
+    second: Boards_061
+  - first:
+      4: 400004
+    second: Boards_062
+  - first:
+      4: 400006
+    second: //RootNode
+  - first:
+      4: 400008
+    second: Cloth001
+  - first:
+      4: 400010
+    second: Metal_176
+  - first:
+      4: 400012
+    second: Metal_177
+  - first:
+      4: 400014
+    second: Metal_182
+  - first:
+      4: 400016
+    second: Metal_185
+  - first:
+      4: 400018
+    second: Metal_187
+  - first:
+      4: 400020
+    second: Metal_188
+  - first:
+      4: 400022
+    second: Metal_189
+  - first:
+      4: 400024
+    second: Metal_191
+  - first:
+      4: 400026
+    second: Sign_008
+  - first:
+      4: 400028
+    second: Stairs001
+  - first:
+      4: 400030
+    second: Wood_006
+  - first:
+      4: 400032
+    second: Wood_007
+  - first:
+      21: 2100000
+    second: Airing
+  - first:
+      23: 2300000
+    second: Boards_060
+  - first:
+      23: 2300002
+    second: Boards_061
+  - first:
+      23: 2300004
+    second: Boards_062
+  - first:
+      23: 2300006
+    second: Cloth001
+  - first:
+      23: 2300008
+    second: Metal_176
+  - first:
+      23: 2300010
+    second: Metal_177
+  - first:
+      23: 2300012
+    second: Metal_182
+  - first:
+      23: 2300014
+    second: Metal_185
+  - first:
+      23: 2300016
+    second: Metal_187
+  - first:
+      23: 2300018
+    second: Metal_188
+  - first:
+      23: 2300020
+    second: Metal_189
+  - first:
+      23: 2300022
+    second: Metal_191
+  - first:
+      23: 2300024
+    second: Sign_008
+  - first:
+      23: 2300026
+    second: Stairs001
+  - first:
+      23: 2300028
+    second: Wood_006
+  - first:
+      23: 2300030
+    second: Wood_007
+  - first:
+      33: 3300000
+    second: Boards_060
+  - first:
+      33: 3300002
+    second: Boards_061
+  - first:
+      33: 3300004
+    second: Boards_062
+  - first:
+      33: 3300006
+    second: Cloth001
+  - first:
+      33: 3300008
+    second: Metal_176
+  - first:
+      33: 3300010
+    second: Metal_177
+  - first:
+      33: 3300012
+    second: Metal_182
+  - first:
+      33: 3300014
+    second: Metal_185
+  - first:
+      33: 3300016
+    second: Metal_187
+  - first:
+      33: 3300018
+    second: Metal_188
+  - first:
+      33: 3300020
+    second: Metal_189
+  - first:
+      33: 3300022
+    second: Metal_191
+  - first:
+      33: 3300024
+    second: Sign_008
+  - first:
+      33: 3300026
+    second: Stairs001
+  - first:
+      33: 3300028
+    second: Wood_006
+  - first:
+      33: 3300030
+    second: Wood_007
+  - first:
+      43: 4300000
+    second: Wood_006
+  - first:
+      43: 4300002
+    second: Sign_008
+  - first:
+      43: 4300004
+    second: Wood_007
+  - first:
+      43: 4300006
+    second: Metal_188
+  - first:
+      43: 4300008
+    second: Metal_191
+  - first:
+      43: 4300010
+    second: Metal_176
+  - first:
+      43: 4300012
+    second: Metal_177
+  - first:
+      43: 4300014
+    second: Boards_060
+  - first:
+      43: 4300016
+    second: Boards_061
+  - first:
+      43: 4300018
+    second: Boards_062
+  - first:
+      43: 4300020
+    second: Metal_182
+  - first:
+      43: 4300022
+    second: Cloth001
+  - first:
+      43: 4300024
+    second: Metal_185
+  - first:
+      43: 4300026
+    second: Metal_187
+  - first:
+      43: 4300028
+    second: Stairs001
+  - first:
+      43: 4300030
+    second: Metal_189
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -98,6 +266,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -121,34 +290,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 10
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -158,14 +342,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
