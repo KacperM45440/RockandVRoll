@@ -1,89 +1,245 @@
 fileFormatVersion: 2
 guid: ca63db3ad530fd54b807e4a99622969b
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Boards_073
-    100002: Boards_077
-    100004: //RootNode
-    100006: Cloth_015
-    100008: Metal_166
-    100010: Metal_203
-    100012: Metal_205
-    100014: Metal_206
-    100016: Metal_207
-    100018: Metal_208
-    100020: Metal_210
-    100022: Metal_212
-    100024: Metal_214
-    100026: Sign_009
-    100028: Wood_010
-    100030: Wood_013
-    400000: Boards_073
-    400002: Boards_077
-    400004: //RootNode
-    400006: Cloth_015
-    400008: Metal_166
-    400010: Metal_203
-    400012: Metal_205
-    400014: Metal_206
-    400016: Metal_207
-    400018: Metal_208
-    400020: Metal_210
-    400022: Metal_212
-    400024: Metal_214
-    400026: Sign_009
-    400028: Wood_010
-    400030: Wood_013
-    2100000: Airing
-    2300000: Boards_073
-    2300002: Boards_077
-    2300004: Cloth_015
-    2300006: Metal_166
-    2300008: Metal_203
-    2300010: Metal_205
-    2300012: Metal_206
-    2300014: Metal_207
-    2300016: Metal_208
-    2300018: Metal_210
-    2300020: Metal_212
-    2300022: Metal_214
-    2300024: Sign_009
-    2300026: Wood_010
-    2300028: Wood_013
-    3300000: Boards_073
-    3300002: Boards_077
-    3300004: Cloth_015
-    3300006: Metal_166
-    3300008: Metal_203
-    3300010: Metal_205
-    3300012: Metal_206
-    3300014: Metal_207
-    3300016: Metal_208
-    3300018: Metal_210
-    3300020: Metal_212
-    3300022: Metal_214
-    3300024: Sign_009
-    3300026: Wood_010
-    3300028: Wood_013
-    4300000: Metal_166
-    4300002: Metal_203
-    4300004: Boards_073
-    4300006: Metal_205
-    4300008: Metal_206
-    4300010: Metal_207
-    4300012: Sign_009
-    4300014: Metal_208
-    4300016: Metal_210
-    4300018: Cloth_015
-    4300020: Metal_212
-    4300022: Wood_010
-    4300024: Metal_214
-    4300026: Boards_077
-    4300028: Wood_013
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Boards_073
+  - first:
+      1: 100002
+    second: Boards_077
+  - first:
+      1: 100004
+    second: //RootNode
+  - first:
+      1: 100006
+    second: Cloth_015
+  - first:
+      1: 100008
+    second: Metal_166
+  - first:
+      1: 100010
+    second: Metal_203
+  - first:
+      1: 100012
+    second: Metal_205
+  - first:
+      1: 100014
+    second: Metal_206
+  - first:
+      1: 100016
+    second: Metal_207
+  - first:
+      1: 100018
+    second: Metal_208
+  - first:
+      1: 100020
+    second: Metal_210
+  - first:
+      1: 100022
+    second: Metal_212
+  - first:
+      1: 100024
+    second: Metal_214
+  - first:
+      1: 100026
+    second: Sign_009
+  - first:
+      1: 100028
+    second: Wood_010
+  - first:
+      1: 100030
+    second: Wood_013
+  - first:
+      4: 400000
+    second: Boards_073
+  - first:
+      4: 400002
+    second: Boards_077
+  - first:
+      4: 400004
+    second: //RootNode
+  - first:
+      4: 400006
+    second: Cloth_015
+  - first:
+      4: 400008
+    second: Metal_166
+  - first:
+      4: 400010
+    second: Metal_203
+  - first:
+      4: 400012
+    second: Metal_205
+  - first:
+      4: 400014
+    second: Metal_206
+  - first:
+      4: 400016
+    second: Metal_207
+  - first:
+      4: 400018
+    second: Metal_208
+  - first:
+      4: 400020
+    second: Metal_210
+  - first:
+      4: 400022
+    second: Metal_212
+  - first:
+      4: 400024
+    second: Metal_214
+  - first:
+      4: 400026
+    second: Sign_009
+  - first:
+      4: 400028
+    second: Wood_010
+  - first:
+      4: 400030
+    second: Wood_013
+  - first:
+      21: 2100000
+    second: Airing
+  - first:
+      23: 2300000
+    second: Boards_073
+  - first:
+      23: 2300002
+    second: Boards_077
+  - first:
+      23: 2300004
+    second: Cloth_015
+  - first:
+      23: 2300006
+    second: Metal_166
+  - first:
+      23: 2300008
+    second: Metal_203
+  - first:
+      23: 2300010
+    second: Metal_205
+  - first:
+      23: 2300012
+    second: Metal_206
+  - first:
+      23: 2300014
+    second: Metal_207
+  - first:
+      23: 2300016
+    second: Metal_208
+  - first:
+      23: 2300018
+    second: Metal_210
+  - first:
+      23: 2300020
+    second: Metal_212
+  - first:
+      23: 2300022
+    second: Metal_214
+  - first:
+      23: 2300024
+    second: Sign_009
+  - first:
+      23: 2300026
+    second: Wood_010
+  - first:
+      23: 2300028
+    second: Wood_013
+  - first:
+      33: 3300000
+    second: Boards_073
+  - first:
+      33: 3300002
+    second: Boards_077
+  - first:
+      33: 3300004
+    second: Cloth_015
+  - first:
+      33: 3300006
+    second: Metal_166
+  - first:
+      33: 3300008
+    second: Metal_203
+  - first:
+      33: 3300010
+    second: Metal_205
+  - first:
+      33: 3300012
+    second: Metal_206
+  - first:
+      33: 3300014
+    second: Metal_207
+  - first:
+      33: 3300016
+    second: Metal_208
+  - first:
+      33: 3300018
+    second: Metal_210
+  - first:
+      33: 3300020
+    second: Metal_212
+  - first:
+      33: 3300022
+    second: Metal_214
+  - first:
+      33: 3300024
+    second: Sign_009
+  - first:
+      33: 3300026
+    second: Wood_010
+  - first:
+      33: 3300028
+    second: Wood_013
+  - first:
+      43: 4300000
+    second: Metal_166
+  - first:
+      43: 4300002
+    second: Metal_203
+  - first:
+      43: 4300004
+    second: Boards_073
+  - first:
+      43: 4300006
+    second: Metal_205
+  - first:
+      43: 4300008
+    second: Metal_206
+  - first:
+      43: 4300010
+    second: Metal_207
+  - first:
+      43: 4300012
+    second: Sign_009
+  - first:
+      43: 4300014
+    second: Metal_208
+  - first:
+      43: 4300016
+    second: Metal_210
+  - first:
+      43: 4300018
+    second: Cloth_015
+  - first:
+      43: 4300020
+    second: Metal_212
+  - first:
+      43: 4300022
+    second: Wood_010
+  - first:
+      43: 4300024
+    second: Metal_214
+  - first:
+      43: 4300026
+    second: Boards_077
+  - first:
+      43: 4300028
+    second: Wood_013
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -92,6 +248,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -115,34 +272,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 10
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -152,14 +324,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
