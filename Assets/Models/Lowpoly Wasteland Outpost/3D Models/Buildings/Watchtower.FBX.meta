@@ -1,91 +1,251 @@
 fileFormatVersion: 2
 guid: 7f96d0cb4f3ff0744a0335ac20f88cd3
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Boards_047
-    100002: Boards_048
-    100004: Boards_049
-    100006: Cloth_012
-    100008: Metal_1
-    100010: Metal_119
-    100012: Metal_122
-    100014: Metal_134
-    100016: Metal_136
-    100018: Metal_138
-    100020: Metal_152
-    100022: //RootNode
-    100024: Wood_1
-    100026: Wood_2
-    100028: Ladder
-    100030: Ladder_1
-    400000: Boards_047
-    400002: Boards_048
-    400004: Boards_049
-    400006: Cloth_012
-    400008: Metal_1
-    400010: Metal_119
-    400012: Metal_122
-    400014: Metal_134
-    400016: Metal_136
-    400018: Metal_138
-    400020: Metal_152
-    400022: //RootNode
-    400024: Wood_1
-    400026: Wood_2
-    400028: Ladder
-    400030: Ladder_1
-    2100000: default
-    2300000: Boards_047
-    2300002: Boards_048
-    2300004: Boards_049
-    2300006: Cloth_012
-    2300008: Metal_1
-    2300010: Metal_119
-    2300012: Metal_122
-    2300014: Metal_134
-    2300016: Metal_136
-    2300018: Metal_138
-    2300020: Metal_152
-    2300022: Wood_1
-    2300024: Wood_2
-    2300026: Ladder
-    2300028: //RootNode
-    2300030: Ladder_1
-    3300000: Boards_047
-    3300002: Boards_048
-    3300004: Boards_049
-    3300006: Cloth_012
-    3300008: Metal_1
-    3300010: Metal_119
-    3300012: Metal_122
-    3300014: Metal_134
-    3300016: Metal_136
-    3300018: Metal_138
-    3300020: Metal_152
-    3300022: Wood_1
-    3300024: Wood_2
-    3300026: Ladder
-    3300028: //RootNode
-    3300030: Ladder_1
-    4300000: Metal_119
-    4300002: Wood_2
-    4300004: Cloth_012
-    4300006: Boards_049
-    4300008: Wood_1
-    4300010: Metal_122
-    4300012: Boards_048
-    4300014: Metal_138
-    4300016: Metal_152
-    4300018: Boards_047
-    4300020: Metal_1
-    4300022: Metal_134
-    4300024: Metal_136
-    4300026: Ladder_1
-    4300028: Ladder
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Boards_047
+  - first:
+      1: 100002
+    second: Boards_048
+  - first:
+      1: 100004
+    second: Boards_049
+  - first:
+      1: 100006
+    second: Cloth_012
+  - first:
+      1: 100008
+    second: Metal_1
+  - first:
+      1: 100010
+    second: Metal_119
+  - first:
+      1: 100012
+    second: Metal_122
+  - first:
+      1: 100014
+    second: Metal_134
+  - first:
+      1: 100016
+    second: Metal_136
+  - first:
+      1: 100018
+    second: Metal_138
+  - first:
+      1: 100020
+    second: Metal_152
+  - first:
+      1: 100022
+    second: //RootNode
+  - first:
+      1: 100024
+    second: Wood_1
+  - first:
+      1: 100026
+    second: Wood_2
+  - first:
+      1: 100028
+    second: Ladder
+  - first:
+      1: 100030
+    second: Ladder_1
+  - first:
+      4: 400000
+    second: Boards_047
+  - first:
+      4: 400002
+    second: Boards_048
+  - first:
+      4: 400004
+    second: Boards_049
+  - first:
+      4: 400006
+    second: Cloth_012
+  - first:
+      4: 400008
+    second: Metal_1
+  - first:
+      4: 400010
+    second: Metal_119
+  - first:
+      4: 400012
+    second: Metal_122
+  - first:
+      4: 400014
+    second: Metal_134
+  - first:
+      4: 400016
+    second: Metal_136
+  - first:
+      4: 400018
+    second: Metal_138
+  - first:
+      4: 400020
+    second: Metal_152
+  - first:
+      4: 400022
+    second: //RootNode
+  - first:
+      4: 400024
+    second: Wood_1
+  - first:
+      4: 400026
+    second: Wood_2
+  - first:
+      4: 400028
+    second: Ladder
+  - first:
+      4: 400030
+    second: Ladder_1
+  - first:
+      21: 2100000
+    second: default
+  - first:
+      23: 2300000
+    second: Boards_047
+  - first:
+      23: 2300002
+    second: Boards_048
+  - first:
+      23: 2300004
+    second: Boards_049
+  - first:
+      23: 2300006
+    second: Cloth_012
+  - first:
+      23: 2300008
+    second: Metal_1
+  - first:
+      23: 2300010
+    second: Metal_119
+  - first:
+      23: 2300012
+    second: Metal_122
+  - first:
+      23: 2300014
+    second: Metal_134
+  - first:
+      23: 2300016
+    second: Metal_136
+  - first:
+      23: 2300018
+    second: Metal_138
+  - first:
+      23: 2300020
+    second: Metal_152
+  - first:
+      23: 2300022
+    second: Wood_1
+  - first:
+      23: 2300024
+    second: Wood_2
+  - first:
+      23: 2300026
+    second: Ladder
+  - first:
+      23: 2300028
+    second: //RootNode
+  - first:
+      23: 2300030
+    second: Ladder_1
+  - first:
+      33: 3300000
+    second: Boards_047
+  - first:
+      33: 3300002
+    second: Boards_048
+  - first:
+      33: 3300004
+    second: Boards_049
+  - first:
+      33: 3300006
+    second: Cloth_012
+  - first:
+      33: 3300008
+    second: Metal_1
+  - first:
+      33: 3300010
+    second: Metal_119
+  - first:
+      33: 3300012
+    second: Metal_122
+  - first:
+      33: 3300014
+    second: Metal_134
+  - first:
+      33: 3300016
+    second: Metal_136
+  - first:
+      33: 3300018
+    second: Metal_138
+  - first:
+      33: 3300020
+    second: Metal_152
+  - first:
+      33: 3300022
+    second: Wood_1
+  - first:
+      33: 3300024
+    second: Wood_2
+  - first:
+      33: 3300026
+    second: Ladder
+  - first:
+      33: 3300028
+    second: //RootNode
+  - first:
+      33: 3300030
+    second: Ladder_1
+  - first:
+      43: 4300000
+    second: Metal_119
+  - first:
+      43: 4300002
+    second: Wood_2
+  - first:
+      43: 4300004
+    second: Cloth_012
+  - first:
+      43: 4300006
+    second: Boards_049
+  - first:
+      43: 4300008
+    second: Wood_1
+  - first:
+      43: 4300010
+    second: Metal_122
+  - first:
+      43: 4300012
+    second: Boards_048
+  - first:
+      43: 4300014
+    second: Metal_138
+  - first:
+      43: 4300016
+    second: Metal_152
+  - first:
+      43: 4300018
+    second: Boards_047
+  - first:
+      43: 4300020
+    second: Metal_1
+  - first:
+      43: 4300022
+    second: Metal_134
+  - first:
+      43: 4300024
+    second: Metal_136
+  - first:
+      43: 4300026
+    second: Ladder_1
+  - first:
+      43: 4300028
+    second: Ladder
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -94,6 +254,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -117,34 +278,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 10
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -154,14 +330,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

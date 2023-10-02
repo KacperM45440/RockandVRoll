@@ -1701,12 +1701,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!95 &743339668 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1893836729167196143, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1719503093}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819168655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,14 +2470,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   leftHandAnimator: {fileID: 1719503103}
-  rightHandAnimator: {fileID: 743339668}
+  rightHandAnimator: {fileID: 0}
   grabbedObject: {fileID: 0}
   usedInteractor: {fileID: 0}
   interactorRefLeft: {fileID: 1719503095}
   interactorRefRight: {fileID: 1719503096}
   physicsRefLeft: {fileID: 1719503097}
   physicsRefRight: {fileID: 1719503094}
-  gripSensitivity: 0.3
+  buttonSensitivity: 0.25
   controllerLeft: {fileID: 1719503098}
   controllerRight: {fileID: 1719503099}
 --- !u!65 &1488628195 stripped
@@ -3109,7 +3103,7 @@ PrefabInstance:
         type: 3}
       propertyPath: handAnimator
       value: 
-      objectReference: {fileID: 743339668}
+      objectReference: {fileID: 0}
     - target: {fileID: 5463713631714702241, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: leftHandAnimator
@@ -3119,7 +3113,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rightHandAnimator
       value: 
-      objectReference: {fileID: 743339668}
+      objectReference: {fileID: 0}
     - target: {fileID: 5688423262833142493, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: handAnimator
@@ -3134,7 +3128,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rightHandAnimator
       value: 
-      objectReference: {fileID: 743339668}
+      objectReference: {fileID: 0}
     - target: {fileID: 5721163330149848893, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_IsActive
@@ -3271,7 +3265,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1719503093}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1748758834}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4863167e74150524197a114e18459d5e, type: 3}
@@ -3307,7 +3301,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1719503093}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1748758835}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4863167e74150524197a114e18459d5e, type: 3}
@@ -3733,6 +3727,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1748758834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1106205611424591161, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1719503093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1748758835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1498690480046709680, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1719503093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1778036804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3870415841718120931, guid: a16155016bd72d044a41c3934356df3e,
@@ -4453,12 +4459,12 @@ PrefabInstance:
         type: 3}
       propertyPath: PhysicalLeftHand
       value: 
-      objectReference: {fileID: 233710180}
+      objectReference: {fileID: 1748758835}
     - target: {fileID: 8632955514803741900, guid: a16155016bd72d044a41c3934356df3e,
         type: 3}
       propertyPath: PhysicalRightHand
       value: 
-      objectReference: {fileID: 2088619257}
+      objectReference: {fileID: 1748758834}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1402395810383124097, guid: a16155016bd72d044a41c3934356df3e, type: 3}
