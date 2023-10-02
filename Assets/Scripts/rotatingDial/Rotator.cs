@@ -126,11 +126,18 @@ public class Rotator : MonoBehaviour
 
     private void RotateDial(float turnDirection)
     {
+        //linkedDial.eulerAngles = new Vector3(
+        //    linkedDial.localEulerAngles.x,
+        //    linkedDial.localEulerAngles.y,
+        //    linkedDial.localEulerAngles.z + (snapRotationAmount * turnDirection)
+        //);
+
         linkedDial.localEulerAngles = new Vector3(
-            linkedDial.localEulerAngles.x,
-            linkedDial.localEulerAngles.y,
+            0,
+            0,
             linkedDial.localEulerAngles.z + (snapRotationAmount * turnDirection)
-        );
+);
+
     }
 
     private void NonDialHandVisible(bool isVisibile, bool isRight) {

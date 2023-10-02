@@ -52,7 +52,7 @@ public class BarrelController : MonoBehaviour
         }
         isReached = currentBarrelValue >= signalThreshold;
         barrelText.text = DisplayMessage(isReached);
-        Debug.Log(currentBarrelValue);
+        //Debug.Log(currentBarrelValue);
     }
 
     public string DisplayMessage(bool isReached) {
