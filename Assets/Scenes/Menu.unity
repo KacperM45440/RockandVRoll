@@ -2798,6 +2798,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: micright
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f9b5062159f99641b903a29c89f68ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4664,7 +4669,6 @@ Transform:
   - {fileID: 1954149511}
   - {fileID: 1043535633}
   - {fileID: 1576036702}
-  - {fileID: 461327519}
   - {fileID: 279543978}
   - {fileID: 946525128}
   - {fileID: 1978132715}
@@ -5735,7 +5739,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 376887209}
+    m_TransformParent: {fileID: 946525128}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
@@ -5745,32 +5749,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.014
+      value: 0.002750491
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.014
+      value: 0.002750491
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.014
+      value: 0.002750491
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.184902
+      value: 0.0039293626
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 357.66425
+      value: 0.08330279
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -216.20343
+      value: -0.00058751233
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
@@ -5780,7 +5784,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.00000015503961
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
@@ -5790,7 +5794,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.000000297835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8ceb3a3cf34d504eb50f6e2d50b1c91,
         type: 3}
@@ -6569,6 +6573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bass Guitar Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171889682695117717, guid: 390dd4e454da57e4786bd17ce2992c1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11661,7 +11670,7 @@ PrefabInstance:
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.1649
+      value: 56.989
       objectReference: {fileID: 0}
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
@@ -11671,27 +11680,27 @@ PrefabInstance:
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -216.20044
+      value: -215.138
       objectReference: {fileID: 0}
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.28418285
       objectReference: {fileID: 0}
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000033577217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.95877016
       objectReference: {fileID: 0}
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
@@ -11701,7 +11710,7 @@ PrefabInstance:
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 146.98
       objectReference: {fileID: 0}
     - target: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
         type: 3}
@@ -11715,7 +11724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6868773247961487687, guid: db755358118574557be020bdb1e3b8de,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 461327519}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db755358118574557be020bdb1e3b8de, type: 3}
 --- !u!4 &946525128 stripped
@@ -16707,6 +16720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gaming Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 7619755910100559835, guid: ce768687e8a64e448aaf2943947d6751,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -17589,6 +17607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drums A
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424284929063792135, guid: 0e33b48dc4b99d44ba9de967ec8acf8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3093721022522619069, guid: 0e33b48dc4b99d44ba9de967ec8acf8e,
         type: 3}
@@ -24873,6 +24896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Electric Guitar Telecaster Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803966401610408321, guid: deff9a39fa15bc7499294181cfcbcb45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6611288778046323515, guid: deff9a39fa15bc7499294181cfcbcb45,
         type: 3}
