@@ -23,6 +23,8 @@ public class GroundDetector : MonoBehaviour
         StartCoroutine(RestartGround());
     }
 
+    // W rzadkich przypadkach i z powodow niewiadomych czasem po skoku nie ustawial sie na nowo ground
+    // Poniewaz nie przewidujemy zadnych dlugich skokow ani spadkow, uznajemy ze jezeli grounded przez 2 sekundy nie zostal ustawiony na true, to powinno to zostac zrobione
     private IEnumerator RestartGround()
     {
         float counter = 0;

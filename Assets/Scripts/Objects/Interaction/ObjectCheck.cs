@@ -11,6 +11,7 @@ public class ObjectCheck : MonoBehaviour
 
     public HandPhysics physicsLeftRef;
     public HandPhysics physicsRightRef;
+
     public void CheckHand()
     {
         if (directLeftRef.isSelectActive)

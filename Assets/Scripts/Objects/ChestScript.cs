@@ -19,6 +19,7 @@ public class ChestScript : MonoBehaviour
         StartCoroutine(DisableKey());
         chestAnimator.SetTrigger("OpenLid");
     }
+    // Po otworzeniu skrzyni, wylaczamy mozliwosc podniesienia klucza, poniewaz zakladamy, ze jeden klucz jest do jednego zamka
     IEnumerator DisableKey()
     {
         yield return new WaitForSeconds(0.1f);

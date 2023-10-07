@@ -11,6 +11,9 @@ public class SkeletonScript : MonoBehaviour
         StartCoroutine(Lean());
     }
 
+    // Wydarzenie na potrzeby traileru
+    // Uzyj niewidzialnych kostek do wypchniecia szkieleta z szafy, tak aby zaczal upadac w strone gracza
+    // Przy naprawionych drzwiach szkielet powinien wypadac sam po otworzeniu drzwi, korzystajac jedynie z fizyki w grze
     private IEnumerator Lean()
     {
         yield return new WaitForSeconds(1.5f);

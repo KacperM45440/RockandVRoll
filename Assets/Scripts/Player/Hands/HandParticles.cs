@@ -21,7 +21,7 @@ public class HandParticles : MonoBehaviour
     public XRDirectInteractor directInteractorRef;
 
     
-    // W ten sposób da siê sprawdzaæ eventy bez wciskania guzików do update'u
+    // W ten sposob da sie sprawdzac eventy bez wciskania guzików do update'u
     // RemotePickupBehaviour.cs - CheckForInput()
     private void OnEnable()
     {
@@ -45,7 +45,7 @@ public class HandParticles : MonoBehaviour
         return direction;
     }
 
-    // Poniewa¿ smugi docieraj¹ wolniej ni¿ da siê podnieœæ obiekt, w przypadku trafienia w niego nie wystrzeliwujemy niczego
+    // Poniewaz smugi docieraja wolniej niz da sie podniesc obiekt, w przypadku trafienia w niego nie wystrzeliwujemy niczego
     // Zamiast smug zrobi siê osobny efekt podnoszenia, oparty na œwietle lub outline'ach
     private IEnumerator ShootLogic()
     {
@@ -59,7 +59,7 @@ public class HandParticles : MonoBehaviour
         //trailSystem.Play();
         Vector3 direction = GetDirection();
 
-        // SprawdŸ, czy cokolwiek zosta³o trafione przez raycast; w przypadku strzelenia "w powietrze" nie rób niczego
+        // Sprawdz, czy cokolwiek zosta³o trafione przez raycast; w przypadku strzelenia "w powietrze" nie rób niczego
         if (Physics.Raycast(tracerSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, maskRef))
         {
             TrailRenderer trail = Instantiate(tracerTrail, tracerSpawnPoint.position, Quaternion.identity);

@@ -21,6 +21,17 @@ public class HandPhysics : MonoBehaviour
 
     private void Update()
     {
+        DisplayGhostHand();
+    }
+
+    void FixedUpdate()
+    {
+        FollowGhostHand();
+    }
+
+    // Jezeli pozycja kontrolera bedzie roznic sie zbyt bardzo od obecnej pozycji fizycznych dloni, pokaz przezroczyste dlonie w jego obecnej pozycji
+    public void DisplayGhostHand()
+    {
         float distance = Vector3.Distance(transform.position, target.position);
 
         if (distance > handDistance)
@@ -35,7 +46,8 @@ public class HandPhysics : MonoBehaviour
         transform.rotation = target.rotation;
     }
 
-    void FixedUpdate()
+    // Kaz fizycznym dloniom podazac za obecna pozycja kontrolera
+    public void FollowGhostHand()
     {
         Vector3 targetPosition = target.position;
         Vector3 currentPosition = transform.position;
@@ -43,12 +55,12 @@ public class HandPhysics : MonoBehaviour
         Vector3 newPosition = Vector3.Lerp(currentPosition, targetPosition, smoothSpeed * Time.fixedDeltaTime);
         bodyRef.velocity = 120 * (newPosition - currentPosition) / Time.fixedDeltaTime;
     }
-
     public void Delay(float time)
     {
         Invoke(nameof(EnableColliders), time);
     }    
 
+    // Wlacz lub wylacz collidery w fizycznej rece
     public void EnableColliders()
     {
         foreach (Collider colliderChild in handColliders)

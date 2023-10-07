@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+// Ten skrypt odpowiedzialny jest za wywo³ywanie wibracji w kontrolerze
 [System.Serializable]
 public class Haptic
 {

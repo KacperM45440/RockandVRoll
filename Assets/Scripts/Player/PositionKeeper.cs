@@ -29,6 +29,10 @@ public class PositionKeeper : MonoBehaviour
         StartCoroutine(CheckRotation());
     }
 
+    // Kiedy gracz obraca kamere, zmienia swoje wzgledne polozenie w swiecie ktore nie pokrywa sie z jego colliderem
+    // Jest przez to w stanie o wiele latwiej wchodzic w obiekty (np: stoly) oraz clipowac przez sciane
+    // Aby zredukowac czestotliwosc wystepowania tego problemu, przesuwamy collider gracza z powrotem do obecnej pozycji glowy gdy konczy obrot
+    // Za zakonczenie obrotu uznajemy sytuacje, w ktorej w krotkim odstepnie czasu nie zauwazamy zmiany w rotacji rigidbody; zbieranie inputu prosto z galki nie dzialalo zbyt dobrze
     private IEnumerator CheckRotation()
     {
         float x = rigidbodyRef.transform.rotation.y;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+// Caly ten skrypt jak sie okazalo mozna wlasciwie zastapic przez Socket Interactor, o ktorym wtedy nie wiedzialem
 public class PlaceableArea : MonoBehaviour
 {
     public Vector3 areaPosition;
