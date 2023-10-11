@@ -7,8 +7,8 @@ public class TapScript : MonoBehaviour
     private bool mugPlaced;
     public GameObject drinkCapsule;
     public Animator drinkAnimator;
-    //public GameObject rightHand;
-    //public GameObject leftHand;
+
+    // Informacja o zmianie stanu kufla przypisana jest w inspektorze jako event
     public void MugPlaced()
     {
         mugPlaced = true;
@@ -19,18 +19,9 @@ public class TapScript : MonoBehaviour
         mugPlaced = false;
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.name.Equals(rightHand.name) || other.name.Equals(leftHand.name))
-    //    {
-    //        SwitchFlicked();
-    //    }
-    //}
-
-    //todo: postawiæ na kraniku pstryczek zeby to dzialalo
+    // Gdy kufel jest polozony, oraz przekrecony zostanie kurek, wypelnij kufel napojem
     public void SwitchFlicked()
     {
-        Debug.Log("flicked");
         if (!mugPlaced)
         {
             return;
@@ -39,6 +30,9 @@ public class TapScript : MonoBehaviour
         PourDrink();
     }
 
+    // Wypelnienie kufla zrobione jest jako prosta animacja pojawiajacej sie kapsuly w kuflu
+    // "Ciecz" nie posiada zadnej fizyki ani elementow sfx, jest pustym obiektem bez kolizji
+    // W przyszlosci mozna dorobic funkcje odpowiedzialna za wylewanie napoju po obroceniu kuflem o 180 stopni
     private void PourDrink()
     {
         if (drinkCapsule.activeSelf.Equals(true))

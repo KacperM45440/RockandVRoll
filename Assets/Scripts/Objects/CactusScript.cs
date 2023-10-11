@@ -13,6 +13,7 @@ public class CactusScript : MonoBehaviour
     public Transform rightHaptic;
     private void OnCollisionEnter(Collision collision)
     {
+        // Poniewaz collidery sa poniekad traktowane jako jednosc, nalezy doprecyzowac ze chodzi nam stricte o collidery kaktusa, a nie np doniczki
         if(!cactusCollider.bounds.Intersects(collision.collider.bounds))
         {
             return;

@@ -10,7 +10,6 @@ public class AutoScaler : MonoBehaviour
     [SerializeField] private List<Transform> rescaleList = new List<Transform>();
     [SerializeField] private Transform rightHandChild;
     [SerializeField] private GameObject rightHandGameObj;
-    private bool addRightOnce = false;
 
     private void FindChild() {
         rightHandChild = rightHandGameObj.transform.Find("[RightHand] Attach");
