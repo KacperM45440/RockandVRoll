@@ -8,11 +8,7 @@ public class MusicNSFXController : MonoBehaviour
 {
     [SerializeField] private AudioMixer musicNSFX;
 
-    private float minValue = 0.0001f;
-    private float maxValue = 1f;
-    private float currSoundValue = 0.1f;
-    private float currMusicValue = 0.1f;
-    public float changeSignificancy = 0.005f;
+    public MusicDataSO dataRef;
     public Rotator sfxDial;
     public Rotator musicDial;
     public TextMeshPro sfxText;
@@ -20,8 +16,8 @@ public class MusicNSFXController : MonoBehaviour
 
     private void Start()
     {
-        sfxText.text = ((int)(currSoundValue * 100)).ToString();
-        musicText.text = ((int)(currMusicValue * 100)).ToString();
+        sfxText.text = ((int)(dataRef.currSoundValue * 100)).ToString();
+        musicText.text = ((int)(dataRef.currMusicValue * 100)).ToString();
     }
 
     private void OnEnable()
@@ -41,38 +37,38 @@ public class MusicNSFXController : MonoBehaviour
     }
     public void ChangeSFXMixerValue(float direction)
     {
-        float valueDestination = currSoundValue + (changeSignificancy * direction);
-        if (valueDestination > maxValue)
+        float valueDestination = dataRef.currSoundValue + (dataRef.changeSignificancy * direction);
+        if (valueDestination > dataRef.maxValue)
         {
-            currSoundValue = maxValue;
+            dataRef.currSoundValue = dataRef.maxValue;
         }
-        else if (valueDestination < minValue)
+        else if (valueDestination < dataRef.minValue)
         {
-            currSoundValue = minValue;
+            dataRef.currSoundValue = dataRef.minValue;
         }
         else
         {
-            currSoundValue += (changeSignificancy * direction);
+            dataRef.currSoundValue += (dataRef.changeSignificancy * direction);
         }
-        SetVolume(currSoundValue, "SoundParam");
-        sfxText.text = ((int) (currSoundValue * 100)).ToString();
+        SetVolume(dataRef.currSoundValue, "SoundParam");
+        sfxText.text = ((int) (dataRef.currSoundValue * 100)).ToString();
     }
     public void ChangeMusicMixerValue(float direction)
     {
-        float valueDestination = currMusicValue + (changeSignificancy * direction);
-        if (valueDestination > maxValue)
+        float valueDestination = dataRef.currMusicValue + (dataRef.changeSignificancy * direction);
+        if (valueDestination > dataRef.maxValue)
         {
-            currMusicValue = maxValue;
+            dataRef.currMusicValue = dataRef.maxValue;
         }
-        else if (valueDestination < minValue)
+        else if (valueDestination < dataRef.minValue)
         {
-            currMusicValue = minValue;
+            dataRef.currMusicValue = dataRef.minValue;
         }
         else
         {
-            currMusicValue += (changeSignificancy * direction);
+            dataRef.currMusicValue += (dataRef.changeSignificancy * direction);
         }
-        SetVolume(currMusicValue, "MusicParam");
-        musicText.text = ((int) (currMusicValue * 100)).ToString();
+        SetVolume(dataRef.currMusicValue, "MusicParam");
+        musicText.text = ((int) (dataRef.currMusicValue * 100)).ToString();
     }
 }
