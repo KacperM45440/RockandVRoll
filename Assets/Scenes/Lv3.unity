@@ -753,10 +753,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 81692707}
-    - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 81692714}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6b76bb998f5844a95b30eb9d3906f5, type: 3}
 --- !u!4 &81692705 stripped
@@ -771,26 +767,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 81692704}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &81692707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81692706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &81692708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,7 +889,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -982,10 +958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &81692712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,10 +2480,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 183827622}
-    - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 183827629}
   m_SourcePrefab: {fileID: 100100000, guid: d39f93b690cd141438693aee493af004, type: 3}
 --- !u!4 &183827620 stripped
@@ -2526,26 +2494,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 183827619}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &183827622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183827621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &183827623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,7 +2616,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -2737,10 +2685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &183827627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3858,10 +3802,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 248735752}
-    - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 248735759}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6b76bb998f5844a95b30eb9d3906f5, type: 3}
 --- !u!4 &248735750 stripped
@@ -3876,26 +3816,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 248735749}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &248735752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248735751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &248735753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4018,7 +3938,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -4087,10 +4007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &248735757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4727,10 +4643,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1713191769081530, guid: b53e8ee30595782449107bc31f9ebf71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 296733718}
-    - targetCorrespondingSourceObject: {fileID: 1713191769081530, guid: b53e8ee30595782449107bc31f9ebf71,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 296733725}
   m_SourcePrefab: {fileID: 100100000, guid: b53e8ee30595782449107bc31f9ebf71, type: 3}
 --- !u!4 &296733716 stripped
@@ -4745,26 +4657,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 296733715}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &296733718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296733717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &296733719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4887,7 +4779,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -4956,10 +4848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &296733723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5547,10 +5435,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 318107858}
-    - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 318107865}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6b76bb998f5844a95b30eb9d3906f5, type: 3}
 --- !u!4 &318107856 stripped
@@ -5565,26 +5449,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 318107855}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &318107858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318107857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &318107859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5707,7 +5571,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -5776,10 +5640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &318107863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6530,10 +6390,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1713191769081530, guid: b53e8ee30595782449107bc31f9ebf71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 350971355}
-    - targetCorrespondingSourceObject: {fileID: 1713191769081530, guid: b53e8ee30595782449107bc31f9ebf71,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 350971362}
   m_SourcePrefab: {fileID: 100100000, guid: b53e8ee30595782449107bc31f9ebf71, type: 3}
 --- !u!4 &350971353 stripped
@@ -6548,26 +6404,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 350971352}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &350971355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350971354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &350971356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6690,7 +6526,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -6759,10 +6595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &350971360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7668,10 +7500,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 426304423}
-    - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 426304430}
   m_SourcePrefab: {fileID: 100100000, guid: d39f93b690cd141438693aee493af004, type: 3}
 --- !u!4 &426304421 stripped
@@ -7686,26 +7514,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 426304420}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &426304423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426304422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &426304424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7828,7 +7636,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -7897,10 +7705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &426304428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8303,10 +8107,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 457473001}
-    - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 457473008}
   m_SourcePrefab: {fileID: 100100000, guid: d39f93b690cd141438693aee493af004, type: 3}
 --- !u!4 &457472999 stripped
@@ -8321,26 +8121,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 457472998}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &457473001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457473000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &457473002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8463,7 +8243,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -8532,10 +8312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &457473006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9891,10 +9667,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 571965435}
-    - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 571965442}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6b76bb998f5844a95b30eb9d3906f5, type: 3}
 --- !u!4 &571965433 stripped
@@ -9909,26 +9681,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 571965432}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &571965435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571965434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &571965436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10051,7 +9803,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -10120,10 +9872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &571965440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10946,10 +10694,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 660018829}
-    - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 660018836}
   m_SourcePrefab: {fileID: 100100000, guid: d39f93b690cd141438693aee493af004, type: 3}
 --- !u!4 &660018827 stripped
@@ -10964,26 +10708,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 660018826}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &660018829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660018828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &660018830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11106,7 +10830,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -11175,10 +10899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &660018834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11517,10 +11237,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 683316829}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 683316836}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &683316827 stripped
@@ -11535,26 +11251,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 683316826}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &683316829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683316828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &683316830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11677,7 +11373,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -11746,10 +11442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &683316834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15846,10 +15538,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 718677307}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 718677314}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &718677305 stripped
@@ -15864,26 +15552,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 718677304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &718677307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718677306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &718677308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16006,7 +15674,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -16075,10 +15743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &718677312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18720,6 +18384,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64980008685148014, guid: bbd56abe3fafc0e42a0654dc47b178f6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18805,6 +18474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4237579260531826, guid: bbd56abe3fafc0e42a0654dc47b178f6, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64980008685148014, guid: bbd56abe3fafc0e42a0654dc47b178f6,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -19163,10 +18837,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1039711597}
-    - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1039711604}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6b76bb998f5844a95b30eb9d3906f5, type: 3}
 --- !u!4 &1039711595 stripped
@@ -19181,26 +18851,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1039711594}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1039711597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039711596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1039711598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19323,7 +18973,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -19392,10 +19042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1039711602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20677,10 +20323,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1044529022452778, guid: b7a83a2fee104e4448badb8ba03f9e33,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1134977759}
-    - targetCorrespondingSourceObject: {fileID: 1044529022452778, guid: b7a83a2fee104e4448badb8ba03f9e33,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1134977766}
     - targetCorrespondingSourceObject: {fileID: 1044529022452778, guid: b7a83a2fee104e4448badb8ba03f9e33,
         type: 3}
@@ -20699,26 +20341,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1134977756}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1134977759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134977758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1134977760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20841,7 +20463,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -20910,10 +20532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1134977764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21419,6 +21037,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1168553290}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1170257287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1170257288}
+  - component: {fileID: 1170257289}
+  m_Layer: 0
+  m_Name: floorCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1170257288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170257287}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 123.37, y: 14.67, z: 547.72}
+  m_LocalScale: {x: 24.78, y: 0.1, z: 9.61}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1362948093}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1170257289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170257287}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2753156, y: 1, z: 3.1820855}
+  m_Center: {x: 0.0014628393, y: 0, z: 0.6710509}
 --- !u!1001 &1175601076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21870,10 +21541,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1184335623}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1184335630}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &1184335621 stripped
@@ -21888,26 +21555,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1184335620}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1184335623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184335622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1184335624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22030,7 +21677,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -22099,10 +21746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1184335628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22602,10 +22245,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1199056335}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1199056342}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &1199056333 stripped
@@ -22620,26 +22259,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1199056332}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1199056335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199056334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1199056336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22762,7 +22381,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -22831,10 +22450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1199056340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23153,10 +22768,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1210903477}
-    - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1210903484}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6b76bb998f5844a95b30eb9d3906f5, type: 3}
 --- !u!4 &1210903475 stripped
@@ -23171,26 +22782,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1210903474}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1210903477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210903476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1210903478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23313,7 +22904,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -23382,10 +22973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1210903482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23673,10 +23260,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1421481951395180, guid: 2dea397dc76e9d94eaa0356a8dd10b4c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1248396148}
-    - targetCorrespondingSourceObject: {fileID: 1421481951395180, guid: 2dea397dc76e9d94eaa0356a8dd10b4c,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1248396155}
     - targetCorrespondingSourceObject: {fileID: 1421481951395180, guid: 2dea397dc76e9d94eaa0356a8dd10b4c,
         type: 3}
@@ -23695,26 +23278,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1248396145}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1248396148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248396147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1248396149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23837,7 +23400,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -23906,10 +23469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1248396153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24628,6 +24187,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64869138666728922, guid: f914a98e4e016e0408541378a4d9b480,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24880,10 +24444,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1713191769081530, guid: b53e8ee30595782449107bc31f9ebf71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1347511002}
-    - targetCorrespondingSourceObject: {fileID: 1713191769081530, guid: b53e8ee30595782449107bc31f9ebf71,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1347511009}
   m_SourcePrefab: {fileID: 100100000, guid: b53e8ee30595782449107bc31f9ebf71, type: 3}
 --- !u!4 &1347511000 stripped
@@ -24898,26 +24458,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1347510999}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1347511002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347511001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1347511003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25040,7 +24580,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -25109,10 +24649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1347511007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25326,6 +24862,7 @@ Transform:
   - {fileID: 1459160729}
   - {fileID: 1000041339}
   - {fileID: 1001996421}
+  - {fileID: 1170257288}
   - {fileID: 1407270322}
   - {fileID: 1336165749}
   - {fileID: 569680148}
@@ -26113,6 +25650,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64869138666728922, guid: f914a98e4e016e0408541378a4d9b480,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26650,10 +26192,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1044529022452778, guid: b7a83a2fee104e4448badb8ba03f9e33,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1445321646}
-    - targetCorrespondingSourceObject: {fileID: 1044529022452778, guid: b7a83a2fee104e4448badb8ba03f9e33,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1445321653}
     - targetCorrespondingSourceObject: {fileID: 1044529022452778, guid: b7a83a2fee104e4448badb8ba03f9e33,
         type: 3}
@@ -26672,26 +26210,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1445321643}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1445321646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445321645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1445321647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26814,7 +26332,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -26883,10 +26401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1445321651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27066,10 +26580,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1449014311}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1449014318}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &1449014309 stripped
@@ -27084,26 +26594,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1449014308}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1449014311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449014310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1449014312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27226,7 +26716,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -27295,10 +26785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1449014316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27527,6 +27013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708943849079860, guid: f914a98e4e016e0408541378a4d9b480, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64869138666728922, guid: f914a98e4e016e0408541378a4d9b480,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -27912,10 +27403,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1421481951395180, guid: 2dea397dc76e9d94eaa0356a8dd10b4c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1489134364}
-    - targetCorrespondingSourceObject: {fileID: 1421481951395180, guid: 2dea397dc76e9d94eaa0356a8dd10b4c,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1489134371}
     - targetCorrespondingSourceObject: {fileID: 1421481951395180, guid: 2dea397dc76e9d94eaa0356a8dd10b4c,
         type: 3}
@@ -27934,26 +27421,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1489134361}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1489134364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489134363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1489134365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28076,7 +27543,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -28145,10 +27612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1489134369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28571,10 +28034,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1498878988}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1498878995}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &1498878986 stripped
@@ -28589,26 +28048,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1498878985}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1498878988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498878987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1498878989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28731,7 +28170,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -28800,10 +28239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1498878993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29455,10 +28890,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1039085289571474, guid: dc841b7fb5d391149b01d84dee71fa1d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1520947213}
-    - targetCorrespondingSourceObject: {fileID: 1039085289571474, guid: dc841b7fb5d391149b01d84dee71fa1d,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1520947220}
     - targetCorrespondingSourceObject: {fileID: 1039085289571474, guid: dc841b7fb5d391149b01d84dee71fa1d,
         type: 3}
@@ -29477,26 +28908,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1520947210}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1520947213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520947212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1520947214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29619,7 +29030,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -29688,10 +29099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1520947218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30754,10 +30161,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1598809948}
-    - targetCorrespondingSourceObject: {fileID: 1544643151556652, guid: 5f6b76bb998f5844a95b30eb9d3906f5,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1598809955}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6b76bb998f5844a95b30eb9d3906f5, type: 3}
 --- !u!4 &1598809946 stripped
@@ -30772,26 +30175,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1598809945}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1598809948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598809947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1598809949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30914,7 +30297,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -30983,10 +30366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1598809953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31682,10 +31061,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1652708487}
-    - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1652708494}
   m_SourcePrefab: {fileID: 100100000, guid: d39f93b690cd141438693aee493af004, type: 3}
 --- !u!4 &1652708485 stripped
@@ -31700,26 +31075,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1652708484}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1652708487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652708486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1652708488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31842,7 +31197,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -31911,10 +31266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1652708492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34225,10 +33576,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1798012713}
-    - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1798012720}
   m_SourcePrefab: {fileID: 100100000, guid: d39f93b690cd141438693aee493af004, type: 3}
 --- !u!4 &1798012711 stripped
@@ -34243,26 +33590,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1798012710}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1798012713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798012712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1798012714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34385,7 +33712,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -34454,10 +33781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1798012718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36964,10 +36287,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1926419056}
-    - targetCorrespondingSourceObject: {fileID: 1539456834428130, guid: d39f93b690cd141438693aee493af004,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1926419063}
   m_SourcePrefab: {fileID: 100100000, guid: d39f93b690cd141438693aee493af004, type: 3}
 --- !u!4 &1926419054 stripped
@@ -36982,26 +36301,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1926419053}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1926419056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926419055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &1926419057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37124,7 +36423,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -37193,10 +36492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &1926419061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38824,10 +38119,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2043589283}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2043589290}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &2043589281 stripped
@@ -38842,26 +38133,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2043589280}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2043589283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043589282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &2043589284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38984,7 +38255,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -39053,10 +38324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &2043589288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39306,10 +38573,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2052251644}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2052251651}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &2052251642 stripped
@@ -39324,26 +38587,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2052251641}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2052251644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052251643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &2052251645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39466,7 +38709,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -39535,10 +38778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &2052251649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41148,10 +40387,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2122659112}
-    - targetCorrespondingSourceObject: {fileID: 1285935677596908, guid: e3b00f5dec202ab498ff0b1591144143,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2122659119}
   m_SourcePrefab: {fileID: 100100000, guid: e3b00f5dec202ab498ff0b1591144143, type: 3}
 --- !u!4 &2122659110 stripped
@@ -41166,26 +40401,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2122659109}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2122659112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122659111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &2122659113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41308,7 +40523,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -41377,10 +40592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &2122659117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41561,10 +40772,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1039085289571474, guid: dc841b7fb5d391149b01d84dee71fa1d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2129170930}
-    - targetCorrespondingSourceObject: {fileID: 1039085289571474, guid: dc841b7fb5d391149b01d84dee71fa1d,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2129170937}
     - targetCorrespondingSourceObject: {fileID: 1039085289571474, guid: dc841b7fb5d391149b01d84dee71fa1d,
         type: 3}
@@ -41583,26 +40790,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2129170927}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2129170930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129170929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directLeftRef: {fileID: 0}
-  directRightRef: {fileID: 0}
-  physicsLeftRef: {fileID: 0}
-  physicsRightRef: {fileID: 0}
-  physicsLeftHand: {fileID: 0}
-  physicsRightHand: {fileID: 0}
-  handParentLeft: {fileID: 0}
-  handParentRight: {fileID: 0}
 --- !u!114 &2129170931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41725,7 +40912,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -41794,10 +40981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60616c33d8135c4dab2213db62b94fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup1: {fileID: 0}
-  pickup2: {fileID: 0}
-  pickup3: {fileID: 0}
-  sourceRef: {fileID: 0}
 --- !u!114 &2129170935
 MonoBehaviour:
   m_ObjectHideFlags: 0

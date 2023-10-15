@@ -1015,7 +1015,7 @@ Transform:
   - {fileID: 2526157262331537052}
   - {fileID: 2323478994399387895}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4678346686545499710
 MonoBehaviour:
@@ -1837,9 +1837,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CameraFloorOffsetObject: {fileID: 8036051766704100390}
-  m_RequestedTrackingMode: 2
+  m_RequestedTrackingMode: 0
   m_TrackingOriginMode: 2
-  m_TrackingSpace: 1
+  m_TrackingSpace: 0
   m_CameraYOffset: 0
 --- !u!1 &8604661814102241192
 GameObject:
@@ -3260,7 +3260,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8765158598420138900, guid: 409b103cf1066fe45a7c38d91b9e1eea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4297861288958355064}
   m_SourcePrefab: {fileID: 100100000, guid: 409b103cf1066fe45a7c38d91b9e1eea, type: 3}
 --- !u!4 &2323478994399387895 stripped
 Transform:
@@ -3292,6 +3296,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd45a0ad8c80d8f409ba400cc2745391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8486304744319398138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8765158598420138900, guid: 409b103cf1066fe45a7c38d91b9e1eea,
+    type: 3}
+  m_PrefabInstance: {fileID: 892117887363693422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4297861288958355064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486304744319398138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f60d48d16e0ef64db7b8a8a4fc3a076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directLeftRef: {fileID: 3755609666434393961}
+  directRightRef: {fileID: 5883538346087228902}
+  physicsLeftRef: {fileID: 9105956821005714308}
+  physicsRightRef: {fileID: 3938813958734424138}
+  physicsLeftHand: {fileID: 4689407396328987910}
+  physicsRightHand: {fileID: 5944440235912310917}
+  handParentLeft: {fileID: 4918354748731414460}
+  handParentRight: {fileID: 3284507296418566383}
 --- !u!1001 &5077136820973412353
 PrefabInstance:
   m_ObjectHideFlags: 0
