@@ -16,8 +16,8 @@ public class MusicNSFXController : MonoBehaviour
 
     private void Start()
     {
-        sfxText.text = ((int)(dataRef.currSoundValue * 100)).ToString();
-        musicText.text = ((int)(dataRef.currMusicValue * 100)).ToString();
+        sfxText.text = ((int)(dataRef.currSoundValue * 10)).ToString();
+        musicText.text = ((int)(dataRef.currMusicValue * 10)).ToString();
     }
 
     private void OnEnable()
@@ -30,6 +30,24 @@ public class MusicNSFXController : MonoBehaviour
     {
         sfxDial.onDialChange.RemoveListener(ChangeSFXMixerValue);
         musicDial.onDialChange.RemoveListener(ChangeMusicMixerValue);
+    }
+    private void Update()
+    {
+        // funkcja do debugu, mozna skasowac 
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.Log("less");
+            dataRef.currSoundValue -= 0.1f;
+            SetVolume(dataRef.currSoundValue, "SoundParam");
+            sfxText.text = ((int)(dataRef.currSoundValue * 10)).ToString();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("more");
+            dataRef.currSoundValue += 0.1f;
+            SetVolume(dataRef.currSoundValue, "SoundParam");
+            sfxText.text = ((int)(dataRef.currSoundValue * 10)).ToString();
+        }
     }
     public void SetVolume(float dialvalue, string param)
     {
@@ -51,7 +69,7 @@ public class MusicNSFXController : MonoBehaviour
             dataRef.currSoundValue += (dataRef.changeSignificancy * direction);
         }
         SetVolume(dataRef.currSoundValue, "SoundParam");
-        sfxText.text = ((int) (dataRef.currSoundValue * 100)).ToString();
+        sfxText.text = ((int) (dataRef.currSoundValue * 10)).ToString();
     }
     public void ChangeMusicMixerValue(float direction)
     {
@@ -69,6 +87,6 @@ public class MusicNSFXController : MonoBehaviour
             dataRef.currMusicValue += (dataRef.changeSignificancy * direction);
         }
         SetVolume(dataRef.currMusicValue, "MusicParam");
-        musicText.text = ((int) (dataRef.currMusicValue * 100)).ToString();
+        musicText.text = ((int) (dataRef.currMusicValue * 10)).ToString();
     }
 }

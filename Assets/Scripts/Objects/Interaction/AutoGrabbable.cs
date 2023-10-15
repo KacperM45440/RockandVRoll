@@ -3,10 +3,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(ObjectCheck))]
-[RequireComponent(typeof(ObjectSounds))]
+//[RequireComponent(typeof(ObjectSounds))]
 [RequireComponent(typeof(RotationKeeper))]
 [RequireComponent(typeof(XRGrabInteractable))]
-[RequireComponent(typeof(ObjectSounds))]
+
 //zmienianie wartwy na grabbable wszystkim: parentowi zmienic na grabbable a on sie spyta, czy children tez
 
 public class AutoGrabbable : MonoBehaviour

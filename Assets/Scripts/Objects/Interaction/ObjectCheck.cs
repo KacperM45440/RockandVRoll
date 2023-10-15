@@ -7,10 +7,13 @@ public class ObjectCheck : MonoBehaviour
 {
     public XRDirectInteractor directLeftRef;
     public XRDirectInteractor directRightRef;
-    private XRDirectInteractor lastInteractor = null;
 
     public HandPhysics physicsLeftRef;
     public HandPhysics physicsRightRef;
+
+    public ObjectSoundsSO objectSoundsRef;
+    private bool canPlaySound = false;
+    private XRDirectInteractor lastInteractor = null;
 
     public void CheckHand()
     {
@@ -49,4 +52,17 @@ public class ObjectCheck : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (canPlaySound)
+        {
+            canPlaySound = false;
+            objectSoundsRef.PickedUp(GetComponent<AudioSource>());
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        canPlaySound = true;
+    }
 }
