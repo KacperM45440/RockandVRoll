@@ -6,6 +6,7 @@ using UnityEngine.XR.Management;
 using UnityEngine.XR.Interaction.Toolkit;
 using System;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class RemotePickupBehaviour : XRBaseInteractor
 {
@@ -29,6 +30,10 @@ public class RemotePickupBehaviour : XRBaseInteractor
     public XRRayInteractor interactorRefRight;
     public HandPhysics physicsRefLeft;
     public HandPhysics physicsRefRight;
+    [SerializeField] private InputAction leftGripInput;
+    [SerializeField] private InputAction rightGripInput;
+    [SerializeField] private InputAction leftTriggerInput;
+    [SerializeField] private InputAction rightTriggerInput;
     [SerializeField] private float buttonSensitivity = 0.25f;
 
     public GameObject controllerLeft;
@@ -48,6 +53,25 @@ public class RemotePickupBehaviour : XRBaseInteractor
             _instance = this;
         }
     }
+
+    private void OnEnable()
+    {
+        // Enable the action when the script is enabled
+        leftGripInput.Enable();
+        rightGripInput.Enable();
+        leftTriggerInput.Enable();
+        rightTriggerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        // Disable the action when the script is disabled
+        leftGripInput.Disable();
+        rightGripInput.Disable();
+        leftTriggerInput.Disable();
+        rightTriggerInput.Disable();
+    }
+
     public void Update()
     {
         CheckForInput();
@@ -145,10 +169,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
     // Oznacza to rowniez koniecznosc drobnej poprawki przy logice animacji
     public void CheckForInput()
     {
-        gripPressedRight = Input.GetAxis("XRI_Right_Grip") > buttonSensitivity;
-        gripPressedLeft = Input.GetAxis("XRI_Left_Grip") > buttonSensitivity;
-        triggerPressedRight = Input.GetAxis("XRI_Right_Trigger") > buttonSensitivity;
-        triggerPressedLeft = Input.GetAxis("XRI_Left_Trigger") > buttonSensitivity;
+        gripPressedRight = rightGripInput.ReadValue<float>() > buttonSensitivity;
+        gripPressedLeft = leftGripInput.ReadValue<float>() > buttonSensitivity;
+        triggerPressedRight = rightTriggerInput.ReadValue<float>() > buttonSensitivity;
+        triggerPressedLeft = leftTriggerInput.ReadValue<float>() > buttonSensitivity;
+
+        Debug.Log(leftTriggerInput.ReadValue<float>());
 
         AnimationLogic();
 
@@ -170,15 +196,15 @@ public class RemotePickupBehaviour : XRBaseInteractor
 
     public void AnimationLogic()
     {
-        rightHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Right_Grip"));
-        leftHandAnimator.SetFloat("grabRemote", Input.GetAxis("XRI_Left_Grip"));
-        rightHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Right_Trigger"));
-        leftHandAnimator.SetFloat("grabDirect", Input.GetAxis("XRI_Left_Trigger"));
+        rightHandAnimator.SetFloat("grabRemote", rightGripInput.ReadValue<float>());
+        leftHandAnimator.SetFloat("grabRemote", leftGripInput.ReadValue<float>());
+        rightHandAnimator.SetFloat("grabDirect", rightTriggerInput.ReadValue<float>());
+        leftHandAnimator.SetFloat("grabDirect", leftTriggerInput.ReadValue<float>());
 
         if (gripPressedRight && interactorRefRight.hasSelection)
         {
             rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
-            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Right_Grip"), Time.deltaTime * 4f));
+            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), rightGripInput.ReadValue<float>(), Time.deltaTime * 4f));
         }
         else
         {
@@ -189,7 +215,7 @@ public class RemotePickupBehaviour : XRBaseInteractor
         if (gripPressedLeft && interactorRefLeft.hasSelection)
         {
             leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
-            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), Input.GetAxis("XRI_Left_Grip"), Time.deltaTime * 4f));
+            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), leftGripInput.ReadValue<float>(), Time.deltaTime * 4f));
         }
         else
         {
