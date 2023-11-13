@@ -3,11 +3,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(ObjectCheck))]
-[RequireComponent(typeof(ObjectSounds))]
+//[RequireComponent(typeof(ObjectSounds))]
 [RequireComponent(typeof(RotationKeeper))]
 [RequireComponent(typeof(XRGrabInteractable))]
-[RequireComponent(typeof(ObjectSounds))]
-//zmienianie wartwy na grabbable wszystkim: parentowi zmienic na grabbable a on sie spyta, czy children tez
+
+//zmienianie wartwy na grabbable wszystkim: parentowi zmienic na grabbable a on sie spyta, czy children tez; poza tym Movement Type - Velocity Tracking
 
 public class AutoGrabbable : MonoBehaviour
 {
@@ -15,18 +15,23 @@ public class AutoGrabbable : MonoBehaviour
     void Start()
     {
         ObjectCheck objectCheckReference = GetComponent<ObjectCheck>();
-        objectCheckReference.directLeftRef ??= ObjectsReferenceManager.instance.directLeftRef;
-        objectCheckReference.directRightRef ??= ObjectsReferenceManager.instance.directRightRef;
+        objectCheckReference.directLeftRef = ObjectsReferenceManager.instance.directLeftRef;
+        objectCheckReference.directRightRef = ObjectsReferenceManager.instance.directRightRef;
 
-        objectCheckReference.physicsLeftRef ??= ObjectsReferenceManager.instance.physicsLeftRef;
-        objectCheckReference.physicsRightRef ??= ObjectsReferenceManager.instance.physicsRightRef;
+        objectCheckReference.physicsLeftRef = ObjectsReferenceManager.instance.physicsLeftRef;
+        objectCheckReference.physicsRightRef = ObjectsReferenceManager.instance.physicsRightRef;
 
 
         RotationKeeper rotationKeeperReference = GetComponent<RotationKeeper>();
-        rotationKeeperReference.physicsLeftHand ??= ObjectsReferenceManager.instance.physicsLeftHand;
-        rotationKeeperReference.physicsRightHand ??= ObjectsReferenceManager.instance.physicsRightHand;
 
-        rotationKeeperReference.handParentLeft ??= ObjectsReferenceManager.instance.handParentLeft;
-        rotationKeeperReference.handParentRight ??= ObjectsReferenceManager.instance.handParentRight;
+        rotationKeeperReference.physicsLeftHand = ObjectsReferenceManager.instance.physicsLeftHand;
+        rotationKeeperReference.physicsRightHand = ObjectsReferenceManager.instance.physicsRightHand;
+
+        rotationKeeperReference.handParentLeft = ObjectsReferenceManager.instance.handParentLeft;
+        rotationKeeperReference.handParentRight = ObjectsReferenceManager.instance.handParentRight;
+
+        rotationKeeperReference.directLeftRef = ObjectsReferenceManager.instance.directLeftRef;
+        rotationKeeperReference.directRightRef = ObjectsReferenceManager.instance.directRightRef;
+        
     }
 }

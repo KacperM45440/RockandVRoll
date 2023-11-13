@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 251584516474538478}
   - component: {fileID: 3806128126966826571}
   - component: {fileID: 1384542512255595137}
-  - component: {fileID: 3104003213737875469}
+  - component: {fileID: 2552938256449601206}
   m_Layer: 0
   m_Name: Trunk Wood_2
   m_TagString: Untagged
@@ -84,17 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3104003213737875469
-MeshCollider:
+--- !u!136 &2552938256449601206
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591693818001380180}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7055519906928556349, guid: fee98f7812ea3453da205434cdfa7d67, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.06904578
+  m_Height: 1.0226709
+  m_Direction: 1
+  m_Center: {x: -0.0582788, y: 0, z: 0}

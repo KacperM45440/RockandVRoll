@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6951293668074299322}
   - component: {fileID: 6329861329946578975}
   - component: {fileID: 8087576655735973077}
-  - component: {fileID: 5195351252909543001}
+  - component: {fileID: 6708202443311936681}
   m_Layer: 0
   m_Name: Out Door Stone_1
   m_TagString: Untagged
@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0.00000009735359, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,6 +53,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -82,17 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5195351252909543001
-MeshCollider:
+--- !u!65 &6708202443311936681
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7727091117342967040}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3071551798283061867, guid: 6683edd36eff14576926b108a9322c7f, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.33174098, y: 0.071725644, z: 0.21247578}
+  m_Center: {x: -0.008323595, y: -0.0000054836273, z: 0.013279021}
