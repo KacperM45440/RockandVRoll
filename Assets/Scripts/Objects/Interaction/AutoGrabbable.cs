@@ -3,9 +3,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(ObjectCheck))]
-[RequireComponent(typeof(ObjectSounds))]
+//[RequireComponent(typeof(ObjectSounds))]
 [RequireComponent(typeof(RotationKeeper))]
 [RequireComponent(typeof(XRGrabInteractable))]
+
 //zmienianie wartwy na grabbable wszystkim: parentowi zmienic na grabbable a on sie spyta, czy children tez; poza tym Movement Type - Velocity Tracking
 
 public class AutoGrabbable : MonoBehaviour
