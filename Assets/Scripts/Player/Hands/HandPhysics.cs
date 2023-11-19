@@ -11,7 +11,7 @@ public class HandPhysics : MonoBehaviour
     public float handDistance = 0.05f;
     public Transform colliderTransform;
     private Collider[] handColliders;
-    private float smoothSpeed = 1f;
+    private float smoothSpeed = 1200f;
 
     void Start()
     {
@@ -19,13 +19,9 @@ public class HandPhysics : MonoBehaviour
         handColliders = colliderTransform.GetComponentsInChildren<Collider>();
     }
 
-    private void Update()
-    {
-        DisplayGhostHand();
-    }
-
     void FixedUpdate()
     {
+        DisplayGhostHand();
         FollowGhostHand();
     }
 
@@ -53,7 +49,7 @@ public class HandPhysics : MonoBehaviour
         Vector3 currentPosition = transform.position;
 
         Vector3 newPosition = Vector3.Lerp(currentPosition, targetPosition, smoothSpeed * Time.fixedDeltaTime);
-        bodyRef.velocity = 120 * (newPosition - currentPosition) / Time.fixedDeltaTime;
+        bodyRef.velocity = 1200 * Time.fixedDeltaTime * (newPosition - currentPosition);
     }
     public void Delay(float time)
     {
