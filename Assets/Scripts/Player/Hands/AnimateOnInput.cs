@@ -37,6 +37,7 @@ public class AnimateOnInput : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         try
         {
+            // sprawdzanie po nazwie - cringe
             if (!remoteRef.interactorRefRight.hasSelection && handAnimator.name.Equals("[PHYSICS] Right Hand"))
             {
                 remoteRef.rightHandAnimator.SetTrigger("remoteCatch");

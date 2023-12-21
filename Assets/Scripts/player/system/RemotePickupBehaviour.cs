@@ -12,7 +12,8 @@ public class RemotePickupBehaviour : XRBaseInteractor
 {
     public Animator leftHandAnimator;
     public Animator rightHandAnimator;
-
+    public Animator leftGhostAnimator;
+    public Animator rightGhostAnimator;
 
     private static RemotePickupBehaviour _instance;
     public static RemotePickupBehaviour Instance { get { return _instance; } }
@@ -128,10 +129,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
             if(IsRightInteractBool(currentInteractor))
             {
                 rightHandAnimator.SetTrigger("recallObject");
+                rightGhostAnimator.SetTrigger("recallObject");
             }
             else
             {
                 leftHandAnimator.SetTrigger("recallObject");
+                leftGhostAnimator.SetTrigger("recallObject");
             }    
             StartCoroutine(EnableCollisionsInObject(currentInteractor));
         }
@@ -174,8 +177,6 @@ public class RemotePickupBehaviour : XRBaseInteractor
         triggerPressedRight = rightTriggerInput.ReadValue<float>() > buttonSensitivity;
         triggerPressedLeft = leftTriggerInput.ReadValue<float>() > buttonSensitivity;
 
-        Debug.Log(leftTriggerInput.ReadValue<float>());
-
         AnimationLogic();
 
         if (isRecalled)
@@ -198,53 +199,66 @@ public class RemotePickupBehaviour : XRBaseInteractor
     {
         rightHandAnimator.SetFloat("grabRemote", rightGripInput.ReadValue<float>());
         leftHandAnimator.SetFloat("grabRemote", leftGripInput.ReadValue<float>());
+        rightGhostAnimator.SetFloat("grabRemote", rightGripInput.ReadValue<float>());
+        leftGhostAnimator.SetFloat("grabRemote", leftGripInput.ReadValue<float>());
+
         rightHandAnimator.SetFloat("grabDirect", rightTriggerInput.ReadValue<float>());
         leftHandAnimator.SetFloat("grabDirect", leftTriggerInput.ReadValue<float>());
+        rightGhostAnimator.SetFloat("grabDirect", rightTriggerInput.ReadValue<float>());
+        leftGhostAnimator.SetFloat("grabDirect", leftTriggerInput.ReadValue<float>());
 
         if (gripPressedRight && interactorRefRight.hasSelection)
         {
             rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
             rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), rightGripInput.ReadValue<float>(), Time.deltaTime * 4f));
+            rightGhostAnimator.SetFloat("clawTime", Mathf.Lerp(rightGhostAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
+            rightGhostAnimator.SetFloat("turnTime", Mathf.Lerp(rightGhostAnimator.GetFloat("turnTime"), rightGripInput.ReadValue<float>(), Time.deltaTime * 4f));
         }
         else
         {
             rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
             rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+            rightGhostAnimator.SetFloat("clawTime", Mathf.Lerp(rightGhostAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            rightGhostAnimator.SetFloat("turnTime", Mathf.Lerp(rightGhostAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
         }
 
         if (gripPressedLeft && interactorRefLeft.hasSelection)
         {
             leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
             leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), leftGripInput.ReadValue<float>(), Time.deltaTime * 4f));
+            leftGhostAnimator.SetFloat("clawTime", Mathf.Lerp(leftGhostAnimator.GetFloat("clawTime"), 1f, Time.deltaTime * 2f));
+            leftGhostAnimator.SetFloat("turnTime", Mathf.Lerp(leftGhostAnimator.GetFloat("turnTime"), leftGripInput.ReadValue<float>(), Time.deltaTime * 4f));
         }
         else
         {
             leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
             leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+            leftGhostAnimator.SetFloat("clawTime", Mathf.Lerp(leftGhostAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+            leftGhostAnimator.SetFloat("turnTime", Mathf.Lerp(leftGhostAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
         }
     }
 
     // Zresetuj stan animacji do idle'owych w momencie gdy straci kontakt z trzymanym obiektem
-    public void LostFocus(XRRayInteractor currentInteractor)
-    {
-        if (!canLeave)
-        {
-            return;
-        }
+    //public void LostFocus(XRRayInteractor currentInteractor)
+    //{
+    //    if (!canLeave)
+    //    {
+    //        return;
+    //    }
 
-        if (IsRightInteractBool(currentInteractor))
-        {
-            //rightHandAnimator.SetTrigger("lostFocus");
-            rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
-            rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
-        }
-        else
-        {
-            //leftHandAnimator.SetTrigger("lostFocus");
-            leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
-            leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
-        }
-    }
+    //    if (IsRightInteractBool(currentInteractor))
+    //    {
+    //        //rightHandAnimator.SetTrigger("lostFocus");
+    //        rightHandAnimator.SetFloat("clawTime", Mathf.Lerp(rightHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+    //        rightHandAnimator.SetFloat("turnTime", Mathf.Lerp(rightHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+    //    }
+    //    else
+    //    {
+    //        //leftHandAnimator.SetTrigger("lostFocus");
+    //        leftHandAnimator.SetFloat("clawTime", Mathf.Lerp(leftHandAnimator.GetFloat("clawTime"), 0, Time.deltaTime * 2f));
+    //        leftHandAnimator.SetFloat("turnTime", Mathf.Lerp(leftHandAnimator.GetFloat("turnTime"), 0, Time.deltaTime * 4f));
+    //    }
+    //}
     private void DisableCollisionsInObject()
     {
         try
