@@ -9,15 +9,14 @@ public class LevelTargetItem : MonoBehaviour
 
     public void ItemFound()
     {
-        Debug.Log("got it!");
         EnableOutline();
-        BackToMenu();
+        StartCoroutine(BackToMenu());
     }
 
     private IEnumerator BackToMenu()
     {
         yield return new WaitForSeconds(1);
-        StartCoroutine(loaderRef.Load());
+        StartCoroutine(loaderRef.LoadIn(false));
     }
 
     private void EnableOutline()
