@@ -14,6 +14,7 @@ public class ObjectCheck : MonoBehaviour
     public ObjectSoundsSO objectSoundsRef;
     private bool canPlaySound = false;
     private XRDirectInteractor lastInteractor = null;
+    private GameObject lastHand = null;
 
     public void CheckHand()
     {
@@ -21,12 +22,14 @@ public class ObjectCheck : MonoBehaviour
         {
             physicsLeftRef.DisableColliders();
             lastInteractor = directLeftRef;
+            lastHand = physicsLeftRef.gameObject;
         }
 
         if (directRightRef.isSelectActive)
         {
             physicsRightRef.DisableColliders();
             lastInteractor = directRightRef;
+            lastHand = physicsRightRef.gameObject;
         }
     }
 
@@ -50,6 +53,22 @@ public class ObjectCheck : MonoBehaviour
             lastInteractor = null;
             return;
         }
+    }
+
+    public void StickHandToObject()
+    {
+        lastHand.transform.parent = transform;
+        lastHand.GetComponent<HandPhysics>().enabled = false;
+        lastHand.GetComponent<Rigidbody>().useGravity = false;
+        lastHand.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    public void UnstickHand()
+    {
+        lastHand.transform.parent = lastInteractor.transform.parent;
+        lastHand.GetComponent<Rigidbody>().isKinematic = false;
+        lastHand.GetComponent<Rigidbody>().useGravity = true;
+        lastHand.GetComponent<HandPhysics>().enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -21,25 +21,7 @@ public class HandPhysics : MonoBehaviour
 
     void FixedUpdate()
     {
-        DisplayGhostHand();
         FollowGhostHand();
-    }
-
-    // Jezeli pozycja kontrolera bedzie roznic sie zbyt bardzo od obecnej pozycji fizycznych dloni, pokaz przezroczyste dlonie w jego obecnej pozycji
-    public void DisplayGhostHand()
-    {
-        float distance = Vector3.Distance(transform.position, target.position);
-
-        if (distance > handDistance)
-        {
-            ghostedHand.enabled = true;
-        }
-        else
-        {
-            ghostedHand.enabled = false;
-        }
-
-        transform.rotation = target.rotation;
     }
 
     // Kaz fizycznym dloniom podazac za obecna pozycja kontrolera
