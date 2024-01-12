@@ -14176,6 +14176,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: ==PLAYER==
       objectReference: {fileID: 0}
+    - target: {fileID: 3938813958734424138, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: gain
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938813958734424138, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: toVel
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938813958734424138, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: maxVel
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938813958734424138, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: addForceStrength
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938813958734424138, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: velocityStrength
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5163181496988296904, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14225,6 +14250,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105956821005714308, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: addForceStrength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105956821005714308, guid: ea1533ad633f4be4fbce6ba2007a1ae0,
+        type: 3}
+      propertyPath: velocityStrength
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
