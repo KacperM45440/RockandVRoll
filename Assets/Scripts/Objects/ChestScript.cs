@@ -12,6 +12,7 @@ public class ChestScript : MonoBehaviour
     public void LockDestroyed()
     {
         keyLock.SetActive(false);
+        keyLock.transform.parent.gameObject.SetActive(false);
         chestAnimator.SetTrigger("OpenLid");
     }
     public void OpenChest()

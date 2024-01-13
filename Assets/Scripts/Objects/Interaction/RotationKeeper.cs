@@ -8,6 +8,7 @@ public class RotationKeeper : MonoBehaviour
     // Skrypt nie jest ju¿ odpowiedzialny za weryfikowanie obracania przedmiotu, natomiast nie ma sensu psuæ scen refaktoryzacj¹ dlatego zostaje z nazw¹ jaka jest
     // Je¿eli zostanie czas: zmieniæ nazwê na "ParentKeeper" albo "JointKeeper"
 
+    public Vector3 preferredPosition;
     public Vector3 preferredRotation;
     public XRDirectInteractor directLeftRef;
     public XRDirectInteractor directRightRef;
@@ -18,6 +19,7 @@ public class RotationKeeper : MonoBehaviour
     private Transform startParent;
     private bool leftSelecting;
     private bool rightSelecting;
+    private List<FixedJoint> joints = new();
 
     private void Start()
     {
@@ -28,6 +30,13 @@ public class RotationKeeper : MonoBehaviour
     {
         rotatedObject.transform.eulerAngles = preferredRotation + givenHand.transform.eulerAngles;
     }
+
+    public void SetPosition(XRRayInteractor currentInteractor, Transform givenAttach)
+    {
+        //givenAttach.localPosition = preferredPosition;
+        givenAttach.position = preferredPosition;
+        currentInteractor.attachTransform = givenAttach;
+    }
     public void AssignParent()
     {
         CheckSelection();
@@ -36,6 +45,9 @@ public class RotationKeeper : MonoBehaviour
 
     public void CheckSelection()
     {
+        leftSelecting = false;
+        rightSelecting = false; 
+
         try
         {
             if (directLeftRef.interactablesSelected[0] != null && (directLeftRef.interactablesSelected[0] as XRGrabInteractable).name.Equals(gameObject.name))
@@ -72,12 +84,15 @@ public class RotationKeeper : MonoBehaviour
     public void ReturnParent()
     {
         transform.parent = startParent;
-        Destroy(gameObject.GetComponent<FixedJoint>());
+        foreach (FixedJoint joint in joints)
+        {
+            Destroy(joint);
+        }
     }
 
     IEnumerator Assign()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(() => leftSelecting || rightSelecting);
 
         if (leftSelecting)
         {
@@ -94,18 +109,20 @@ public class RotationKeeper : MonoBehaviour
 
     IEnumerator CreateJoint()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(() => leftSelecting || rightSelecting);
 
         if (leftSelecting)
         {
             FixedJoint newJoint = gameObject.AddComponent<FixedJoint>();
             newJoint.connectedBody = physicsLeftHand.GetComponent<Rigidbody>();
+            joints.Add(newJoint);
         }
 
         if (rightSelecting)
         {
             FixedJoint newJoint = gameObject.AddComponent<FixedJoint>();
             newJoint.connectedBody = physicsRightHand.GetComponent<Rigidbody>();
+            joints.Add(newJoint);
         }
     }
 }
