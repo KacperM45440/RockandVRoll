@@ -16,9 +16,10 @@ public class DoorSceneLoader : MonoBehaviour
         // przypisac collider gracza i sprawdzic czy collider ktory wszedl to jest ten z referencji /done
         // player experience przy ³adowaniu przejœcia by³by miserable - portal netherowy jest mêcz¹cy z czasem (a to tylko jeden portal do jednego miejsca, a nie wszystkich miejsc)
         // no chyba ¿e na czas fade, to to by mia³o jeszcze sens
-        if (other == playerCollider)
+       
+        if (other.Equals(playerCollider))
         {
-            StartCoroutine(LoadIn(true));
+            StartCoroutine(LoadIn(false));
         }
     }
 

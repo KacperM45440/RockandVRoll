@@ -35,17 +35,17 @@ public class PositionKeeper : MonoBehaviour
         }
 
         Vector3 targetPos = cameraPos.transform.position;
-        foreach (Transform child in transform) 
+        for (int i = 0; i < 3; i++) 
         {
-            child.parent = tempTransform;
+            transform.GetChild(0).parent = tempTransform;
         }
 
         transform.position = new Vector3(targetPos.x, transform.position.y, targetPos.z);
-        foreach (Transform child in tempTransform)
+        for (int i = 0; i < 3; i++)
         {
-            child.parent = transform;
+            tempTransform.GetChild(0).parent = transform;
         }
-        
+
         cameraPos.rotation = Quaternion.Euler(cameraPos.rotation.x, cameraPos.rotation.y + GetComponent<ActionBasedSnapTurnProvider>().turnAmount, cameraPos.rotation.z);
     }
 }
