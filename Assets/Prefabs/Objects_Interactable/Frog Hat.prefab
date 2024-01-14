@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6475650317945019569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2170964712392523616}
   - component: {fileID: 2030357692901391399}
   - component: {fileID: 2469188764639740663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Frog Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,9 +130,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7184084568628320971}
   serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 200
+  m_Drag: 1.5
+  m_AngularDrag: 1.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2030357692901391399}
         m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
         m_MethodName: CheckHand
         m_Mode: 1
@@ -213,7 +213,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2469188764639740663}
         m_TargetAssemblyTypeName: RotationKeeper, Assembly-CSharp
         m_MethodName: AssignParent
         m_Mode: 1
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2030357692901391399}
         m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
         m_MethodName: ObjectDropped
         m_Mode: 1
@@ -240,7 +240,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2469188764639740663}
         m_TargetAssemblyTypeName: RotationKeeper, Assembly-CSharp
         m_MethodName: ReturnParent
         m_Mode: 1
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 0
+  m_ThrowOnDetach: 1
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf2c7b41b0417848abd075a4c15e91a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preferredPosition: {x: 0, y: 0, z: 0}
   preferredRotation: {x: 0, y: 0, z: 0}
   directLeftRef: {fileID: 0}
   directRightRef: {fileID: 0}
@@ -396,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3135325553481180336}
   - component: {fileID: 2227044439217717848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor.XR.LegacyInputHelpers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -7,9 +6,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PositionKeeper : MonoBehaviour
 {
     public InputActionReference stoppedRotating = null;
+    public Transform tempTransform;
     public Transform cameraPos;
+    public GameObject cameraOffset;
     public Rigidbody rigidbodyRef;
-    private Vector2 thumbAxis;
 
     private void Awake()
     {
@@ -23,27 +23,29 @@ public class PositionKeeper : MonoBehaviour
     {
         stoppedRotating.action.Disable();
     }
-    public void Rotate(InputAction.CallbackContext obj)
-    {
-        thumbAxis.x = obj.ReadValue<float>();
-        StartCoroutine(CheckRotation());
-    }
-
     // Kiedy gracz obraca kamere, zmienia swoje wzgledne polozenie w swiecie ktore nie pokrywa sie z jego colliderem
     // Jest przez to w stanie o wiele latwiej wchodzic w obiekty (np: stoly) oraz clipowac przez sciane
     // Aby zredukowac czestotliwosc wystepowania tego problemu, przesuwamy collider gracza z powrotem do obecnej pozycji glowy gdy konczy obrot
     // Za zakonczenie obrotu uznajemy sytuacje, w ktorej w krotkim odstepnie czasu nie zauwazamy zmiany w rotacji rigidbody; zbieranie inputu prosto z galki nie dzialalo zbyt dobrze
-    private IEnumerator CheckRotation()
+    public void Rotate(InputAction.CallbackContext obj)
     {
-        float x = rigidbodyRef.transform.rotation.y;
-        yield return new WaitForSeconds(0.1f);
-        float y = rigidbodyRef.transform.rotation.y;
-
-        bool grounded = transform.GetChild(0).GetComponent<GroundDetector>().isGrounded;
-
-        if (x.Equals(y) && grounded)
+        if (obj.ReadValue<Vector2>().y != 0)
         {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(cameraPos.localPosition.x, transform.localPosition.y, cameraPos.localPosition.z), 1);
+            return;
         }
+
+        Vector3 targetPos = cameraPos.transform.position;
+        for (int i = 0; i < 3; i++) 
+        {
+            transform.GetChild(0).parent = tempTransform;
+        }
+
+        transform.position = new Vector3(targetPos.x, transform.position.y, targetPos.z);
+        for (int i = 0; i < 3; i++)
+        {
+            tempTransform.GetChild(0).parent = transform;
+        }
+
+        cameraPos.rotation = Quaternion.Euler(cameraPos.rotation.x, cameraPos.rotation.y + GetComponent<ActionBasedSnapTurnProvider>().turnAmount, cameraPos.rotation.z);
     }
 }

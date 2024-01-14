@@ -1,27 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class LevelTargetItem : MonoBehaviour
 {
     public Outline outlineRef;
     public DoorSceneLoader loaderRef;
+    public XRGrabInteractable targetItemGrabbable;
+    private bool isFirstSelect = true;
+
+    public void ItemInSocket()
+    {
+        if (isFirstSelect)
+        {
+            isFirstSelect = false;
+            return;
+        }
+
+        targetItemGrabbable.enabled = true;
+    }
 
     public void ItemFound()
     {
-        Debug.Log("got it!");
         EnableOutline();
-        BackToMenu();
+        StartCoroutine(BackToMenu());
     }
 
     private IEnumerator BackToMenu()
     {
         yield return new WaitForSeconds(1);
-        StartCoroutine(loaderRef.Load());
+        StartCoroutine(loaderRef.LoadIn(false));
     }
 
     private void EnableOutline()
     {
-
+        outlineRef.enabled = true;
     }
 }

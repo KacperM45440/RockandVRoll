@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class SkeletonScript : MonoBehaviour
 {
-    public Transform moverRef;
-
+    public HingeJoint joint;
     public void MoveSkeleton()
     {
         StartCoroutine(Lean());
     }
 
-    // Wydarzenie na potrzeby traileru
     // Uzyj niewidzialnych kostek do wypchniecia szkieleta z szafy, tak aby zaczal upadac w strone gracza
     // Przy naprawionych drzwiach szkielet powinien wypadac sam po otworzeniu drzwi, korzystajac jedynie z fizyki w grze
     private IEnumerator Lean()
     {
-        yield return new WaitForSeconds(1.5f);
-        moverRef.position = new Vector3(-0.35f, moverRef.position.y, moverRef.position.z);
+        yield return new WaitUntil(() => joint.angle >= 50f);
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        yield return new WaitForSeconds(2f);
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }

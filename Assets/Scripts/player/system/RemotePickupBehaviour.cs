@@ -18,7 +18,6 @@ public class RemotePickupBehaviour : XRBaseInteractor
     private static RemotePickupBehaviour _instance;
     public static RemotePickupBehaviour Instance { get { return _instance; } }
 
-    private bool canLeave = true;
     private bool isRecalled = false;
     private bool gripPressedRight = false;
     private bool gripPressedLeft = false;
@@ -118,14 +117,18 @@ public class RemotePickupBehaviour : XRBaseInteractor
             // Jedyne co trzeba zrobic to ja wlaczyc podczas "zrestartowania" zaznaczenia
             // Podczas tego procesu wylaczamy rowniez chwilowo kolizje w obiekcie, by obiekt nie utykal pomiedzy scianami lub innymi przeszkodami
 
+            rotationRef = grabbedObject.GetComponent<RotationKeeper>();
             PrepareRotation(currentInteractor);
+
+            //currentInteractor.attachTransform = null;
+            //Transform currentAttach = currentInteractor.transform.GetChild(0);
+            //PreparePosition(currentInteractor, currentAttach);
+
             DisableCollisionsInObject();
-            canLeave = false;
             ForceDeselect(currentInteractor);
-
-
             currentInteractor.useForceGrab = true;
             ForceSelect(currentInteractor, grabbedObject);
+            
             if(IsRightInteractBool(currentInteractor))
             {
                 rightHandAnimator.SetTrigger("recallObject");
@@ -268,13 +271,17 @@ public class RemotePickupBehaviour : XRBaseInteractor
                 child.gameObject.SetActive(false);
             }
         }
-        catch { }
+        catch { Debug.LogError("Can't disable by child."); }
+        try
+        {
+            grabbedObject.GetComponent<MeshCollider>().enabled = false;
+        }
+        catch { Debug.LogError("Can't disable by meshcollider."); }
     }
     private IEnumerator EnableCollisionsInObject(XRRayInteractor currentInteractor)
     {
-        yield return new WaitForSeconds(0.1f);
-
-        canLeave = true;
+        //yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0f);
 
         try
         {
@@ -283,7 +290,12 @@ public class RemotePickupBehaviour : XRBaseInteractor
                 child.gameObject.SetActive(true);
             }
         }
-        catch { }
+        catch { Debug.LogError("Can't enable by child."); }
+        try
+        {
+            grabbedObject.GetComponent<MeshCollider>().enabled = true;
+        }
+        catch { Debug.LogError("Can't enable by meshcollider."); }
 
         StartCoroutine(WaitForRelease(currentInteractor));
         StartCoroutine(WaitForObject(currentInteractor));
@@ -292,11 +304,16 @@ public class RemotePickupBehaviour : XRBaseInteractor
     // Ustaw obiekt tak, by zostal przywolany w korzystnej pozycji do zlapania go dlonia
     private void PrepareRotation(XRRayInteractor currentInteractor)
     {
-        rotationRef = grabbedObject.GetComponent<RotationKeeper>();
         rotationRef.preferredRotation.x *= IsRightInteractFloat(currentInteractor);
         rotationRef.preferredRotation.y *= IsRightInteractFloat(currentInteractor);
         rotationRef.preferredRotation.z *= IsRightInteractFloat(currentInteractor);
         rotationRef.SetRotation(grabbedObject.gameObject, HandFromRay(currentInteractor));
+    }
+    private void PreparePosition(XRRayInteractor currentInteractor, Transform currentAttach)
+    {
+        rotationRef.preferredPosition.x *= IsRightInteractFloat(currentInteractor);
+        rotationRef.preferredPosition.z *= IsRightInteractFloat(currentInteractor);
+        rotationRef.SetPosition(currentInteractor, currentAttach);
     }
 
     // Wymus wypuszczenie obiektu przez interactor (tak, jak przy puszczeniu triggera)
