@@ -133,8 +133,8 @@ Transform:
   m_GameObject: {fileID: 5087747296288951393}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.000001847744, z: -0, w: 1}
-  m_LocalPosition: {x: -1.35478, y: -0.018041058, z: 0.4211}
-  m_LocalScale: {x: 0.692445, y: 2.5000002, z: 0.008264461}
+  m_LocalPosition: {x: -0.16001, y: -0.2259, z: -0.057}
+  m_LocalScale: {x: 0.6778283, y: 2.4479094, z: 0.008264461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5993590348004158733}
@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 3039846072846562544}
   - component: {fileID: 5006858976821942170}
   - component: {fileID: 6675005759978049265}
+  - component: {fileID: 2175025422861104499}
   m_Layer: 0
   m_Name: Wardrobe Door
   m_TagString: Untagged
@@ -273,15 +274,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6369868909210711991}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.708118, z: 0, w: 0.7060941}
-  m_LocalPosition: {x: -0.166, y: 1.761, z: 4.2771626}
-  m_LocalScale: {x: 2.3800008, y: 1.2199999, z: 1.2100004}
+  m_LocalRotation: {x: 0, y: -0.39619455, z: 0, w: 0.9181666}
+  m_LocalPosition: {x: 1.2338113, y: 1.9950002, z: 9.188776}
+  m_LocalScale: {x: 2.380001, y: 1.2199999, z: 1.2100006}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5636392399514668960}
   - {fileID: 835817518652129897}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.164, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -46.681, z: 0}
 --- !u!33 &7242449281170301608
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -289,7 +290,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6369868909210711991}
-  m_Mesh: {fileID: -4400576859003009123, guid: d38e51f091278fe4fbef1d19639d44c5, type: 3}
+  m_Mesh: {fileID: -4400576859003009123, guid: 0f7ee4507ceaa1d4cb9a21992cf61b85, type: 3}
 --- !u!23 &4856761070697616994
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -343,9 +344,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6369868909210711991}
   serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0.2
-  m_AngularDrag: 0.2
+  m_Mass: 200
+  m_Drag: 1.5
+  m_AngularDrag: 1.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -418,10 +419,58 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2175025422861104499}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: CheckHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2175025422861104499}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: StickHandToObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2175025422861104499}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: UnstickHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2175025422861104499}
+        m_TargetAssemblyTypeName: ObjectCheck, Assembly-CSharp
+        m_MethodName: ObjectDropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -529,10 +578,10 @@ HingeJoint:
   m_GameObject: {fileID: 6369868909210711991}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: -1.71, y: -0.14, z: 0.43}
+  m_Anchor: {x: -0.5, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.36594677, y: 1.6512, z: 8.345458}
+  m_ConnectedAnchor: {x: 0.41400003, y: 1.5902001, z: 7.133}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -578,8 +627,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6, y: 2.25, z: 0.05}
-  m_Center: {x: -1.34, y: 0, z: 0.43}
+  m_Size: {x: 0.55, y: 2.25, z: 0.03}
+  m_Center: {x: -0.15, y: -0.22, z: -0.04}
 --- !u!114 &6675005759978049265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +642,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moverRef: {fileID: 0}
+--- !u!114 &2175025422861104499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369868909210711991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe581f307c68deb48bcb28b75404baa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directLeftRef: {fileID: 0}
+  directRightRef: {fileID: 0}
+  physicsLeftRef: {fileID: 0}
+  physicsRightRef: {fileID: 0}
+  objectSoundsRef: {fileID: 0}
 --- !u!1 &6713128805228356480
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +737,7 @@ Transform:
   m_GameObject: {fileID: 7179686693269653950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1058, y: 0.33, z: 0.5207}
+  m_LocalPosition: {x: 0.0984, y: 0.096, z: 0.0456}
   m_LocalScale: {x: 0.04, y: 0.39, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
