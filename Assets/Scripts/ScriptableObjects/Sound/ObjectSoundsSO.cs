@@ -23,10 +23,12 @@ public class ObjectSoundsSO : ScriptableObject
 
     private AudioClip ChooseSound()
     {
-        List<AudioClip> soundList = new();
-        soundList.Add(pickup1);
-        soundList.Add(pickup2);
-        soundList.Add(pickup3);
+        List<AudioClip> soundList = new()
+        {
+            pickup1,
+            pickup2,
+            pickup3
+        };
 
         while (i.Equals(previousSound))
         {
