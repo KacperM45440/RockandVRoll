@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6245773718109603475}
   - component: {fileID: 4492477464217807319}
   - component: {fileID: 4992253198564262809}
+  - component: {fileID: 1435895645264709689}
   m_Layer: 6
   m_Name: Small Mouse
   m_TagString: Untagged
@@ -471,3 +472,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1435895645264709689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463739924940747727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de95715c057b334c872b939c17b6d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup1: {fileID: 0}
+  pickup2: {fileID: 0}
+  pickup3: {fileID: 0}
+  sourceRef: {fileID: 0}

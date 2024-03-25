@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7993828612972477396}
   - component: {fileID: 5491775509619356738}
   - component: {fileID: 8398597885550198148}
+  - component: {fileID: -4722573388168331580}
   m_Layer: 6
   m_Name: Hurting Cactus
   m_TagString: Untagged
@@ -476,6 +477,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4722573388168331580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653737457905791318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de95715c057b334c872b939c17b6d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup1: {fileID: 0}
+  pickup2: {fileID: 0}
+  pickup3: {fileID: 0}
+  sourceRef: {fileID: 0}
 --- !u!1 &2872513127626758126
 GameObject:
   m_ObjectHideFlags: 0
