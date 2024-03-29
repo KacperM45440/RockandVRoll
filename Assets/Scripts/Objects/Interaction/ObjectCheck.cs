@@ -75,13 +75,15 @@ public class ObjectCheck : MonoBehaviour
     {
         if (canPlaySound)
         {
-            canPlaySound = false;
+            StartCoroutine(StartSoundTimeout());
             objectSoundsRef.PickedUp(GetComponent<AudioSource>());
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private IEnumerator StartSoundTimeout()
     {
+        canPlaySound = false;
+        yield return new WaitForSeconds(0.5f);
         canPlaySound = true;
-    }
+    }    
 }
