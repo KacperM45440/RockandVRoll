@@ -22,6 +22,8 @@ public class OpenDoorController : GlitchEffect
     private void Awake()
     {
         closeDoor = door.rotation;
+        openDoor.x = closeDoor.x;
+        openDoor.z = closeDoor.z;
         SetMaterialValues(0, 0, 1);
     }
 
