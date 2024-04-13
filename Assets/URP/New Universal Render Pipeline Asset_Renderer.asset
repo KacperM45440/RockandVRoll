@@ -33,8 +33,7 @@ MonoBehaviour:
       type: 3}
   m_RendererFeatures:
   - {fileID: 2504324067512820278}
-  - {fileID: 6477601278818650143}
-  m_RendererFeatureMap: 3622908e7825c1221f089a140b10e559
+  m_RendererFeatureMap: 3622908e7825c122
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -121,20 +120,3 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
---- !u!114 &6477601278818650143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00045f12942b46c698459096c89274e, type: 3}
-  m_Name: FullScreenPassRendererFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  passMaterial: {fileID: 2100000, guid: af2b9177e5467934b81d72a53948a07f, type: 2}
-  injectionPoint: 600
-  requirements: 4
-  passIndex: 1
