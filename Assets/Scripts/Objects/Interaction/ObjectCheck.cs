@@ -15,6 +15,12 @@ public class ObjectCheck : MonoBehaviour
     private bool canPlaySound = false;
     private XRDirectInteractor lastInteractor = null;
     private GameObject lastHand = null;
+    private Transform parentRef;
+    
+    private void Start()
+    {
+        parentRef = transform.parent;
+    }
 
     public void CheckHand()
     {
@@ -75,13 +81,35 @@ public class ObjectCheck : MonoBehaviour
     {
         if (canPlaySound)
         {
-            canPlaySound = false;
+            StartCoroutine(StartSoundTimeout());
             objectSoundsRef.PickedUp(GetComponent<AudioSource>());
+        }
+
+        if (collision.rigidbody != null)
+        {
+            ConnectObject(collision.rigidbody);
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        canPlaySound = true;
+        DetachObject();
     }
+
+    private void DetachObject()
+    {
+        transform.parent = parentRef;
+    }
+
+    private void ConnectObject(Rigidbody givenBody)
+    {
+        transform.parent = givenBody.transform.parent;
+    }
+
+    private IEnumerator StartSoundTimeout()
+    {
+        canPlaySound = false;
+        yield return new WaitForSeconds(0.5f);
+        canPlaySound = true;
+    }    
 }

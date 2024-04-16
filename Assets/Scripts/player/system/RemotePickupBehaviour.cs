@@ -276,7 +276,20 @@ public class RemotePickupBehaviour : XRBaseInteractor
         {
             grabbedObject.GetComponent<MeshCollider>().enabled = false;
         }
-        catch { Debug.LogError("Can't disable by meshcollider."); }
+        catch
+        {
+            try
+            {
+                foreach (Collider collider in grabbedObject.GetComponentsInChildren<Collider>())
+                {
+                    collider.enabled = false;
+                }
+            }
+            catch
+            {
+                Debug.LogError("No colliders found in object.");
+            }
+        }
     }
     private IEnumerator EnableCollisionsInObject(XRRayInteractor currentInteractor)
     {
@@ -295,7 +308,21 @@ public class RemotePickupBehaviour : XRBaseInteractor
         {
             grabbedObject.GetComponent<MeshCollider>().enabled = true;
         }
-        catch { Debug.LogError("Can't enable by meshcollider."); }
+        catch 
+        {
+            try
+            {
+                foreach (Collider collider in grabbedObject.GetComponentsInChildren<Collider>())
+                {
+                    collider.enabled = true;
+                }
+            }
+            catch
+            {
+                Debug.LogError("No colliders found in object.");
+            }
+        }
+
 
         StartCoroutine(WaitForRelease(currentInteractor));
         StartCoroutine(WaitForObject(currentInteractor));
