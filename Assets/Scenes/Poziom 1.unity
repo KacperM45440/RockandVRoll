@@ -122,6 +122,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!64 &465744840 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 5626268292476296169, guid: e6066dc74492570469002ab806a699a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 7074950090497030172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7074950090497030172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,12 +191,72 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4401014975710133927, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.244
+      objectReference: {fileID: 0}
     - target: {fileID: 4999167149163713627, guid: e6066dc74492570469002ab806a699a6,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: babd91743f9ac294f930b7e5fa44e3e9,
         type: 2}
+    - target: {fileID: 5624396560841661468, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624396560841661468, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: 'm_Colliders.Array.data[1]'
+      value: 
+      objectReference: {fileID: 465744840}
+    - target: {fileID: 5624396560841661468, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: 'm_Colliders.Array.data[2]'
+      value: 
+      objectReference: {fileID: 465744840}
+    - target: {fileID: 5624396560841661468, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: 'm_Colliders.Array.data[3]'
+      value: 
+      objectReference: {fileID: 465744840}
+    - target: {fileID: 5624396560841661468, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: 'm_Colliders.Array.data[4]'
+      value: 
+      objectReference: {fileID: 465744840}
+    - target: {fileID: 5624396560841661468, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: 'm_Colliders.Array.data[5]'
+      value: 
+      objectReference: {fileID: 465744840}
+    - target: {fileID: 5626268292476296169, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626268292476296169, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944669221458695914, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207083153290733846, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_ImplicitCom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207083153290733846, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
