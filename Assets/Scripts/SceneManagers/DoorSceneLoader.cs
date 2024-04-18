@@ -5,7 +5,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class DoorSceneLoader : MonoBehaviour
 {
+   // [Header("Glitch effect")]
+   // [SerializeField] Material material;
+   // [SerializeField] float noiseAmount;
+   // [SerializeField] float glitchStrength;
+   // [Range(0.0f, 1.0f)]
+   // [SerializeField] float scanLinesStrength;
+
+
     // public string sceneName;
+    [Header("Load Level")]
     public UnityEngine.Object choosenLevel;
     public float fadeInTime = 0.5f;
     public float fadeOutTime = 1f;
@@ -22,6 +31,7 @@ public class DoorSceneLoader : MonoBehaviour
             StartCoroutine(LoadIn(false));
         }
     }
+
 
     public IEnumerator LoadIn(bool loadIn)
     {
