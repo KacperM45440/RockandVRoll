@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2233605091459180893}
   - component: {fileID: 88214412372164518}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2671553562959527290}
   - component: {fileID: 1245413857086407668}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Back3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7110692466912183277}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4110790309868796772}
   - component: {fileID: 6649914337063520044}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ArmrestL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2939594099295725892}
   - component: {fileID: 5560425537504885183}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ArmrestR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7005802131040991623}
   - component: {fileID: 4037504320891972052}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190509050007621810}
   - component: {fileID: 3470619624309604150}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Back1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,8 +373,7 @@ GameObject:
   - component: {fileID: 7378143221793523280}
   - component: {fileID: 3283921730733890265}
   - component: {fileID: -3546465257009814022}
-  - component: {fileID: 4700878996189478588}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Gaming Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,34 +517,10 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4700878996189478588}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4700878996189478588}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -843,7 +818,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7252763515889548312, guid: 9fa6698f2bea9f84e93a999bdd1ac8ca,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -928,24 +903,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4700878996189478588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7619755910100559835}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 0, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &8513455856198565041
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854288656797931720}
   - component: {fileID: 507851081709152546}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Back2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
