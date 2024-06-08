@@ -20,23 +20,8 @@ public class BarrelController : MonoBehaviour
         barrelText.text = "no";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeBarrelValue(float direction) 
     {
-        
-    }
-
-    private void OnEnable()
-    {
-        barrelDial.onDialChange.AddListener(ChangeBarrelValue);
-    }
-
-    private void OnDisable()
-    {
-        barrelDial.onDialChange.RemoveListener(ChangeBarrelValue);
-    }
-
-    public void ChangeBarrelValue(float direction) {
         float valueDestination = currentBarrelValue + (changeSignificancy * direction);
         if (valueDestination > maxValue)
         {
@@ -52,15 +37,17 @@ public class BarrelController : MonoBehaviour
         }
         isReached = currentBarrelValue >= signalThreshold;
         barrelText.text = DisplayMessage(isReached);
-        //Debug.Log(currentBarrelValue);
+        Debug.Log(currentBarrelValue);
     }
 
-    public string DisplayMessage(bool isReached) {
+    public string DisplayMessage(bool isReached)
+    {
         if (!isReached)
         {
             return "no";
         }
-        else {
+        else
+        {
             return "yes";
         }
     }

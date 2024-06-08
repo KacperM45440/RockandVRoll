@@ -164,6 +164,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1419571924}
+    - target: {fileID: 1424957033396497936, guid: 1520fee35c4a66b42a83bd92e8714f52,
+        type: 3}
+      propertyPath: linkedDial
+      value: 
+      objectReference: {fileID: 1445760361}
     - target: {fileID: 1499498381140110382, guid: 1520fee35c4a66b42a83bd92e8714f52,
         type: 3}
       propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.size
@@ -289,6 +294,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2103751824544079439, guid: 1520fee35c4a66b42a83bd92e8714f52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3429630205115539683, guid: 1520fee35c4a66b42a83bd92e8714f52,
         type: 3}
       propertyPath: m_Name
@@ -393,6 +403,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2103751824544079439, guid: 1520fee35c4a66b42a83bd92e8714f52,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 1422956123673639642, guid: 1520fee35c4a66b42a83bd92e8714f52,
         type: 3}
       insertIndex: -1
@@ -603,6 +617,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1445760361 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7407404067498212265, guid: 1520fee35c4a66b42a83bd92e8714f52,
+    type: 3}
+  m_PrefabInstance: {fileID: 1000135392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
