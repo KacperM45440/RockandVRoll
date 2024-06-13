@@ -140,6 +140,128 @@ MeshCollider:
     type: 3}
   m_PrefabInstance: {fileID: 7074950090497030172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &635033126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5551989760602527036, guid: e6066dc74492570469002ab806a699a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 7074950090497030172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &635033128
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635033126}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -7252763515889548312, guid: 9fa6698f2bea9f84e93a999bdd1ac8ca,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: c5f30583ac5aec549ba06e8db9fd9254, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 1
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &635033129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635033126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230363e3f3846b14d8822bb5fd1cda1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelStartScreen: 1
+  maxGlitchTime: 6
+  glitchMaterial: {fileID: 2100000, guid: af2b9177e5467934b81d72a53948a07f, type: 2}
+  noiseAmount: 250
+  glitchStrength: 500
+  scanLinesStrength: 0.95
+  glitchSound: {fileID: 635033128}
 --- !u!64 &680505999 stripped
 MeshCollider:
   m_CorrespondingSourceObject: {fileID: 5052574879240083929, guid: e6066dc74492570469002ab806a699a6,
@@ -178,6 +300,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 102502707857438171, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.342
+      objectReference: {fileID: 0}
     - target: {fileID: 123763737065036269, guid: e6066dc74492570469002ab806a699a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -217,6 +344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 81.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185210682942742233, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 1514344885022835325, guid: e6066dc74492570469002ab806a699a6,
         type: 3}
@@ -472,7 +604,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5551989760602527036, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 635033129}
+    - targetCorrespondingSourceObject: {fileID: 5551989760602527036, guid: e6066dc74492570469002ab806a699a6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 635033128}
   m_SourcePrefab: {fileID: 100100000, guid: e6066dc74492570469002ab806a699a6, type: 3}
 --- !u!64 &7074950090497030173 stripped
 MeshCollider:
