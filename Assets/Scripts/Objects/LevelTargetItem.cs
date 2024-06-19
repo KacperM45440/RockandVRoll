@@ -30,7 +30,7 @@ public class LevelTargetItem : MonoBehaviour
     private IEnumerator BackToMenu()
     {
         yield return new WaitForSeconds(1);
-        StartCoroutine(loaderRef.LoadIn(false));
+        StartCoroutine(loaderRef.LoadInMenu(false));
     }
 
     private void EnableOutline()

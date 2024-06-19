@@ -15,7 +15,7 @@ public class DoorSceneLoader : MonoBehaviour
 
     // public string sceneName;
     [Header("Load Level")]
-    public UnityEngine.Object chosenLevel;
+    //public UnityEngine.Object chosenLevel;
     public float fadeInTime = 0.5f;
     public float fadeOutTime = 1f;
     public Collider playerCollider;
@@ -38,7 +38,24 @@ public class DoorSceneLoader : MonoBehaviour
         {
             ScreenFader.Instance.FadeOut(fadeOutTime, () => transitionDone = true);
             yield return new WaitUntil(() => transitionDone);
-            SceneManager.LoadScene(chosenLevel.name);
+            //SceneManager.LoadScene(chosenLevel.name);
+            SceneManager.LoadScene("Poziom 1");
+        }
+    }
+
+    public IEnumerator LoadInMenu(bool loadIn)
+    {
+        bool transitionDone = false;
+        if (loadIn)
+        {
+            ScreenFader.Instance.FadeIn(fadeInTime);
+        }
+        else
+        {
+            ScreenFader.Instance.FadeOut(fadeOutTime, () => transitionDone = true);
+            yield return new WaitUntil(() => transitionDone);
+            //SceneManager.LoadScene(chosenLevel.name);
+            SceneManager.LoadScene("Menu");
         }
     }
 }
